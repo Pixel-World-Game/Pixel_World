@@ -1,0 +1,330 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Sprite Editor Data Provider API</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20241003"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20241003"></script><script type="text/javascript" src="docdata/toc.js?ts=20241003"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20241003"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20241003">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2022.3</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Sprite-data-provider-api.html">English</a></li>
+<li><a href="/cn/current/Manual/Sprite-data-provider-api.html">中文</a></li>
+<li><a href="/ja/current/Manual/Sprite-data-provider-api.html">日本語</a></li>
+<li><a href="/kr/current/Manual/Sprite-data-provider-api.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2022.3</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Sprite-data-provider-api.html">English</a></li>
+<li><a href="/cn/current/Manual/Sprite-data-provider-api.html">中文</a></li>
+<li><a href="/ja/current/Manual/Sprite-data-provider-api.html">日本語</a></li>
+<li><a href="/kr/current/Manual/Sprite-data-provider-api.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="Unity2D.html">2D game development</a></li>
+<li><a href="Sprites.html">Work with sprites</a></li>
+<li><a href="SpriteEditor.html">Sprite Editor</a></li>
+<li>Sprite Editor Data Provider API</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SpriteEditor-SecondaryTextures.html"></a></span><div class="tip">Sprite Editor: Secondary Textures</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-SortingGroup.html"></a></span><div class="tip">Sorting Groups</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Sprite Editor Data Provider API</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>By using the <span class="tooltip"><strong>Sprite</strong><span class="tooltiptext">A 2D graphic objects. If you are used to working in 3D, Sprites are essentially just standard textures but there are special techniques for combining and managing sprite textures for efficiency and convenience during development. <a class="tooltipMoreInfoLink" href="Sprites.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Sprite">Glossary</a></span></span></span> Editor Data Provider API, the user can add, change and remove Sprite data in a custom importer or editor tool. Refer to the code examples below to see how the API is applied.</p>
+
+<p>
+<strong>Important:</strong> Some of the following examples contains an additional section of code which is needed if you are using Unity 2021.2 or newer. If you are using Unity 2021.1 or older, you should remove the indicated section to ensure the code compiles properly.</p>
+
+<h2>How to get ISpriteEditorDataProvider instances</h2>
+
+<p>The following examples show you how to use the API to get each respective instance.</p>
+
+<h3>Importer</h3>
+
+<pre><code class="lang-csharp">using UnityEditor;
+using UnityEditor.U2D.Sprites;
+using UnityEngine;
+
+public class MyAssetPostProcessor : AssetPostprocessor
+{
+    private void OnPreprocessTexture()
+    {
+        var factory = new SpriteDataProviderFactories();
+        factory.Init();
+        var dataProvider = factory.GetSpriteEditorDataProviderFromObject(assetImporter);
+        dataProvider.InitSpriteEditorDataProvider();
+
+        /* Use the data provider */
+
+        // Apply the changes made to the data provider
+        dataProvider.Apply();
+    }
+}
+</code></pre>
+
+<h3>Texture</h3>
+
+<pre><code class="lang-csharp">using UnityEditor;
+using UnityEditor.U2D.Sprites;
+using UnityEngine;
+
+public static class MyCustomTool
+{
+    [MenuItem(&quot;Custom/Update Sprite Settings&quot;)]
+    static void UpdateSettings()
+    {
+        foreach (var obj in Selection.objects)
+        {
+            if (obj is Texture2D)
+            {
+                var factory = new SpriteDataProviderFactories();
+                factory.Init();
+                var dataProvider = factory.GetSpriteEditorDataProviderFromObject(obj);
+                dataProvider.InitSpriteEditorDataProvider();
+
+                /* Use the data provider */
+
+                // Apply the changes made to the data provider
+                dataProvider.Apply();
+
+                // Reimport the asset to have the changes applied
+                var assetImporter = dataProvider.targetObject as AssetImporter;
+                assetImporter.SaveAndReimport();
+            }
+        }
+    }
+}
+</code></pre>
+
+<h2>How to add Sprites</h2>
+
+<pre><code class="lang-csharp">static void AddSprite(ISpriteEditorDataProvider dataProvider)
+{
+    // Define the new Sprite Rect
+    var newSprite = new SpriteRect()
+    {
+        name = &quot;MyNewSprite&quot;,
+        spriteID = GUID.Generate(),
+        rect = new Rect(0, 0, 32, 32)
+    };
+    // Add the Sprite Rect to the list of existing Sprite Rects
+    var spriteRects = dataProvider.GetSpriteRects().ToList();
+    spriteRects.Add(newSprite);
+
+    // Write the updated data back to the data provider
+    dataProvider.SetSpriteRects(spriteRects.ToArray());
+
+    // Note: This section is only for Unity 2021.2 and newer
+    // Register the new Sprite Rect's name and GUID with the ISpriteNameFileIdDataProvider
+    var spriteNameFileIdDataProvider = dataProvider.GetDataProvider&lt;ISpriteNameFileIdDataProvider&gt;();
+    var nameFileIdPairs = spriteNameFileIdDataProvider.GetNameFileIdPairs().ToList();
+    nameFileIdPairs.Add(new SpriteNameFileIdPair(newSprite.name, newSprite.spriteID));
+    spriteNameFileIdDataProvider.SetNameFileIdPairs(nameFileIdPairs);
+    // End of Unity 2021.2 and newer section
+
+    // Apply the changes
+    dataProvider.Apply();
+}
+</code></pre>
+
+<h2>How to change Sprite data</h2>
+
+<pre><code class="lang-csharp">static void SetPivot(ISpriteEditorDataProvider dataProvider)
+{
+    // Get all the existing Sprites
+    var spriteRects = dataProvider.GetSpriteRects();
+
+    // Loop over all Sprites and update the pivots
+    foreach (var rect in spriteRects)
+    {
+        rect.pivot = new Vector2(0.1f, 0.2f);
+        rect.alignment = SpriteAlignment.Custom;
+    }
+
+    // Write the updated data back to the data provider
+    dataProvider.SetSpriteRects(spriteRects);
+
+    // Apply the changes
+    dataProvider.Apply();
+}
+</code></pre>
+
+<h2>How to remove Sprites</h2>
+
+<pre><code class="lang-csharp">static void RemoveSprite(ISpriteEditorDataProvider dataProvider, string spriteName)
+{
+    // Get all the existing Sprites and look for the Sprite with the selected name
+    var spriteRects = dataProvider.GetSpriteRects().ToList();
+    var index = spriteRects.FindIndex(x =&gt; x.name == spriteName);
+
+    // Remove the entry of the Sprite if found
+    if (index &gt;= 0)
+        spriteRects.RemoveAt(index);
+
+    // Write the updated data back to the data provider
+    dataProvider.SetSpriteRects(spriteRects.ToArray());
+
+    // Note: This section is only for Unity 2021.2 and newer
+    // Get all the existing SpriteName &amp; FileId pairs and look for the Sprite with the selected name
+    var spriteNameFileIdDataProvider = dataProvider.GetDataProvider&lt;ISpriteNameFileIdDataProvider&gt;();
+    var nameFileIdPairs = spriteNameFileIdDataProvider.GetNameFileIdPairs().ToList();
+    index = nameFileIdPairs.FindIndex(x =&gt; x.name == spriteName);
+
+    // Remove the entry of the Sprite if found
+    if (index &gt;= 0)
+        nameFileIdPairs.RemoveAt(index);
+
+    spriteNameFileIdDataProvider.SetNameFileIdPairs(nameFileIdPairs);
+    // End of Unity 2021.2 and newer section
+
+    // Apply the changes
+    dataProvider.Apply();
+}
+</code></pre>
+
+<h2>How to update Outline data</h2>
+
+<pre><code class="lang-csharp">static void SetOutline(ISpriteEditorDataProvider dataProvider)
+{
+    // Get the ISpriteOutlineDataProvider
+    var outlineDataProvider = dataProvider.GetDataProvider&lt;ISpriteOutlineDataProvider&gt;();
+
+    // Loop over all Sprites and set their outline to a quad
+    var spriteRects = dataProvider.GetSpriteRects();
+    foreach (var spriteRect in spriteRects)
+    {
+        var halfWidth = spriteRect.rect.width / 2f;
+        var halfHeight = spriteRect.rect.height / 2f;
+
+        var quadOutline = new Vector2[4]
+        {
+            new Vector2(-halfWidth, -halfHeight),
+            new Vector2(-halfWidth, halfHeight),
+            new Vector2(halfWidth, halfHeight),
+            new Vector2(halfWidth, -halfHeight)
+        };
+
+        var outlines = new List&lt;Vector2[]&gt;();
+        outlines.Add(quadOutline);
+
+        var spriteGuid = spriteRect.spriteID;
+        outlineDataProvider.SetOutlines(spriteGuid, outlines);
+    }
+
+    // Apply the changes
+    dataProvider.Apply();
+}
+</code></pre>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li>Full list of available data providers in 2D Sprite package’s <a href="https://docs.unity3d.com/Packages/com.unity.2d.sprite@latest/index.html?subfolder=/api/UnityEditor.U2D.Sprites.html">Scripting API section</a>
+</li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SpriteEditor-SecondaryTextures.html"></a></span><div class="tip">Sprite Editor: Secondary Textures</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-SortingGroup.html"></a></span><div class="tip">Sorting Groups</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-10-03.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

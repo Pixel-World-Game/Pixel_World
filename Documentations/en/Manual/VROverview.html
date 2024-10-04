@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: VR development in Unity</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20241003"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20241003"></script><script type="text/javascript" src="docdata/toc.js?ts=20241003"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20241003"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20241003">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2022.3</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/VROverview.html">English</a></li>
+<li><a href="/cn/current/Manual/VROverview.html">中文</a></li>
+<li><a href="/ja/current/Manual/VROverview.html">日本語</a></li>
+<li><a href="/kr/current/Manual/VROverview.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2022.3</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/VROverview.html">English</a></li>
+<li><a href="/cn/current/Manual/VROverview.html">中文</a></li>
+<li><a href="/ja/current/Manual/VROverview.html">日本語</a></li>
+<li><a href="/kr/current/Manual/VROverview.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="PlatformSpecific.html">Platform development  </a></li>
+<li><a href="XR.html">XR</a></li>
+<li><a href="xr-support-landing.html">Overview</a></li>
+<li>VR development in Unity</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AROverview.html"></a></span><div class="tip">AR development in Unity</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="XRPluginArchitecture.html"></a></span><div class="tip">XR architecture</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>VR development in Unity</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>VR development shares common workflows and design considerations with any real-time 3D development in Unity. However, distinguishing factors include:</p>
+
+<ul>
+<li>
+<strong>Richer user input</strong>: in addition to “traditional” button and joystick controllers, <strong>VR</strong> devices provide spatial head, controller, and (in some cases) hand and finger tracking.</li>
+<li>
+<strong>More “intimate” interaction with the environment</strong>: in conjunction with the possibilities of richer input, VR raises the expectations of much closer and “physical” interaction with the environment than typical 3D games and applications. Users expect to be able to pick things up and interact with objects in the environment. With head tracking, the <span class="tooltip"><strong>camera</strong><span class="tooltiptext">A component which creates an image of a particular viewpoint in your scene. The output is either drawn to the screen or captured as a texture. <a class="tooltipMoreInfoLink" href="CamerasOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Camera">Glossary</a></span></span></span> can get much closer to the walls and other boundaries of the environment – even passing through them.</li>
+<li>
+<strong>User comfort concerns</strong>: many people experience motion sickness in VR when camera movement doesn’t match the movement of their head. You can mitigate the causes of motion sickness by maintaining a high frame rate, offering a range of locomotion options so that users can choose a mode they are comfortable with, and avoiding moving the camera independently of the user’s head tracking.</li>
+</ul>
+
+<p>To get started with VR development, use the <span class="notooltip">XR</span> Plug-in Management system to install and enable XR provider plug-ins for the devices you want to support. Refer to <a href="configuring-project-for-xr.html">XR Project set up</a> for more information.</p>
+
+<h2>Basic VR scene elements</h2>
+
+<p>A basic VR <span class="tooltip"><strong>scene</strong><span class="tooltiptext">A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. <a class="tooltipMoreInfoLink" href="CreatingScenes.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Scene">Glossary</a></span></span></span> should contain an <a href="xr-origin.html">XR Origin</a>, which defines the 3D origin for tracking data. This collection of <span class="tooltip"><strong>GameObjects</strong><span class="tooltiptext">The fundamental object in Unity scenes, which can represent characters, props, scenery, cameras, waypoints, and more. A GameObject’s functionality is defined by the Components attached to it. <a href="class-GameObject.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#GameObject">Glossary</a></span></span></span> and components also contains the main scene Camera and the GameObjects representing the user’s controllers. Refer to <a href="xr-scene-setup.html">Set up an XR scene</a> for instructions on setting up a basic VR scene.</p>
+
+<p>Beyond the basics, you typically need a way for the user to move around and to interact with the 3D world you have created. The <a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/">XR Interaction Toolkit</a> provides components for creating interactions like selecting and grabbing objects. It also provides a customizable locomotion system. You can use the <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/">Input System</a> in addition to or instead of the <span class="tooltip"><strong>XR</strong><span class="tooltiptext">An umbrella term encompassing Virtual Reality (VR), Augmented Reality (AR) and Mixed Reality (MR) applications. Devices supporting these forms of interactive applications can be referred to as XR devices. <a href="XR.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#XR">Glossary</a></span></span></span> Interaction Toolkit.</p>
+
+<h2>VR packages</h2>
+
+<p>Most of the features and APIs used for VR development in Unity are provided through packages. These packages include:</p>
+
+<ul>
+<li><a href="#vr-plugin">Provider plug-ins</a></li>
+<li><a href="#xr-interaction-toolkit">XR Interaction Toolkit</a></li>
+<li><a href="#xr-core-utilities">XR Core Utilities</a></li>
+<li><a href="#input-system">Input System</a></li>
+<li><a href="#vr-template">VR project template</a></li>
+<li><a href="#hand-tracking">Hand tracking</a></li>
+</ul>
+
+<p><a id="vr-plugin"></a></p>
+
+<h3>VR provider plug-ins</h3>
+
+<p>To build VR apps in Unity, use the XR <span class="tooltip"><strong>Plug-in</strong><span class="tooltiptext">A set of code created outside of Unity that creates functionality in Unity. There are two kinds of plug-ins you can use in Unity: Managed plug-ins (managed .NET assemblies created with tools like Visual Studio) and Native plug-ins (platform-specific native code libraries). <a class="tooltipMoreInfoLink" href="Plugins.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Plug-in">Glossary</a></span></span></span> Management system to add and enable provider plug-ins for the devices you want to support. See <a href="configuring-project-for-xr.html">XR Project set up</a> for instructions. </p>
+
+<p>The VR provider plug-ins supported by Unity include:</p>
+
+<ul>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.xr.visionos@1.0/manual/index.html">Apple visionOS XR Plugin</a> for the Apple Vision Pro.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.xr.oculus@4.0/manual/index.html">Oculus</a> for Oculus Rift, Meta Quest 2, and Quest Pro.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.7/manual/index.html">OpenXR</a> for any device with an OpenXR runtime, including Meta headsets, VIVE headsets, Valve SteamVR, HoloLens, Windows <span class="tooltip"><strong>Mixed Reality</strong><span class="tooltiptext">Mixed Reality (MR) combines its own virtual environment with the user’s real-world environment and allows them to interact with each other.<br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#MixedReality">Glossary</a></span></span></span>, and others.</li>
+<li>PlayStation VR (available to registered PlayStation developers) for Sony PS VR and PS VR2 devices. See <a href="https://partners.playstation.net/">PlayStation Partners</a> for more information.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.xr.mock-hmd@latest/">Mock HMD</a> for simulating a VR headset in the Unity Editor Play mode view.</li>
+</ul>
+
+<p>
+<strong>Note:</strong> Many headset makers are working toward using the OpenXR runtime as a standard. However, this process is not complete and there can be feature discrepancies between OpenXR and a headset maker’s own provider plug-in or SDK </p>
+
+<p><a id="xr-interaction-toolkit"></a></p>
+
+<h3>XR Interaction Toolkit</h3>
+
+<p>The <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/">XR Interaction Toolkit</a> can make it easier and faster to develop VR applications. The XR Interaction Toolkit provides:</p>
+
+<ul>
+<li>An <a href="xr-origin.html">XR Origin</a> set up with controllers.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/manual/general-setup.html#configure-xr-controller-and-interactor">XR controller</a> setups with Input System presets for basic interactions like select and grab.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/manual/architecture.html#interactors">Interactor and Interactable components</a> for creating object manipulation.</li>
+<li>A configurable <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/manual/locomotion.html">locomotion system</a>.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.3/manual/ui-setup.html">XR UI input</a>.</li>
+</ul>
+
+<p><a id="xr-core-utilities"></a></p>
+
+<h3>XR Core Utilities</h3>
+
+<p>The <a href="https://docs.unity3d.com/Packages/com.unity.xr.core-utils@2.1/manual/index.html">XR Core Utilities</a> package contains software utilities used by other Unity XR plug-ins and packages. Typically, this package gets installed in your project as a dependency of other XR packages. </p>
+
+<p><a id="input-system"></a></p>
+
+<h3>Input System</h3>
+
+<p>The Unity <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@1.5/manual/index.html">Input System</a> package not only supports accessing user input from VR controller buttons and joysticks, but also provides access to XR tracking data and haptics. The Input System package is required if you use the <a href="#xr-interaction-toolkit">XR Interaction Toolkit</a> or the <a href="#vr-plugin">OpenXR provider plug-in</a>. </p>
+
+<p><a id="vr-template"></a></p>
+
+<h2>VR template</h2>
+
+<p>Unity’s VR Project Template provides a starting point for <strong>virtual reality</strong> development in Unity. The template configures <span class="tooltip"><strong>project settings</strong><span class="tooltiptext">A broad collection of settings which allow you to configure how Physics, Audio, Networking, Graphics, Input and many other areas of your project behave. <a class="tooltipMoreInfoLink" href="comp-ManagerGroup.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#ProjectSettings">Glossary</a></span></span></span>, pre-installs the right packages, and includes a sample scene with various pre-configured example assets to demonstrate how to set up a project that is ready for VR. Access the VR template through the Unity Hub when you create a new project. Refer to <a href="xr-create-projects.html#create-a-new-xr-project">Create a new project</a> for information about creating a project with the template.</p>
+
+<p>For more information about the template assets and how the sample scene is set up, refer to <a href="https://docs.unity3d.com/Packages/com.unity.template.vr@latest/">About the VR Project Template</a>. </p>
+
+<p><a id="hand-tracking"></a></p>
+
+<h2>Hand tracking</h2>
+
+<p>Hand tracking is a feature that allows users to interact with a VR application using their hands. Hand tracking is supported by the <a href="https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/index.html">XR Hands</a> package.</p>
+
+<p>The Hands package provides:</p>
+
+<ul>
+<li>A standard <a href="https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/hand-data/xr-hand-data-model.html">hand data model</a>.</li>
+<li>An <a href="https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/api/UnityEngine.XR.Hands.XRHandSubsystem.html">API</a> for accessing hand tracking data.</li>
+<li>The <a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/hand-data/xr-hand-visuals.html">XR Hand Skeleton Driver</a> component, which maps a set of Transforms to their corresponding hand <span class="tooltip"><strong>joints</strong><span class="tooltiptext">A physics component allowing a dynamic connection between Rigidbody components, usually allowing some degree of movement such as a hinge. <a href="Joints.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#joint">Glossary</a></span></span></span> and updates those Transforms as tracking data is received.</li>
+<li>The <a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/hand-data/xr-hand-visuals.html#xr-hand-mesh-controller">XR Hand Mesh Controller</a>, which enables and disables a <span class="tooltip"><strong>mesh</strong><span class="tooltiptext">The main graphics primitive of Unity. Meshes make up a large part of your 3D worlds. Unity supports triangulated or Quadrangulated polygon meshes. Nurbs, Nurms, Subdiv surfaces must be converted to polygons. <a href="comp-MeshGroup.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Mesh">Glossary</a></span></span></span> as hand tracking is acquired or lost.</li>
+<li>A <a href="https://docs.unity3d.com/Packages/com.unity.xr.hands@1.2/manual/project-setup/scene-setup.html">HandVisualizer</a> sample that demonstrates how to use the hand tracking API.</li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AROverview.html"></a></span><div class="tip">AR development in Unity</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="XRPluginArchitecture.html"></a></span><div class="tip">XR architecture</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-10-03.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

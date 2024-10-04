@@ -1,0 +1,653 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Using UDP with other services</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20241003"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20241003"></script><script type="text/javascript" src="docdata/toc.js?ts=20241003"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20241003"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20241003">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2022.3</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/udp-service-interoperability.html">English</a></li>
+<li><a href="/cn/current/Manual/udp-service-interoperability.html">中文</a></li>
+<li><a href="/ja/current/Manual/udp-service-interoperability.html">日本語</a></li>
+<li><a href="/kr/current/Manual/udp-service-interoperability.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2022.3</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/udp-service-interoperability.html">English</a></li>
+<li><a href="/cn/current/Manual/udp-service-interoperability.html">中文</a></li>
+<li><a href="/ja/current/Manual/udp-service-interoperability.html">日本語</a></li>
+<li><a href="/kr/current/Manual/udp-service-interoperability.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityServices.html">Unity Services</a></li>
+<li><a href="udp.html">Unity Distribution Portal</a></li>
+<li>Using UDP with other services</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="udp-managing-and-publishing.html"></a></span><div class="tip">Managing and publishing your game on the UDP console</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="udp-firebase.html"></a></span><div class="tip">Using Firebase with UDP builds</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Using UDP with other services</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Important</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">The Unity Distribution Portal (UDP) is shutting down on February 17th, 2025. Access to the UDP Web console and services will be permanently deactivated on this date. To download your keystores and instructions on how to republish your games directly to app stores, visit the <a href="https://api-udp.unity.com/overview">UDP overview</a> page. If you have any questions about your account, submit a ticket with <a href="https://support.unity.com/hc/en-us/requests/new?ticket_form_id=360000323692">Unity Customer Support</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Google Play games services in UDP builds</h2>
+
+<h3>Overview</h3>
+
+<p>Implementing <a href="https://developers.google.com/games/services/console/enabling">Google Play games services</a> in your Android games lets you leverage Google’s service layer for features such as achievements and leaderboards. If your game implements Google Play game services, additional configuration is required to support the builds that <a href="https://unity.com/products/unity-distribution-portal">UDP</a> creates for different stores.</p>
+
+<p>When your game invokes Google Play games services, Google Play games services checks that the following details match the information registered on the Google Play Console:</p>
+
+<ul>
+<li>The application’s <strong>package name</strong>
+</li>
+<li>The <strong>certificate</strong> the application was signed with</li>
+</ul>
+
+<p>If they don’t match, the player can’t log into the application with Google Play games services.</p>
+
+<p>For certain stores that you publish your game to via UDP, UDP adds a store-specific suffix to the package name. Additionally, if you don’t use your own private key to generate the certificate, UDP generates a certificate for each repacked build. These events would cause your certificate and/or package name to no longer match the information on the Google Play Console. This would prevent users from logging into the game with Google Play game services.</p>
+
+<p>The following section explains how to resolve this issue.</p>
+
+<h3>Configuring Google Play games services for UDP builds</h3>
+
+<p>This section explains how to link your UDP versions to a Google Play application so that Google Play game services can work on all of them.</p>
+
+<ol>
+<li>In the Google Play Console, go to the target app.</li>
+<li>Go to <strong>Play Games Services</strong> &gt; <strong>Setup and management</strong> &gt; <strong>Configuration</strong>.
+
+<ul>
+<li>If your Google Play game has Google Play games services implemented, your game will already be linked to a Google Play games services project. In this case:
+
+<ol>
+<li>Select <strong>Use an existing Play Games Services project</strong>.</li>
+<li>Select your game project and select <strong>Use</strong>.</li>
+<li>Follow the steps in <a href="#link">Link the UDP apps to your game service</a>.</li>
+</ol>
+</li>
+<li>If your Google Play game doesn’t have Google Play games services implemented:
+
+<ol>
+<li>In the Play Games Services setup page, select <strong>Yes, my game already uses Google APIs</strong> or <strong>No, my game doesn’t use Google APIs</strong>.</li>
+<li>Follow the steps in <a href="#create">Creating and linking a Google Play games services project</a>.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+
+<p><a name="create"></a></p>
+
+<h4>Creating and linking a Google Play games services project</h4>
+
+<p>This section explains how to create a Google Play games services project and link it to a new or existing cloud project.</p>
+
+<p>If you selected <strong>Yes, my game already uses Google APIs</strong> in the Play Games Services setup page:</p>
+
+<ol>
+<li>Select a cloud project.</li>
+<li>Select Use to create a new Play Games Services project and link it to your existing cloud project.</li>
+</ol>
+
+<p>If you selected <strong>No, my game doesn’t use Google APIs</strong> in the Play Games Services setup page:</p>
+
+<ol>
+<li>Enter a game name.</li>
+<li>Select Create to create a new Play Games Services project and link it to a new cloud project.</li>
+</ol>
+
+<p>When you create a new Play Games Services project, the <strong>Add credential</strong> link is disabled.</p>
+
+<ol>
+<li>Select <strong>Configure OAuth consent screen</strong>.</li>
+<li>In the Play Games Services configuration screen, select Refresh.<br>The Add credential option is now enabled.</li>
+<li>Select <strong>Add credential</strong>.<br>This opens the Add credential page.</li>
+<li>In the Add credential page:
+
+<ol>
+<li>Select <strong>Android</strong> as the <strong>Type</strong>.</li>
+<li>Set <strong>Enable anti-piracy</strong> to <strong>Off</strong>. This lets users access your game if they have installed it from a different app store than Google Play.</li>
+<li>In the Authorization section, select <strong>Create OAuth client</strong>. This opens a popup.</li>
+<li>Select <strong>Create OAuth Client ID</strong> and use the details from the popup to complete the form.</li>
+</ol>
+</li>
+</ol>
+
+<p>When you’ve completed the above steps, your Google Play game is linked to its Google Play games services. The next step is to <a href="#link">link your UDP builds to the games services</a>.</p>
+
+<p><a name="link"></a></p>
+
+<h4>Linking UDP apps to your games services</h4>
+
+<p>When you have linked your app to Google Play games services you can link the other (UDP) apps to the games services.</p>
+
+<ol>
+<li>In the Google Play Console, select <strong>Play Games Services</strong> &gt; <strong>Setup and management</strong> &gt; <strong>Configuration</strong>.
+
+<ol>
+<li>In the Play Games Services configuration page, select <strong>Add credential</strong>.</li>
+</ol>
+</li>
+<li>In the Add credential page:
+
+<ol>
+<li>Select <strong>Android</strong>.</li>
+<li>Set <strong>Enable anti-piracy to off</strong>. This lets users access your game if they have installed it from a different app store than Google Play.</li>
+<li>In the <strong>Authorization</strong> section, select <strong>Create OAuth client</strong>. This opens a popup.</li>
+<li>Select <strong>Create OAuth Client ID</strong> and use the details from the popup to complete the form.</li>
+</ol>
+</li>
+<li>In the Create OAuth client ID form, enter the required details to create an entry for one of your UDP builds.
+
+<ol>
+<li>In the <strong>Name</strong> field, name the build after the corresponding store, for example “Samsung version”.</li>
+<li>In the <strong>Package name</strong> field, specify the package name for the build registered with the corresponding store via the UDP console.<br>The store-specific package name is displayed in the UDP console:
+
+<ol>
+<li>Go to My Games &gt; Publish tab.</li>
+<li>Select <strong>Advanced</strong> for the corresponding store.<br>The package name is displayed in the Basic Information section.</li>
+</ol>
+</li>
+<li>In the certificate field, use the certificate used for the corresponding UDP store. UDP signs the app with the new certificate after the Repack operation.<br>The store-specific certificate is displayed in the UDP console:
+
+<ol>
+<li>Go to My Games &gt; Publish tab.</li>
+<li>Select <strong>Advanced</strong> for the corresponding store.<br>The certificate is displayed in the Basic Information section.<br><strong>Note</strong>: You can also download the APK Certificate and get the fingerprint information via the command:<br><code>openssl x509 -in [downloaded-pem-filepath] -fingerprint -noout</code>
+</li>
+<li>Copy the SHA–1 from the UDP console into the certificate field.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>When you’ve completed the form, select <strong>Create</strong> and return to Google Play Console.</li>
+<li>Select <strong>Refresh OAuth clients</strong>.</li>
+<li>Select your new OAuth client.
+
+<ol>
+<li>Select <strong>Save changes</strong> to save the credential.</li>
+</ol>
+</li>
+<li>Repeat the above steps for each store-specific UDP build that you want to link to your Google Play application.</li>
+</ol>
+
+<p>You can view the UDP builds you’ve linked to your Google Play application in the Google Cloud Platform &gt; Google API &amp; Services dashboard, under Credentials.</p>
+
+<p>These steps enable Google Play games services to work successfully on all the UDP store versions that are linked that way, excluding Mi GetApps (whose SDK integrates an old version of Google Mobile Services, which creates conflicts).</p>
+
+<p>
+<strong>Note</strong>: Any changes to Google’s systems could impact the solution described above. For more information on Google’s troubleshooting information, see the <a href="https://www.google.com/url?q=https://developers.google.com/games/services/android/troubleshooting&amp;sa=D&amp;ust=1611571996561000&amp;usg=AOvVaw00u3uXWmm9qmGpqo4yuFQX">Google documentation</a>.</p>
+
+<h2>Using Build Automation with UDP</h2>
+
+<p>You can use <span class="tooltip"><a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Manual/UnitybuildAutomation.html">Build Automation</a><span class="tooltiptext">A continuous integration service for Unity projects that automates the process of creating builds on Unity’s servers. <a href="https://docs.unity.com/devops/en/manual/unity-build-automation">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#BuildAutomation">Glossary</a></span></span></span> to deploy your game to the UDP console in the following ways:</p>
+
+<ul>
+<li>
+<a href="#upload">Upload your APK to Build Automation</a>, and deploy it to UDP from there</li>
+<li>
+<a href="#build">Build your game with Build Automation</a>, and deploy it to UDP from there</li>
+</ul>
+
+<p><a name="upload"></a></p>
+
+<h2>Pushing the build to the UDP console via Build Automation</h2>
+
+<p>This section explains how to use Build Automation to push your game to UDP.
+In the Unity Editor, enable Build Automation in the <span class="tooltip"><strong>Project Settings</strong><span class="tooltiptext">A broad collection of settings which allow you to configure how Physics, Audio, Networking, Graphics, Input and many other areas of your project behave. <a class="tooltipMoreInfoLink" href="comp-ManagerGroup.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#ProjectSettings">Glossary</a></span></span></span> window.</p>
+
+<h3>Using Build Automation in the Editor to deploy your game to UDP</h3>
+
+<p>To deploy your game to UDP via the Build Automation feature in the Unity Editor, you need to upload your UDP build and push it to UDP.</p>
+
+<ol>
+<li>In the <strong>Build Automation</strong> tab of the Project Settings window, if you haven’t uploaded any build before, select <strong>Upload Build</strong>.<br>
+</li>
+<li>In <strong>FILE</strong>:<br>
+
+<ul>
+<li>Choose the <span class="tooltip"><strong>APK</strong><span class="tooltiptext">The Android Package format output by Unity. An APK is automatically deployed to your device when you select File &gt; Build &amp; Run. <a class="tooltipMoreInfoLink" href="android-BuildProcess.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#APK">Glossary</a></span></span></span> of your UDP build</li>
+<li>Enter a useful <strong>LABEL</strong>
+</li>
+<li>Set the <strong>PLATFORM</strong> field to Android.<br>
+</li>
+</ul>
+</li>
+<li>Select <strong>UPLOAD</strong>, and let it complete the upload process.</li>
+<li>In the <strong>Build Automation</strong> tab of the Project Settings window, locate the desired build from the build <strong>History</strong> timeline and select <strong>Push to Unity Distribution Portal</strong>.
+
+<ol>
+<li>Verify that you want to push, and that the action completes.<br>
+</li>
+</ol>
+</li>
+</ol>
+
+<h3>Using the Unity Dashboard to deploy your game to UDP</h3>
+
+<p>To deploy your game to UDP via the Build Automation feature in the Unity Dashboard, you need to upload your UDP build to the Unity Dashboard and push it from there to UDP.</p>
+
+<ol>
+<li>In the <a href="https://developer.cloud.unity3d.com/build">Unity Developer Dashboard</a>, navigate to your Project’s <strong>Build Automation</strong> &gt; <strong>History</strong>.</li>
+<li>Select <strong>Upload</strong>, then select your APK file.</li>
+<li>In the <strong>Platform</strong> field, select <strong>Android</strong>.</li>
+<li>Select <strong>Upload</strong>.</li>
+<li>Select the More menu next to your build to expand the drop-down menu.</li>
+<li>Select <strong>Push to Unity Distribution Portal</strong>.</li>
+</ol>
+
+<p><a name="build"></a></p>
+
+<h2>Building and deploying via Build Automation</h2>
+
+<p>If you use Unity Teams Advanced, you can <a href="https://docs.unity.com/ugs/en-us/manual/devops/manual/unity-build-automation#continuous-integration">generate builds automatically</a>.</p>
+
+<p>In the Build Automation tab of the Project Settings window:</p>
+
+<ol>
+<li>Select <strong>Manage Build Targets</strong> &gt; <strong>Add new build target</strong>
+</li>
+<li>In the <strong>TARGET SETUP</strong> window, set the <strong>PLATFORM</strong> field to Android and enter a useful <strong>TARGET LABEL</strong>.</li>
+<li>Select <strong>Next: Save</strong>.</li>
+<li>Select <strong>Start Build Automation</strong>, then select the target build you just created.</li>
+</ol>
+
+<p>Push your build to UDP directly via the Unity Build Automation Developer Dashboard (as shown above).</p>
+
+<h2>Service interoperability</h2>
+
+<p>UDP can tell other services used by your game which store was the game downloaded from.</p>
+
+<p>This information can be used in many ways, by Unity services as well as by third-party or your own services.</p>
+
+<p>For example, <a href="https://unity.com/remote-config">Unity Remote Config</a> lets you tune your game settings based on rules that you define, such as which store the game was downloaded from.</p>
+
+<p>This section explains how to let other services gain access to this information, and includes an <a href="#example">example</a>.</p>
+
+<h3>How does it work?</h3>
+
+<p>When your game first launches on a player’s device, UDP creates and drops the <code>udp.json</code> file in the game’s Persistent Data Path. This file contains the field <code>udpStore</code>, which shows which store the game was downloaded from. Retrieve that information to use it the way you intend to.</p>
+
+<p>
+<strong>Note:</strong> This doesn’t add any new permission into your game manifest.</p>
+
+<h3>Locating udp.json</h3>
+
+<p>The file <code>udp.json</code> is saved in: </p>
+
+<p><code>Application.PersistentDataPath + '/Unity' + /Application.CloudProjectID + /udp/udp.json</code></p>
+
+<p>Where:</p>
+
+<ul>
+<li>
+<code>Application.PersistentDataPath</code> is your game’s persistent data path</li>
+<li>
+<code>Application.CloudProjectID</code> is your game’s Unity project ID</li>
+</ul>
+
+<p>Here is an example of a path to the <code>udp.json</code> file:</p>
+
+<p><code>path/storage/emulated/0/Android/data/com.mystudio.mygame/files/Unity/c83d2de2-de74-4b75-83fc-ade948bda064/udp/udp.json</code></p>
+
+<p>Where:</p>
+
+<ul>
+<li>
+<code>Application.PersistentDataPath</code>= <code>path/storage/emulated/0/Android/data/com.mystudio.mygame</code>
+</li>
+<li>
+<code>Application.CloudProjectID</code>= <code>c83d2de2-de74-4b75-83fc-ade948bda064</code>
+</li>
+</ul>
+
+<h3>Reading udp.json</h3>
+
+<p>The file <code>udp.json</code> contains the following information:</p>
+
+<pre><code>{&quot;key&quot;:&quot;UDP&quot;,&quot;udpStore&quot;:&quot;StoreName&quot;,&quot;udpClientId&quot;:&quot;value_of_udpClientId&quot;,&quot;CloudProjectId&quot;:&quot;value_of_CloudProjectId&quot;}
+</code></pre>
+
+<p>The field <code>udpStore</code> contains the value of the UDP store your game was downloaded from.</p>
+
+<p>Here is an example of a <code>udp.json</code> file:</p>
+
+<pre><code>{&quot;key&quot;:&quot;UDP&quot;,&quot;udpStore&quot;:&quot;Huawei&quot;,&quot;udpClientId&quot;:&quot;icjaB7wmu_q7AOjrSLH8yw&quot;,&quot;cloudProjectId&quot;:&quot;bc2be074-09f3-450f-8e98-a0f79c9746f7&quot;}
+</code></pre>
+
+<p>In this example, the game was downloaded from the HUAWEI AppGallery.</p>
+
+<p>
+<strong>Tip:</strong> use <code>JSONUtility.FromJsonOverwrite</code> to read the contents of the file as a text asset.</p>
+
+<p><a name="udp-values"></a></p>
+
+<h3>udpStore values</h3>
+
+<p>The table below lists the <code>udpStore</code> values you can expect for stores available on UDP.</p>
+
+<p>These are case-sensitive.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Store (channel name on UDP)</th>
+	<th style="text-align:left;">Value for udpStore</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">UDP Sandbox (for the generic UDP builds)</td>
+	<td style="text-align:left;">UdpSandbox</td>
+</tr>
+<tr>
+	<td style="text-align:left;">ONE store</td>
+	<td style="text-align:left;">OneStore</td>
+</tr>
+<tr>
+	<td style="text-align:left;">APPTUTTi</td>
+	<td style="text-align:left;">Apptutti</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Mi GetApps (Xiaomi)</td>
+	<td style="text-align:left;">XiaomiStore</td>
+</tr>
+<tr>
+	<td style="text-align:left;">HUAWEI AppGallery</td>
+	<td style="text-align:left;">Huawei</td>
+</tr>
+<tr>
+	<td style="text-align:left;">QooApp Game Store</td>
+	<td style="text-align:left;">QooApp</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Uptodown</td>
+	<td style="text-align:left;">Uptodown</td>
+</tr>
+<tr>
+	<td style="text-align:left;">SHAREit</td>
+	<td style="text-align:left;">ShareIt</td>
+</tr>
+<tr>
+	<td style="text-align:left;">JioGames</td>
+	<td style="text-align:left;">JioGames</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Legion Store</td>
+	<td style="text-align:left;">Legion</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="example"></a></p>
+
+<h3>Using udpStore with Remote Config</h3>
+
+<p>
+<a href="https://unity.com/remote-config">Unity Remote Config</a> lets you tune your game settings without deploying new versions of your application. When a player launches your game, Remote Config detects contextual attributes used as Rule conditions (based on Unity, the application, the user, or custom criteria that you define). The service then returns customized settings for each player according to the Rules that apply to them.</p>
+
+<p>Use <code>udpStore</code> as an attribute in your Rule conditions, so you can determine game settings that depend on which UDP store the game was downloaded from.</p>
+
+<p>To implement udpStore with Remote Config, follow these steps.</p>
+
+<ol>
+<li>Download and install the UDP package.</li>
+<li>Download and install the <span class="tooltip"><strong>Unity Remote</strong><span class="tooltiptext">A downloadable app designed to help with Android, iOS and tvOS development. The app connects with Unity while you are running your project in Play Mode from the Unity Editor. <a class="tooltipMoreInfoLink" href="UnityRemote5.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#UnityRemote">Glossary</a></span></span></span> Config package. See the <a href="https://docs.unity3d.com/Packages/com.unity.remote-config@latest/index.html">Remote Config documentation</a>.</li>
+<li>Create an AppAttributes struct, which at least has a parameter, “udpStore”:<br>
+<code>
+public struct AppAttributes
+{
+  public string udpStore;
+}
+</code>
+</li>
+<li>In the game code, implement the Remote Config ConfigManager.FetchConfigs call.</li>
+<li>When calling FetchConfigs, create a new instance of the AppAttributes struct, read the UDP store data file from:
+Application.PersistentDataPath + ‘/Unity’ + /Application.CloudProjectId + /udp/udp.json
+Use JSONUtility.FromJsonOverwrite to read the contents of the file as a text asset.<br>
+<code>
+{
+    string udpFilePath = System.IO.Path.Combine(Application.persistentDataPath, &quot;Unity&quot;, Application.cloudProjectId, &quot;udp&quot;, &quot;udp.json&quot;);
+    string udpFileContents = System.IO.File.ReadAllText(udpFilePath);
+    var appAttr = JsonUtility.FromJson&amp;lt;AppAttributes&amp;gt;(udpFileContents);
+    Unity.RemoteConfig.ConfigManager.FetchCompleted += ConfigManager_FetchCompleted;
+    Unity.RemoteConfig.ConfigManager.FetchConfigs(null, appAttr);
+}
+</code>
+</li>
+<li>Ensure the AppAttributes struct is used in ConfigManager.FetchConfigs.</li>
+<li>Open the <strong>Remote Config</strong> settings (<strong>Services</strong> &gt; <strong>Remote Config</strong> &gt; <strong>Configure</strong>), and create the parameters that you’d want to change based on the UDP store.</li>
+<li>When the parameters are set up, and instrumented in the game code, create a rule for each store in the Remote Config window.</li>
+<li>In each rule’s condition, put: app.udpStore == “[storeName]”<br>
+
+<ul>
+<li>See the <a href="#udp-values">values for udpStore</a><br>
+ <img src="../uploads/Main/UDPServiceInteroperability_01.png" alt="">
+</li>
+</ul>
+</li>
+<li>To enable the setting, select the checkbox next to the name of the rule on the left panel in the Remote Config settings.</li>
+<li>Build the app to a device and ensure the rules are properly applied, and ship it.</li>
+</ol>
+
+<p><a name="iap"></a></p>
+
+<h2>Implementing IAP items for UDP with Unity IAP</h2>
+
+<p>If you want to implement UDP using <span class="tooltip"><strong>Unity IAP</strong><span class="tooltiptext">Abbreviation of Unity <strong>In App Purchase</strong><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#UnityIAP">Glossary</a></span></span></span>, first <a href="https://docs.unity3d.com/Manual/UnityIAPSettingUp.html">set up Unity IAP</a>. </p>
+
+<p>
+<strong>Note</strong>: If you choose to implement UDP with Unity IAP version 1.22.0–1.23.5 (instead of using the UDP package) then implement via Unity IAP only.</p>
+
+<p>Unity IAP automatically handles the following:</p>
+
+<ul>
+<li>Initializing UDP</li>
+<li>Querying the store’s IAP product inventory</li>
+<li>Requesting to purchase a product</li>
+<li>Consuming the purchased item</li>
+</ul>
+
+<p>However, your game must properly use Unity IAP’s similar functions (such as initialization and purchase) according to the <a href="https://docs.unity3d.com/Manual/UnityIAP.html">Unity IAP Documentation</a>.</p>
+
+<p>When you’ve implemented your game’s in-app purchases with Unity IAP, take the following steps to set up UDP with Unity IAP.</p>
+
+<p><a name="query-iap"></a></p>
+
+<h3>Querying IAP inventory</h3>
+
+<h4>With Unity IAP (code implementation)</h4>
+
+<h5>Fetching IAP products defined in the Editor</h5>
+
+<p>When fetching the IAP products to pass to the <code>queryInventory</code> method, invoke <code>ProductCatalog.LoadDefaultCatalog()</code>. This returns the IAP products defined in the Editor’s <strong>IAP Catalog</strong> (<strong>Services</strong> &gt; <strong>Unity IAP</strong> &gt; <strong>IAP Catalog</strong>).</p>
+
+<p>For instance:</p>
+
+<pre><code>var catalog = ProductCatalog.LoadDefaultCatalog();
+
+foreach (var product in catalog.allValidProducts)
+{
+   if (product.allStoreIDs.Count &gt; 0)
+   {
+       var ids = new IDs();
+       foreach (var storeID in product.allStoreIDs)
+       {
+           ids.Add(storeID.id, storeID.store);
+       }
+       builder.AddProduct(product.id, product.type, ids);
+   }
+   else
+   {
+       builder.AddProduct(product.id, product.type);
+   }
+}
+</code></pre>
+
+<h5>Fetching IAP product information from the UDP console</h5>
+
+<p>If you plan to modify your game’s IAP Catalog on the UDP Console, prepare your game to fetch IAP product information from the UDP Console.</p>
+
+<p>When fetching the IAP products to pass to the <code>queryInventory</code> method, invoke builder.AddProduct to retrieve specific IAP products defined from the UDP console:</p>
+
+<p><code>builder.AddProduct(product.id, product.type, new IDs{})</code></p>
+
+<p>To display the product price, formatted with currency, use <code>productInfo.Value.Price</code>.</p>
+
+<h5>Fetching the IAP Catalog from the UDP console</h5>
+
+<p>To retrieve all the IAP products defined on the UDP Console, don’t invoke any IAP product retrieval method. Your game will then fetch the entire IAP Catalog from the UDP Console. </p>
+
+<p>Note: Uploading a CSV file of IAP products on the UDP Console entirely overwrites your IAP Catalog.</p>
+
+<h4>Filling in the IAP Catalog with the Unity IAP package</h4>
+
+<p>Add and configure your <a href="udp.html#iap-catalog">IAP Catalog</a> all your in-app purchases for UDP. </p>
+
+<p>
+<strong>Note</strong>: If you don’t use an IAP Catalog in your game client (for instance, you maintain your IAP items solely on your game server) you must still <a href="udp-implementing-iap.html#create">create your IAP Catalog on the UDP console</a>.</p>
+
+<ol>
+<li>In the Unity Editor, select <strong>Services</strong> &gt; <strong>Unity IAP</strong> &gt; <strong>IAP Catalog</strong>.</li>
+<li>Select <strong>Add Product</strong> and enter the details for each IAP product.
+
+<ol>
+<li>Add the price for the IAP item under Unity Distribution Portal Configuration.
+<img src="../uploads/Main/UDPGamesWithIAP_09.png" alt="">
+</li>
+</ol>
+</li>
+<li>To save your IAP product to the UDP console, select <strong>Sync to UDP</strong>. Do this for each IAP product you create.</li>
+</ol>
+
+<p>To make sure the IAP Catalog is properly saved, check that the items you added are displayed in the UDP console.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="udp-managing-and-publishing.html"></a></span><div class="tip">Managing and publishing your game on the UDP console</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="udp-firebase.html"></a></span><div class="tip">Using Firebase with UDP builds</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-10-03.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
