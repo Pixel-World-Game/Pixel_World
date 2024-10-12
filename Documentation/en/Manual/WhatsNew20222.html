@@ -1,0 +1,471 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: New in Unity 2022.2</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20241003"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20241003"></script><script type="text/javascript" src="docdata/toc.js?ts=20241003"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20241003"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20241003">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2022.3</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/WhatsNew20222.html">English</a></li>
+<li><a href="/cn/current/Manual/WhatsNew20222.html">中文</a></li>
+<li><a href="/ja/current/Manual/WhatsNew20222.html">日本語</a></li>
+<li><a href="/kr/current/Manual/WhatsNew20222.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2022.3</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/WhatsNew20222.html">English</a></li>
+<li><a href="/cn/current/Manual/WhatsNew20222.html">中文</a></li>
+<li><a href="/ja/current/Manual/WhatsNew20222.html">日本語</a></li>
+<li><a href="/kr/current/Manual/WhatsNew20222.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="WhatsNew2022LTS.html">New in Unity 2022 LTS</a></li>
+<li>New in Unity 2022.2</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WhatsNew2022LTS.html"></a></span><div class="tip">New in Unity 2022 LTS</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WhatsNew20221.html"></a></span><div class="tip">New in Unity 2022.1</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>New in Unity 2022.2</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h3>Release Notes</h3>
+
+<p>To find out more about the new features, changes, and improvements to this Unity version, refer to the <a href="https://unity3d.com/unity/whats-new/2022.3.0">2022.3 Release Notes</a>.</p>
+
+<h3>Upgrade Guide</h3>
+
+<p>If you are upgrading existing projects from 2022.2, read the <a href="UpgradeGuide2022LTS.html">Upgrade Guide to 2022LTS</a> for information about how your project might be affected.</p>
+
+<h1>What’s new</h1>
+
+<p>See what’s changed in Unity 2022.2 since 2022.1 and view the documentation for the affected areas.</p>
+
+<h2>Editor and Workflow</h2>
+
+<ul>
+<li>The Device Simulator device list now includes a new button to install the com.unity.device-simulator.devices package, which contains the latest device definitions from Unity.</li>
+<li>You now have the option to block shortcuts from triggering during Play mode while the Game view window is focused.</li>
+<li>Added an Edit mode preview Overlay for the Trail Renderer</li>
+<li>Added Context column to <code>ShortcutManager</code>.</li>
+<li>Added functionality to import and export profiles in the Shortcuts manager.</li>
+<li>Added MinMaxCurveProperty Drawer to UIToolkit <span class="tooltip"><strong>Inspector</strong><span class="tooltiptext">A Unity window that displays information about the currently selected GameObject, asset or project settings, allowing you to inspect and edit the values. <a class="tooltipMoreInfoLink" href="UsingTheInspector.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Inspector">Glossary</a></span></span></span>.</li>
+<li>You can now run tests in a specified order from a test list.</li>
+</ul>
+
+<h2>Memory Profiler</h2>
+
+<p>
+<a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.0/manual/index.html">Memory Profiler 1.0.0</a> includes the following features:</p>
+
+<ul>
+<li>A new <strong>All Of Memory snapshots comparison</strong> tab.</li>
+<li>A <strong>Close</strong> button to close snapshots, which means, single-clicking a selected snapshot no longer closes it.</li>
+<li>Unity Objects breakdown comparison between two captures.</li>
+</ul>
+
+<p>For a summary of changes, refer to <a href="https://docs.unity3d.com/Packages/com.unity.memoryprofiler@1.0/manual/whats-new.html">What’s new in Memory Profiler 1.0.0</a>.</p>
+
+<h3>UI Toolkit for Editor UI</h3>
+
+<ul>
+<li>Added support for <code>background-position</code>, <code>background-size</code> and <code>background-repeat</code> for background rendering.</li>
+<li>Added new <span class="tooltip"><strong>UI</strong><span class="tooltiptext">(User Interface) Allows a user to interact with your application. Unity currently supports three UI systems. <a class="tooltipMoreInfoLink" href="UI-system-compare.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#UI">Glossary</a></span></span></span> Toolkit versions for <code>ColorBlockDrawer</code> and <code>NavigationDrawer</code>.</li>
+<li>Improved UI/UX of the Inspector displaying appropriate visual cues according to the statuses of properties and provided more details about how properties’ values are bound and resolved.</li>
+<li>Improved the UI Builder Inspector.</li>
+<li>Added library icons to UI Builder.</li>
+<li>Added the <code>align-self</code> field to the UI Builder style Inspector.</li>
+<li>Added call to implement <code>DecoratorDrawers</code>.</li>
+<li>
+<a href="UIE-work-with-text.html">Synchronized TextCore’s text generation with the latest code from TextMeshPro</a>.</li>
+</ul>
+
+<h2>Graphics</h2>
+
+<ul>
+<li>Added access to the bounds of the current renderer in the per object constant buffer for SRPs.</li>
+<li>Implemented custom error/loading <span class="tooltip"><strong>shader</strong><span class="tooltiptext">A program that runs on the GPU. <a class="tooltipMoreInfoLink" href="Shaders.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Shader">Glossary</a></span></span></span> support for the <code>BatchRendererGroup</code>.</li>
+<li>Added visual debug tool for buffer load/store actions.</li>
+<li>OpenGL ES 3.1 support for <code>BatchRendererGroup</code>.</li>
+<li><span class="tooltip"><strong>Terrain</strong><span class="tooltiptext">The landscape in your scene. A Terrain GameObject adds a large flat plane to your scene and you can use the Terrain’s Inspector window to create a detailed landscape. <a class="tooltipMoreInfoLink" href="terrain-UsingTerrains.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Terrain">Glossary</a></span></span></span> <span class="tooltip"><strong>heightmap</strong><span class="tooltiptext">A greyscale Texture that stores height data for an object. Each pixel stores the height difference perpendicular to the face that pixel represents.<br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Heightmap">Glossary</a></span></span></span> support in <code>RayTracingAccelerationStructure</code> when using <code>RayTracingAccelerationStructure.CullInstances</code> function.</li>
+<li>Added gaze foveated rendering (GFR) on Vulkan using fragment density map offset.</li>
+<li>The Texture2D importer and constructor now allow excluding the texture from mipmap limits, ensuring that all mips can get uploaded regardless of the quality settings.</li>
+<li>Added the runtime-modifiable Texture2D property to toggle excluding the texture from mipmap limits (only for readable Texture2Ds).</li>
+<li>The Texture2D importer and constructor can now be used to add the texture to a project-defined mipmap limit group for more fine-grained control of how texture quality gets affected per quality level.</li>
+<li>Added mipmap limit groups for more fine-grained configurability over the single value that applies to all mipmapped Texture2Ds.</li>
+<li>Added shader variant loading settings in <span class="tooltip"><strong>Player Settings</strong><span class="tooltiptext">Settings that let you set various player-specific options for the final game built by Unity. <a class="tooltipMoreInfoLink" href="class-PlayerSettings.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#PlayerSettings">Glossary</a></span></span></span> to control how much memory shaders use at runtime.</li>
+<li>Shader Warmup can now compile pipeline state objects asynchronously.</li>
+<li>Foveated Rendering support for D3D12/Vulkan.</li>
+</ul>
+
+<h3>URP</h3>
+
+<p>For a complete description of new features and improvements in URP, refer to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/whats-new/urp-whats-new.html">What’s new in URP 14 (Unity 2022.2)</a> page. </p>
+
+<h4>New features</h4>
+
+<ul>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/renderer-features/renderer-feature-full-screen-pass.html">Added Full Screen Pass Renderer feature</a>.</li>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/post-processing/post-processing-custom-effect-low-code.html">Custom post-processing effects</a> with <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/renderer-features/renderer-feature-full-screen-pass.html">Full Screen Pass Renderer feature</a>.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/features/rendering-layers.html">Added Rendering Layers</a>.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/rendering/forward-plus-rendering-path.html">Added Forward+ Rendering Path</a>.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/universalrp-asset.html#lod-cross-fade">Added LOD Cross-fade</a>.</li>
+<li>Shader stripping improvement: added light cookies stripping.</li>
+<li>
+<a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/features/rendering-layers.html">Changed light and decal layers to rendering layers</a>.</li>
+</ul>
+
+<h4>Improvements</h4>
+
+<ul>
+<li>Performance and usability improvements to Screen space <span class="tooltip"><strong>ambient occlusion</strong><span class="tooltiptext">A method to approximate how much ambient light (light not coming from a specific direction) can hit a point on a surface.<br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Ambientocclusion">Glossary</a></span></span></span> (SSAO).</li>
+<li>New 64-bit high precision <span class="tooltip"><strong>HDR</strong><span class="tooltiptext">high dynamic range<br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#HDR">Glossary</a></span></span></span> render target format.</li>
+<li>New bloom quality settings.</li>
+<li>Improvements to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/features/rp-converter.html">Render Pipeline Converter</a>.</li>
+<li>Full screen draws in URP now use the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@14.0/manual/renderer-features/how-to-fullscreen-blit.html">SRP Core Bliter API</a>.</li>
+<li>More consistent lighting behavior on different platforms.</li>
+<li>New XRSystem API.</li>
+<li>Shader stripping improvements</li>
+<li>CPU performance improvements for light-heavy <span class="tooltip"><strong>scenes</strong><span class="tooltiptext">A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. <a class="tooltipMoreInfoLink" href="CreatingScenes.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scene">Glossary</a></span></span></span>.</li>
+</ul>
+
+<h3>HDRP</h3>
+
+<h4>New features</h4>
+
+<ul>
+<li>Added Fullscreen material type and sample set.</li>
+<li>Added <span class="tooltip"><strong>Ray tracing</strong><span class="tooltiptext">The process of generating an image by tracing out rays from the Camera through each pixel and recording the color contribution at the hit point. This is an alternative to rasterization. <span class="search-words">raytracing</span><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Raytracing">Glossary</a></span></span></span> support for Terrain.</li>
+<li>Added the Water System.</li>
+<li>Volumetric material support for <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Local-Volumetric-Fog.html">local volumetric fog</a> volumes.</li>
+<li>Added transparency sample scene.</li>
+<li>Added color monitors to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Render-Pipeline-Debug-Window.html">Rendering Debugger</a>.</li>
+<li>Added a new <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/eye-shader.html">Eye Shader</a> type called Eye Cinematic with Caustic.</li>
+<li>The <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Ray-Tracing-Settings.html">Ray Tracing Settings</a> volume includes <strong>Culling Mode</strong> properties to define the algorithm that performs Ray Tracing culling.</li>
+</ul>
+
+<h4>Improvements</h4>
+
+<ul>
+<li>Replaced the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Diffusion-Profile.html">Diffusion Profile</a> <strong>Scattering Color</strong> HDR color picker with an LDR color picker.</li>
+<li>Added properties to the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Override-Screen-Space-Reflection.html">Screen Space Reflection</a> component to control how the PBR Accumulation SSR algorithm behaves.</li>
+<li>Added a property called <strong>Target</strong> in the <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Custom-Pass-Creating.html">Custom pass</a> drawer to access the current custom pass instance.</li>
+<li>Added <strong>Asymmetric projection</strong> and <strong>Screen Coordinates Override</strong> <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Frame-Settings.html">Frame settings</a>.</li>
+<li>Adapted <span class="tooltip"><a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/Post-Processing-Main.html">post-processing</a><span class="tooltiptext">A process that improves product visuals by applying filters and effects before the image appears on screen. You can use post-processing effects to simulate physical camera and film properties, for example Bloom and Depth of Field. <a href="PostProcessingOverview.html">More info</a> <span class="search-words">post processing, postprocessing, postprocess</span><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#post-processing">Glossary</a></span></span></span> effects to support Screen Coordinates Override.</li>
+<li>Added settings to overwrite diffusion profile IOR on <a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/master-stack-stacklit.html">StackLit</a>.</li>
+<li>Added the <strong>Occlusion remap Curve</strong> property to the <span class="tooltip"><a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@14.0/manual/shared/lens-flare/lens-flare-component.html">Lens Flare</a><span class="tooltiptext">A component that simulates the effect of lights refracting inside a camera lens. Use a Lens Flare to represent very bright lights or add atmosphere to your scene. <a href="class-LensFlare.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#LensFlare">Glossary</a></span></span></span> component.</li>
+<li>Added <strong>Probe Touchup Volumes</strong> for tuning Probe Volumes, and you can now bake separate lighting scenarios using Probe Volumes and blend between them.</li>
+</ul>
+
+<h2>Package Manager</h2>
+
+<ul>
+<li>Moved the package action <span class="tooltip"><strong>toolbar</strong><span class="tooltiptext">A row of buttons and basic controls at the top of the Unity Editor that allows you to interact with the Editor in various ways (e.g. scaling, translation). <a class="tooltipMoreInfoLink" href="Toolbar.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Toolbar">Glossary</a></span></span></span> in the <a href="upm-ui-details.html">package details</a> header and implemented new design changes on the details header.</li>
+<li>Reorganized <a class="tooltipMoreInfoLink" href="upm-ui-details.html">Package Details</a> into tab-based display. Packages now have individual tabs for <strong>Description</strong>, <strong>Version History</strong>, <strong>Samples</strong>, and <strong>Dependencies</strong>, while <span class="tooltip"><strong>Asset Store</strong><span class="tooltiptext">A growing library of free and commercial assets created by Unity and members of the community. Offers a wide variety of assets, from textures, models and animations to whole project examples, tutorials and Editor extensions. <a href="AssetStore.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#AssetStore">Glossary</a></span></span></span> Packages have tabs for <strong>Overview</strong>, <strong>Releases</strong>, and <strong>Images</strong>.</li>
+<li>Added a runtime module from the <code>com.unity.properties</code> package that enables the use of a generalized visitor pattern.</li>
+<li>Updated the scripting API by adding the <code>isDeprecated</code> and <code>deprecationMessage</code> properties to the <code>UnityEditor.PackageManager.PackageInfo</code> class, which are set when a given package version is labeled as <a href="upm-lifecycle.html">deprecated</a> on the registry by its author.</li>
+<li>Updated the scripting API by adding the <code>deprecated</code> property to the <a href="../ScriptReference/PackageManager.VersionsInfo.html"><code>UnityEditor.PackageManager.VersionsInfo</code></a> class (usually accessed through the <code>versions</code> property of a <code>UnityEditor.PackageManager.PackageInfo</code> instance), which lists all versions of that package that are labeled as <a href="upm-lifecycle.html">deprecated</a> on the registry.</li>
+</ul>
+
+<h2>Authoring Tools</h2>
+
+<h3>Animation</h3>
+
+<ul>
+<li>Modified fields on <code>SerializeReference</code> instances of <code>MonoBehaviour</code> so they can be animated like fields directly on <code>MonoBehaviour</code> classes.</li>
+<li>Added support to edit multiple <span class="tooltip"><strong>Animation Clips</strong><span class="tooltiptext">Animation data that can be used for animated characters or simple animations. It is a simple “unit” piece of motion, such as (one specific instance of) “Idle”, “Walk” or “Run”. <a class="tooltipMoreInfoLink" href="class-AnimationClip.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#AnimationClip">Glossary</a></span></span></span> at once.</li>
+</ul>
+
+<h3>Navigation and Pathfinding</h3>
+
+<ul>
+<li>Released a new <a href="https://docs.unity3d.com/Packages/com.unity.ai.navigation@latest">AI Navigation package</a> which will eventually replace the core Navigation and Pathfinding feature.</li>
+<li>Removed the Bake and Object tabs from the Navigation window as they’re no longer necessary. However, you can still find them in the Navigation (Obsolete) window.</li>
+<li>The Navigation Static and Off Mesh Link Generation options are no longer available in the Static Editor Flags dropdown menu. However, you can still find them in the Navigation (Obsolete) window &gt; Object tab.</li>
+</ul>
+
+<h3>Terrain</h3>
+
+<p>Added Quality Settings to control various Terrain settings at different quality levels.</p>
+
+<h3>Audio</h3>
+
+<p>Added clock management options with the Video Player component.</p>
+
+<h3>2D</h3>
+
+<p>2D now supports the following features:</p>
+
+<ul>
+<li>New 2D Physics <span class="tooltip"><strong>Profiler</strong><span class="tooltiptext">A window that helps you to optimize your game. It shows how much time is spent in the various areas of your game. For example, it can report the percentage of time spent rendering, animating, or in your game logic. <a class="tooltipMoreInfoLink" href="Profiler.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Profiler">Glossary</a></span></span></span> Area with Custom Profile Counters.</li>
+<li>New Editor Preference editor for 2D Physics that allows the configuration of <span class="tooltip"><strong>Gizmo</strong><span class="tooltiptext">A graphic overlay associated with a GameObject in a Scene, and displayed in the Scene View. Built-in scene tools such as the move tool are Gizmos, and you can create custom Gizmos using textures or scripting. Some Gizmos are only drawn when the GameObject is selected, while other Gizmos are drawn by the Editor regardless of which GameObjects are selected. <a class="tooltipMoreInfoLink" href="GizmosMenu.html#GizmosIcons">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Gizmo">Glossary</a></span></span></span> colors and settings.</li>
+<li>The ability for 2D Physics <span class="tooltip"><strong>Collider</strong><span class="tooltiptext">An invisible shape that is used to handle physical collisions for an object. A collider doesn’t need to be exactly the same shape as the object’s mesh - a rough approximation is often more efficient and indistinguishable in gameplay. <a class="tooltipMoreInfoLink" href="CollidersOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Collider">Glossary</a></span></span></span> Gizmos to optionally draw Outlines and Filled Colliders. These are new options in the Physics 2D <span class="tooltip"><strong>Project Settings</strong><span class="tooltiptext">A broad collection of settings which allow you to configure how Physics, Audio, Networking, Graphics, Input and many other areas of your project behave. <a href="comp-ManagerGroup.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#ProjectSettings">Glossary</a></span></span></span> Editor.</li>
+<li>The ability to select per-Collider2D, which layers that contacts:
+
+<ul>
+<li>Are captured for querying and producing physics callbacks.</li>
+<li>Will produce a physics callbacks for.</li>
+</ul>
+</li>
+<li>An option to override Layer <span class="tooltip"><strong>collisions</strong><span class="tooltiptext">A collision occurs when the physics engine detects that the colliders of two GameObjects make contact or overlap, when at least one has a Rigidbody component and is in motion. <a class="tooltipMoreInfoLink" href="CollidersOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Collision">Glossary</a></span></span></span> for Colliders, <span class="tooltip"><strong>Rigidbody</strong><span class="tooltiptext">A component that allows a GameObject to be affected by simulated gravity and other forces. <a href="class-Rigidbody.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Rigidbody">Glossary</a></span></span></span> components, ArticulationBodies and <span class="tooltip"><strong>Character Controllers</strong><span class="tooltiptext">A simple, capsule-shaped collider component with specialized features for behaving as a character in a game. Unlike true collider components, a Rigidbody is not needed and the momentum effects are not realistic. <a href="class-CharacterController.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#CharacterController">Glossary</a></span></span></span>, which allows to fine tune which bodies should collide with what layers.</li>
+</ul>
+
+<h4>2D Physics improvements</h4>
+
+<p>You can now allow the following in 2D Physics: </p>
+
+<ul>
+<li>A Rigidbody2D/Collider2D to explicitly override (include or exclude) contact layers, so it can override the Layer Collision Matrix per-object.</li>
+<li>A Collider2D to control Send and Receive forces per-layer upon contact with another Collider2D.</li>
+<li>A Rigidbody2D to read or write the total force or torque that has been applied to it directly via add force or add torque calls.</li>
+<li>A Joint2D to select one of four modes that control an action to be taken when the <span class="tooltip"><strong>joint</strong><span class="tooltiptext">A physics component allowing a dynamic connection between Rigidbody components, usually allowing some degree of movement such as a hinge. <a class="tooltipMoreInfoLink" href="Joints.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#joint">Glossary</a></span></span></span> breaks. These are <strong>Ignore</strong>, <strong>CallbackOnly</strong>, <strong>Disable</strong>, or <strong>Destroy</strong>. Previously, <strong>Destroy</strong> was the fixed action and is still the default.</li>
+</ul>
+
+<h3>Burst</h3>
+
+<p>Added support for detecting managed breakpoints in code compiled with Burst, and automatically switching the affected code to the mono execution path to allow managed debugging. Requires Burst 1.8.</p>
+
+<h3>VFX Graph</h3>
+
+<ul>
+<li>VFX Instancing now optimizes both CPU and GPU VFX runtime.</li>
+<li>Activation Boolean port on blocks.</li>
+<li>Added passthrough space (None).</li>
+<li>Skinned <span class="tooltip"><strong>Mesh</strong><span class="tooltiptext">The main graphics primitive of Unity. Meshes make up a large part of your 3D worlds. Unity supports triangulated or Quadrangulated polygon meshes. Nurbs, Nurms, Subdiv surfaces must be converted to polygons. <a class="tooltipMoreInfoLink" href="comp-MeshGroup.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Mesh">Glossary</a></span></span></span> Sampling out of experimental.</li>
+<li>Added a new lighting model for smoke: Six-way lighting.</li>
+</ul>
+
+<h2>Platforms</h2>
+
+<ul>
+<li>Added preliminary support for Magic Leap 2 in Android.</li>
+<li>Introduced a new <span class="tooltip"><strong>WebGL</strong><span class="tooltiptext">A JavaScript API that renders 2D and 3D graphics in a web browser. The Unity WebGL build option allows Unity to publish content as JavaScript programs which use HTML5 technologies and the WebGL rendering API to run Unity content in a web browser. <a class="tooltipMoreInfoLink" href="webgl-gettingstarted.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#WebGL">Glossary</a></span></span></span> player setting to display <a href="class-PlayerSettingsWebGL.html#diagnostic">diagnostics information (currently limited to memory usage)</a> in WebGL applications.</li>
+<li>WebGL VideoPlayer now has a configurable time update mode, to support game time, unscaled game time, and audio display time.</li>
+</ul>
+
+<h2>Artist and Cinematic tools</h2>
+
+<h3>ShaderGraph</h3>
+
+<p>Added access to the renderer bounds in Shader Graph through the object node.</p>
+
+<h2>Programmer tools</h2>
+
+<h3>AI</h3>
+
+<p>Added an option to create a height mesh when you build the <span class="tooltip"><strong>NavMesh</strong><span class="tooltiptext">A mesh that Unity generates to approximate the walkable areas and obstacles in your environment for path finding and AI-controlled navigation. <a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Packages/com.unity.ai.navigation@latest/index.html?subfolder=/manual/NavInnerWorkings.html%23walkable-areas">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#NavMesh">Glossary</a></span></span></span> at runtime.</p>
+
+<h3>Kernel</h3>
+
+<p>Added a new Memory Manager <span class="tooltip"><strong>Plug-in</strong><span class="tooltiptext">A set of code created outside of Unity that creates functionality in Unity. There are two kinds of plug-ins you can use in Unity: Managed plug-ins (managed .NET assemblies created with tools like Visual Studio) and Native plug-ins (platform-specific native code libraries). <a class="tooltipMoreInfoLink" href="Plugins.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Plug-in">Glossary</a></span></span></span> interface to allow Unity’s native Memory Manager to do native memory allocations.</p>
+
+<h3>Serialization improvements</h3>
+
+<ul>
+<li>Changed so fields on <code>SerializeReference</code> instances of <code>MonoBehaviours</code> can now be animated like fields directly on <code>MonoBehaviours</code>.</li>
+<li>Made EditorSerializationUtility services to access and manipulate <code>SerializeReference</code> instances with IDs available at runtime in <code>Serialization.ManagedReferenceUtility</code>.</li>
+</ul>
+
+<h3>Version Control</h3>
+
+<p>Added branch name column in changeset view.</p>
+
+<h2>Asset Store</h2>
+
+<p>Added Verified Solutions program, a library of third-party assets and solutions that Unity curates.</p>
+
+<h2>XR</h2>
+
+<ul>
+<li>Added <span class="tooltip"><strong>profiler markers</strong><span class="tooltiptext">Placed in code to describe a CPU or GPU event that is then displayed in the Unity Profiler window. Added to Unity code by default, or you can use <a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Packages/com.unity.profiling.core@latest/index.html?subfolder=/manual/profilermarker-guide.html">ProfilerMarker API</a> to add your own custom markers. <a href="profiler-markers.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Profilermarker">Glossary</a></span></span></span> for some <span class="tooltip"><strong>XR</strong><span class="tooltiptext">An umbrella term encompassing Virtual Reality (VR), Augmented Reality (AR) and Mixed Reality (MR) applications. Devices supporting these forms of interactive applications can be referred to as XR devices. <a href="XR.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#XR">Glossary</a></span></span></span> Display subsystem entry points. Markers are named <code>XR.Display.*</code>
+</li>
+<li>Added support for late latch debug mode to help verify late latch functionality to the Oculus XR plug-in</li>
+<li>
+<a href="https://unity.com/products/mars/get-started">Unity Mars</a> is now included with Unity Pro, Unity Enterprise, and Unity Industrial Collection.</li>
+</ul>
+
+<h3>XR package changes</h3>
+
+<p><strong>Version updates:</strong></p>
+
+<ul>
+<li>com.unity.xr.arcore: 4.2.1 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.arcore@5.0/changelog/CHANGELOG.html">5.0.2</a>
+</li>
+<li>com.unity.xr.arfoundation: 4.2.1 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/changelog/CHANGELOG.html">5.0.2</a>
+</li>
+<li>com.unity.xr.arkit: 4.2.1 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.arkit@5.0/changelog/CHANGELOG.html">5.0.2</a>
+</li>
+<li>com.unity.xr.core-utils: 2.0.0-pre.5 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.core-utils@2.1/changelog/CHANGELOG.html">2.1.0</a>
+</li>
+<li>com.unity.xr.interaction.toolkit: 2.0.0-pre.5 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.1/changelog/CHANGELOG.html">2.1.1</a>
+</li>
+<li>com.unity.xr.legacyinputhelpers: 2.1.8 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.legacyinputhelpers@2.1/changelog/CHANGELOG.html">2.1.10</a>
+</li>
+<li>com.unity.xr.oculus: 1.11.0 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.oculus@3.2/changelog/CHANGELOG.html">3.2.1</a>
+</li>
+<li>com.unity.xr.openxr: 1.3.0 → <a href="https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.5/changelog/CHANGELOG.html">1.5.3</a>
+</li>
+</ul>
+
+<p>Removed the deprecated <code>unity.xr.arkit-face-tracking</code> package from the <span class="tooltip"><strong>AR</strong><span class="tooltiptext">Augmented Reality <a class="tooltipMoreInfoLink" href="AROverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#AR">Glossary</a></span></span></span> <span class="tooltip"><strong>Feature set</strong><span class="tooltiptext">A <span class="notooltips">feature set</span> is a collection of related packages that you can use to achieve specific results in the Unity Editor. You can manage feature sets directly in Unity’s Package Manager. <a href="FeatureSets.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Featureset">Glossary</a></span></span></span>. (APIs are now in the main ARKit package.)</p>
+
+<h3>AR Foundation 5.0.2</h3>
+
+<ul>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/manual/ar-debug-menu.html">AR Debug Menu</a> to provide visualization for AR debug information.</li>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/manual/simulation.html">XR Simulation</a> to allow testing of AR apps in a simulated environment within the editor (previously a Mars only feature).</li>
+<li>Merged the <code>com.unity.xr.arsubsystems</code> package into AR Foundation.</li>
+<li>Renamed XRDepthSubsystem to <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/api/UnityEngine.XR.ARSubsystems.XRPointCloudSubsystem.html">XRPointCloudSubsystem</a> and XRDepthSubsystemDescriptor to <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/api/UnityEngine.XR.ARSubsystems.XRPointCloudSubsystemDescriptor.html">XRPointCloudSubsystemDescriptor</a>.</li>
+</ul>
+
+<h3>ARCore 5.0.2</h3>
+
+<ul>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.xr.arcore@5.0/manual/project-configuration-arcore.html#project-validation">project validation rules</a>, which can identify configuration and settings issues in your app.</li>
+<li>Added an option to <a href="https://docs.unity3d.com/Packages/com.unity.xr.arfoundation@5.0/api/UnityEngine.XR.ARSubsystems.OcclusionPreferenceMode.html">OcclusionPreferenceMode</a> to disable occlusion rendering.</li>
+<li>Added support for changing the <span class="tooltip"><strong>camera</strong><span class="tooltiptext">A component which creates an image of a particular viewpoint in your scene. The output is either drawn to the screen or captured as a texture. <a class="tooltipMoreInfoLink" href="CamerasOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Camera">Glossary</a></span></span></span> background rendering order.</li>
+<li>Updated the package to use Google’s ARCore 1.31.</li>
+<li>Updated depth data to 16 bit, which increases range from 8 meters to 65 meters.</li>
+<li>Added the <a href="https://docs.unity3d.com/Packages/com.unity.xr.arcore@5.0/api/UnityEngine.XR.ARCore.ARCorePermissionManager.html#UnityEngine_XR_ARCore_ARCorePermissionManager_CancelPermissionRequest">CancelPermissionRequest</a> method to allow developers to handle permission requests. Resolves issue: <a href="https://issuetracker.unity3d.com/issues/arfoundation-camera-request-permission-window-is-not-shown-when-app-is-minimized-and-opened-again-on-android-device">ARFOUNDATION: CAMERA REQUEST PERMISSION WINDOW IS NOT SHOWN WHEN APP IS MINIMIZED AND OPENED AGAIN ON ANDROID DEVICE</a>.</li>
+</ul>
+
+<h3>ARKit 5.0.2</h3>
+
+<ul>
+<li>Expanded face tracking capabilities to include tracking multiple faces with both the front and rear cameras at the same time. The device must support Apple ARKit 3.</li>
+<li>Merged the com.unity.arkit-face-tracking package into the ARKit package. The separate ARKit Face Tracking package is no longer needed.</li>
+</ul>
+
+<h3>Oculus 3.2.1</h3>
+
+<ul>
+<li>Added optional support for <a href="https://docs.unity3d.com/Packages/com.unity.xr.oculus@3.2/api/Unity.XR.Oculus.OculusSettings.html#Unity_XR_Oculus_OculusSettings_SymmetricProjection">Symmetric Projection</a> on Quest 2 when using Vulkan and Multiview. This mode can improve GPU performance when using Multiview due to more common workloads between the left and right eye. Enable Symmetric Projection in the Oculus settings under <strong>XR Plug-in Management</strong>.</li>
+<li>Added Quest Pro to the list of target devices in the Oculus settings under <strong>XR Plug-in Management</strong>. Enable this option to add the Quest Pro to the app’s Android manifest.</li>
+</ul>
+
+<h3>OpenXR 1.5.3</h3>
+
+<ul>
+<li>Added <a href="https://docs.unity3d.com/Packages/com.unity.xr.core-utils@2.1/manual/project-validation.html">Project Validation support</a> (requires XR Core Utilities 2.1.0+). Project validation evaluates the project settings to identify possible problems.</li>
+<li>Added support for setting the Environment Blend Mode.</li>
+<li>Added support for XR_MSFT_holographic_windown_attachment extension on UWP so that installing Microsoft <span class="tooltip"><strong>Mixed Reality</strong><span class="tooltiptext">Mixed Reality (MR) combines its own virtual environment with the user’s real-world environment and allows them to interact with each other.<br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#MixedReality">Glossary</a></span></span></span> OpenXR Plug-in is no longer required if targeting HoloLens V2 devices.</li>
+<li>Added support for XR_FB_foveation, XR_FB_foveation_configuration, XR_FB_swapchain_update_state, XR_FB_foveation_vulkan and XR_FB_space_warp extensions.</li>
+<li>Applications now attempt to recover after the Oculus Link is lost and reconnected.</li>
+</ul>
+
+<h3>XR Interaction Toolkit 2.1.1</h3>
+
+<ul>
+<li>Added an option to make the attachment point used when grabbing objects dynamic. Refer to <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.1/manual/xr-grab-interactable.html">XR Grab Interactable</a> for more information.</li>
+<li>Added “intention” filtering that uses a weighted score to choose which object to select when more than one otherwise qualifies. Refer to <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.1/manual/target-filters.html">Target filters</a> for more information.</li>
+<li>Added an option to activate a comfort mode vignette during locomotion. Refer to <a href="https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.1/manual/tunneling-vignette-controller.html">Tunneling Vignette Controller</a> for more info.</li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WhatsNew2022LTS.html"></a></span><div class="tip">New in Unity 2022 LTS</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WhatsNew20221.html"></a></span><div class="tip">New in Unity 2022.1</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-10-03.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
