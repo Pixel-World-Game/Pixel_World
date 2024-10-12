@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Create, modify, and apply Material Variants</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20241003"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20241003"></script><script type="text/javascript" src="docdata/toc.js?ts=20241003"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20241003"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20241003">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2022.3</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/materialvariant-tasks.html">English</a></li>
+<li><a href="/cn/current/Manual/materialvariant-tasks.html">中文</a></li>
+<li><a href="/ja/current/Manual/materialvariant-tasks.html">日本語</a></li>
+<li><a href="/kr/current/Manual/materialvariant-tasks.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2022.3</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/materialvariant-tasks.html">English</a></li>
+<li><a href="/cn/current/Manual/materialvariant-tasks.html">中文</a></li>
+<li><a href="/ja/current/Manual/materialvariant-tasks.html">日本語</a></li>
+<li><a href="/kr/current/Manual/materialvariant-tasks.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="Materials.html">Materials</a></li>
+<li><a href="materialvariant-landingpage.html">Material Variants</a></li>
+<li>Create, modify, and apply Material Variants</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="materialvariant-hierarchyconcept.html"></a></span><div class="tip">Material Variant inheritance</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="visual-effects.html"></a></span><div class="tip">Visual effects</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Create, modify, and apply Material Variants</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>These instructions explain how to work with Material Variants.
+Programmers should consult the <span class="tooltip"><a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/2022.1/Documentation/ScriptReference/Material.html">Material</a><span class="tooltiptext">An asset that defines how a surface should be rendered. <a href="class-Material.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Material">Glossary</a></span></span></span> and <a href="https://docs.unity3d.com/ScriptReference/MaterialEditor.html">MaterialEditor</a> API documentation for information about how to work with Material Variants in <span class="tooltip"><strong>scripts</strong><span class="tooltiptext">A piece of code that allows you to create your own Components, trigger game events, modify Component properties over time and respond to user input in any way you like. <a href="CreatingAndUsingScripts.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scripts">Glossary</a></span></span></span>.</p>
+
+<h2>Differences between Prefab Variants and Material Variants</h2>
+
+<p>The Material Variant workflow is mostly the same as the Prefab Variant workflow. There are two key differences:</p>
+
+<ul>
+<li>You can lock one or more Properties of a Material Variant so that no one can edit these Properties in its children</li>
+<li>It is possible to change the parent of a Material Variant</li>
+</ul>
+
+<h2>Create a Material Variant</h2>
+
+<p>There are two ways to create a Material Variant.</p>
+
+<h3>Right-click on a Material in the Project window</h3>
+
+<ol>
+<li>Select a Material in the <span class="tooltip"><strong>Project window</strong><span class="tooltiptext">A window that shows the contents of your <code>Assets</code> folder (Project tab) <a class="tooltipMoreInfoLink" href="ProjectView.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Projectwindow">Glossary</a></span></span></span>.</li>
+<li>Right-click on that Material.</li>
+<li>Select <strong>Create</strong> &gt; <strong>Material Variant</strong>.</li>
+</ol>
+
+<h3>Select in the Material Hierarchy</h3>
+
+<ol>
+<li>Open the Material Hierarchy dialog.</li>
+<li>Select the material type dropdown.</li>
+<li>Select <strong>Material Variant</strong>.</li>
+<li>Assign a material to the parent field</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/matlvariant-createfromhierarchy.png" alt="The dropdown to create a Material Variant from the Material Hierarchy">
+<figcaption>The dropdown to create a Material Variant from the Material Hierarchy</figcaption>
+</figure>
+
+<h3>Identify the new Material Variant</h3>
+
+<p>When you create a new Material Variant, it has the name [Material Name] <strong>Variant (Material Variant)</strong> in the Material <span class="tooltip"><strong>Inspector</strong><span class="tooltiptext">A Unity window that displays information about the currently selected GameObject, asset or project settings, allowing you to inspect and edit the values. <a class="tooltipMoreInfoLink" href="UsingTheInspector.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Inspector">Glossary</a></span></span></span>. When Unity begins to load a new Material Variant, the Material Variant has a striped icon in the Project window. After Unity finishes loading the new Material Variant, the normal Material preview replaces the striped icon in the Project window.</p>
+
+<h2>Add an Override on a Material Variant</h2>
+
+<ol>
+<li>Select a Material Variant.</li>
+<li>Modify one of its Properties in the Material Inspector.</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/matlvariant-overrides.png" alt="The thick line to the left of a Property (circled in red in this screenshot) indicates an Override.">
+<figcaption>The thick line to the left of a Property (circled in red in this screenshot) indicates an Override.</figcaption>
+</figure>
+
+<p><a name="revertoverride"></a></p>
+
+<h2>Revert one or more Overrides on a Material Variant</h2>
+
+<ol>
+<li>Right-click on an Override.</li>
+<li>Select <strong>Revert</strong> to revert this specific Override, or select <strong>Revert all Overrides</strong> to revert every Override on this variant. If this Override originated from a child, reverting also applies to that child.</li>
+</ol>
+
+<p>For a detailed explanation of how inheritance determines the effect of reverting changes, see <a href="materialvariant-hierarchyconcept.html">Material Variant inheritance</a> or <a href="#revertoverrideappliedupward">Revert an Override applied upward</a>.</p>
+
+<h2>Apply an Override upward in the hierarchy</h2>
+
+<p>You can apply an Override upward to any ancestor in the hierarchy.</p>
+
+<figure>
+<img src="../uploads/Main/matlvariant-revert-applyupward.png" alt="This dropdown makes it possible for you to Revert Overrides, apply them upward, or lock them.">
+<figcaption>This dropdown makes it possible for you to Revert Overrides, apply them upward, or lock them.</figcaption>
+</figure>
+
+<h3>Apply the Override to the parent</h3>
+
+<p>To apply an Override to a parent, right-click on an Override and select <strong>Apply to</strong> [name of parent] in the dropdown.</p>
+
+<h3>Apply the Override to an ancestor</h3>
+
+<p>To apply an Override to an ancestor, right-click on an Override and select <strong>Apply to</strong> [name of ancestor] in the dropdown.</p>
+
+<p><a name="revertoverrideappliedupward"></a></p>
+
+<h3>Revert one or more Overrides applied upward</h3>
+
+<p>Once an Override is applied upward, you can no longer revert it on the child that originated it. Instead, you must revert it on the recipient parent or ancestor; see the instructions in <a href="#revertoverride">Revert one or more Overrides on a Material Variant</a>.</p>
+
+<p><a name="deletematerialvariant"></a></p>
+
+<h2>Delete a Material Variant</h2>
+
+<ol>
+<li>Select the Material Variant in the Project window.</li>
+<li>Press the <strong>Delete</strong> key.
+The next step depends on whether the Material Variant has children.
+
+<ul>
+<li>If the Material Variant has no children, click <strong>Delete</strong> in the warning dialog to delete the variant.</li>
+<li>If the Material Variant has one or more children, a warning dialog appears that says <strong>One or more of these Material(s) has one or more children. Would you like you reparent all of these children to their closest remaining ancestor?</strong>
+
+<ul>
+<li>The warning dialog provides three options:
+
+<ul>
+<li>
+<strong>Delete and reparent children</strong>: This option causes Unity to automatically assign this parent’s children to their closest ancestor; this new parent can be either a Material Variant or a Material, or no parent if the Material to be deleted is the root of the hierarchy.</li>
+<li>
+<strong>Delete only</strong> Note: A Material with a missing parent is in an invalid state and will not load correctly at runtime.</li>
+<li>
+<strong>Cancel</strong>
+See <a href="materialvariant-hierarchyconcept.html#prevent-the-creation-of-circular-dependencies-or-orphans">Inheritance error messages</a> for information about orphan Material Variants.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+<h2>Reparent a Material Variant</h2>
+
+<p>There are two ways to reparent a Material Variant.</p>
+
+<h3>In the Material Inspector</h3>
+
+<ol>
+<li>Select the variant you want to reparent in the Project window.</li>
+<li>Select the bullseye next to the <strong>Parent</strong> Property and choose a new parent in the <strong>Select Material</strong> dialog.</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/matlvariant-reparent.png" alt="Select a new parent">
+<figcaption>Select a new parent</figcaption>
+</figure>
+
+<h3>In the Project window</h3>
+
+<p>Drag the new parent Material or Material Variant onto the target child.</p>
+
+<h2>Lock a Property</h2>
+
+<ol>
+<li>Right-click on a Property.</li>
+<li>Select <strong>Lock in children</strong> in the dropdown.</li>
+<li>A padlock icon appears next to the locked Property.</li>
+</ol>
+
+<p>To unlock the property, click <strong>Lock in children</strong> again.</p>
+
+<figure>
+<img src="../uploads/Main/matlvariant-lock.png" alt="The lock menu">
+<figcaption>The lock menu</figcaption>
+</figure>
+
+<h2>Convert a Material Variant to a Material</h2>
+
+<p>There are two ways to convert a Material Variant to a Material.</p>
+
+<h3>From the Hierarchy View</h3>
+
+<ol>
+<li>Select the Material Variant in the Project window.</li>
+<li>Expand the Hierarchy dialog in the Material Inspector.</li>
+<li>Select <strong>Material</strong> in the Material type dropdown.</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/matlvariant-convertomaterial.png" alt="Convert to a Material from the Hierarchy view">
+<figcaption>Convert to a Material from the Hierarchy view</figcaption>
+</figure>
+
+<h3>From the Settings dropdown</h3>
+
+<ol>
+<li>Click the Settings dropdown in the Material Inspector.</li>
+<li>Select <strong>Flatten Material Variant</strong> in the dropdown.</li>
+</ol>
+
+<figure>
+<img src="../uploads/Main/matlvariant-convertomaterial-flatten.png" alt="The Flatten Material Variant option.">
+<figcaption>The Flatten Material Variant option.</figcaption>
+</figure>
+
+<h2>Additional resources</h2>
+
+<ul>
+<li><a href="https://docs.unity3d.com/Manual/materials-introduction.html">Materials introduction</a></li>
+<li><a href="https://docs.unity3d.com/Manual/class-Material.html">Material Inspector Reference</a></li>
+<li><span class="tooltip"><a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Manual/Prefabs.html">Prefabs</a><span class="tooltiptext">An asset type that allows you to store a GameObject complete with components and properties. The prefab acts as a template from which you can create new object instances in the scene. <a href="Prefabs.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Prefab">Glossary</a></span></span></span></li>
+<li><a href="https://docs.unity3d.com/Manual/PrefabVariants.html">Prefab Variants</a></li>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.shadergraph@10.1/manual/index.html">Shader Graph</a></li>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.high-definition@13.1/manual/Lit-Shader.html">HDRP Lit shader</a></li>
+</ul>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="materialvariant-hierarchyconcept.html"></a></span><div class="tip">Material Variant inheritance</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="visual-effects.html"></a></span><div class="tip">Visual effects</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-10-03.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
