@@ -1,0 +1,538 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Unity Distribution Portal</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20241003"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20241003"></script><script type="text/javascript" src="docdata/toc.js?ts=20241003"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20241003"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20241003">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2022.3</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/udp.html">English</a></li>
+<li><a href="/cn/current/Manual/udp.html">中文</a></li>
+<li><a href="/ja/current/Manual/udp.html">日本語</a></li>
+<li><a href="/kr/current/Manual/udp.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2022.3</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/udp.html">English</a></li>
+<li><a href="/cn/current/Manual/udp.html">中文</a></li>
+<li><a href="/ja/current/Manual/udp.html">日本語</a></li>
+<li><a href="/kr/current/Manual/udp.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityServices.html">Unity Services</a></li>
+<li>Unity Distribution Portal</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UnityMultiplayerService.html"></a></span><div class="tip">Multiplayer services</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="udp-getting-started.html"></a></span><div class="tip">Getting started with UDP</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Unity Distribution Portal</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Important</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">The Unity Distribution Portal (UDP) is shutting down on February 17th, 2025. Access to the UDP Web console and services will be permanently deactivated on this date. To download your keystores and instructions on how to republish your games directly to app stores, visit the <a href="https://api-udp.unity.com/overview">UDP overview</a> page. If you have any questions about your account, submit a ticket with <a href="https://support.unity.com/hc/en-us/requests/new?ticket_form_id=360000323692">Unity Customer Support</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Overview</h2>
+
+<p>Unity Distribution Portal (UDP) lets you distribute your games to multiple app stores through a single hub. UDP repacks your Android build with each store’s dedicated In-App Purchase SDK to make your game compatible with the separate app stores. You can manage all your store submissions from the UDP console.</p>
+
+<p>
+<img src="../uploads/Main/UDPOverview_01.png" alt=""> <br>
+UDP overview</p>
+
+<p>You can use UDP to distribute premium games and games with IAP.</p>
+
+<h2>UDP console</h2>
+
+<p>The <a href="https://distribute.dashboard.unity.com">UDP console</a> is a web-based portal where you can prepare your games for submission to multiple app stores. The UDP console lets you:</p>
+
+<ul>
+<li><a href="udp-distribution.html#edit">Manage your game’s information</a></li>
+<li><a href="udp-implementing-iap.html#edit">Edit your game’s in-app purchases</a></li>
+<li><a href="udp-managing-and-publishing.html#publish">Publish your game to multiple app stores</a></li>
+<li><a href="udp-reference.html#reporting">View your games’ performance across all UDP stores</a></li>
+</ul>
+
+<p>Learn more about the <a href="udp-reference.html">UDP console interface</a>.</p>
+
+<h2>UDP package</h2>
+
+<p>The <a class="tooltipMoreInfoLink" href="https://docs.unity3d.com/Packages/com.unity.purchasing.udp@latest/">UDP package</a> contains an SDK for working with UDP. It also enables the Unity Distribution Portal settings in the <span class="tooltip"><strong>Project Settings</strong><span class="tooltiptext">A broad collection of settings which allow you to configure how Physics, Audio, Networking, Graphics, Input and many other areas of your project behave. <a href="comp-ManagerGroup.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#ProjectSettings">Glossary</a></span></span></span> window of the Unity Editor.</p>
+
+<h2>UDP client</h2>
+
+<p>To use UDP, your game must have a UDP client, including UDP client ID. This identifies your game on the UDP service. The ID is generated when you <a href="udp-distribution.html#create">create a game on UDP</a> and you must <a href="https://docs.unity3d.com/Packages/com.unity.purchasing.udp@latest/index.html?subfolder=/manual/getting-started.html%23linking">link it to your Unity project</a>.
+To unlink a Unity project from a UDP client, remove the Unity project ID from the <a href="udp-reference.html#integrate">Integration Information</a> section in the UDP console.</p>
+
+<h2>UDP sandbox</h2>
+
+<p>The UDP package contains a sandbox environment that acts as a test store for your UDP games. When you implement the UDP SDK in your game, your UDP build can then use the sandbox as a test environment. Before you can submit your game to the real stores, you must <a href="udp-sandbox-testing.html">test your game in the sandbox</a> to verify that your UDP and IAP (if applicable) implementation works properly. </p>
+
+<p>Sandbox testing helps you to identify any issues that arise during your initial UDP implementation. Unresolved problems could prevent UDP repacking your game for stores, or cause UDP to repack the game with the existing problems. This could result in stores rejecting your game or players being unable to complete transactions.</p>
+
+<h2>Games with in-app purchases</h2>
+
+<p>In-app purchases (IAP) let you sell content to players from inside your game. You only need to implement your in-app purchases via UDP. UDP then automatically repacks your game into store-specific builds.</p>
+
+<p>You can implement UDP on both the game client and server sides. For offline games, you only need to implement UDP in the game client. For online games, you can also implement UDP on the server side.</p>
+
+<ul>
+<li>Implementing UDP in-app purchases in the game client<br>The implementation in the game client includes initializing the UDP SDK and integrating with the in-app purchase flow of UDP.</li>
+<li>Implementing UDP in-app purchases on the server side<br>The implementation on the server side lets you query the UDP server about orders, receive callback notifications, and return the acknowledgements.</li>
+</ul>
+
+<p>Learn how to:</p>
+
+<ul>
+<li><a href="udp-implementing-iap.html#manage">Manage in-app purchases on the UDP console</a></li>
+<li>Implement in-app purchases on the Editor
+
+<ul>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.purchasing.udp@latest/index.html?subfolder=/manual/games-with-iap.html">with the UDP package</a></li>
+<li><a href="udp-service-interoperability.html#iap">with Unity IAP</a></li>
+</ul>
+</li>
+<li><a href="https://docs.unity3d.com/Packages/com.unity.purchasing.udp@latest/index.html?subfolder=/manual/games-with-iap.html%23server-side">Implement in-app purchases on the server side</a></li>
+</ul>
+
+<h3>IAP product types</h3>
+
+<p>UDP only supports consumable and non-consumable IAP products. Subscription products are not supported.</p>
+
+<p><a name="non-consumable"></a></p>
+
+<h4>Non-consumable IAP products</h4>
+
+<p>Non-consumable products provide permanent effects. Players can only purchase them once. </p>
+
+<p><a name="consumable"></a></p>
+
+<h4>Consumable IAP products</h4>
+
+<p>Consumable products provide temporary effects, such as game currency and extra experience points. Players can purchase these multiple times.</p>
+
+<p>When a user has purchased a consumable product, they must consume it before they can repurchase it. You can use the consumption to ensure the purchased product is successfully delivered. </p>
+
+<p>To <a href="https://docs.unity3d.com/Packages/com.unity.purchasing.udp@latest/index.html?subfolder=/manual/games-with-iap.html%23consume">consume a product</a>, your game needs to send a Consume request to the UDP SDK. Your game should deliver a product when it is consumed. This prevents the product being delivered repeatedly.</p>
+
+<p><a name="iap-catalog"></a></p>
+
+<h3>IAP Catalog</h3>
+
+<p>The IAP Catalog is an inventory of the IAP items implemented in your game. For each IAP item, you define a:</p>
+
+<ul>
+<li>description</li>
+<li>price</li>
+<li>consumable type</li>
+<li>Product ID</li>
+</ul>
+
+<p>When your game is repacked and submitted to a store, UDP syncs your IAP Catalog with the store’s back-end. Your game can then query the IAP inventory from the store’s back-end.</p>
+
+<p>When players purchase IAP products, your game asks the store to confirm the IAP Catalog. UDP must be properly implemented in your game for this step to work smoothly.</p>
+
+<p>The IAP Catalog on the UDP console is the source of truth for what is submitted to the store’s back-end systems.</p>
+
+<p>For a successful implementation, follow the <a href="https://docs.unity3d.com/Packages/com.unity.purchasing.udp@latest/index.html?subfolder=/manual/games-with-iap.html">UDP implementation guidance</a>. To ensure your IAPs behave properly, <a href="https://docs.unity3d.com/Packages/com.unity.purchasing.udp@latest/index.html?subfolder=/manual/building-your-game.html%23testing">test your game in the UDP Sandbox environment</a>.</p>
+
+<h2>Premium Games</h2>
+
+<p>You can distribute Premium games (aka pay-to-download games) via UDP to stores which support premium games. You can then view your premium game revenue in the UDP console’s <a href="udp-reference.html#reporting">Reporting dashboard</a>. </p>
+
+<p>Learn how to distribute your premium game via UDP.</p>
+
+<h2>Ownership</h2>
+
+<p>UDP games belong to a <a href="https://docs.unity3d.com/Manual/OrgsManagingyourOrganization.html">Unity Organization</a> and not to any individual user. All users of an Organization have access to its UDP games. Permissions vary depending on the role of a given user within the Organization.</p>
+
+<p>You can also add users who aren’t in the Organization to specific projects. Add users in the Unity Dashboard under <strong>Project</strong> &gt; <strong>Settings</strong> &gt; <strong>Users</strong>.</p>
+
+<p>You can divide tasks within a Unity Organization between users and non-users of the Unity Editor; for example:</p>
+
+<ul>
+<li>
+<strong>Publishing Manager</strong> (not an Editor user)
+
+<ul>
+<li>Creates a new game on the UDP console</li>
+<li>Passes <strong>Developer</strong> the parameters needed to carry out the UDP implementation</li>
+<li>Consolidates the material required for distribution</li>
+<li>Begins signing up with the stores the Organization wants to distribute its games to</li>
+</ul>
+</li>
+<li>
+<strong>Developer</strong> (Editor user)
+
+<ul>
+<li>Implements UDP in the project</li>
+<li>Builds and tests the game’s <span class="tooltip"><strong>APK</strong><span class="tooltiptext">The Android Package format output by Unity. An APK is automatically deployed to your device when you select File &gt; Build &amp; Run. <a class="tooltipMoreInfoLink" href="android-BuildProcess.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#APK">Glossary</a></span></span></span> or AAB</li>
+<li>Deploys the game build to the UDP console</li>
+</ul>
+</li>
+<li>
+<strong>Publishing Manager</strong>
+
+<ul>
+<li>Creates game releases</li>
+<li>Finalizes the submissions to the stores</li>
+</ul>
+</li>
+</ul>
+
+<p><a name="permissions"></a></p>
+
+<h3>Project-related permissions</h3>
+
+<p>Members of an organization and individuals granted access to a project can both work on Unity projects.</p>
+
+<p>Project-related permissions relate to what UDP features you have access to on a specific Unity project, both in the Unity Editor and in the UDP console. This applies to:</p>
+
+<ul>
+<li>Members of the organization that the project belongs to (with organization-level permissions)</li>
+<li>Individuals granted access to the project only (with project-level permissions)</li>
+</ul>
+
+<p>The table below lists the project-related UDP permissions for Users, Managers and Owners in the Unity Editor. These are the same for both project-level and organization-level permissions.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;">User</th>
+	<th style="text-align:left;">Manager</th>
+	<th style="text-align:left;">Owner</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Generate a new UDP client</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Link a Unity project to the UDP client</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Modify UDP settings</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Create or modify IAPs</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+</tbody>
+</table>
+
+<p>The table below lists the project-related UDP permissions for Users, Managers and Owners in the UDP console. These are the same for both project-level and organization-level permissions.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;">User</th>
+	<th style="text-align:left;">Manager</th>
+	<th style="text-align:left;">Owner</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Generate a new UDP client</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Archive a game in game list</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Delete a game in game list</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Edit a game revision</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Link a Unity project with a UDP client</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Unlink a Unity project from a UDP client</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Release a game revision</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Register a game to a store</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Publish a game to a store</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Advanced page operation</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Status page access and operation</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Generate an authentication token</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Organization-related permissions</h3>
+
+<p>Organization-related permissions relate to what UDP features you have access to in the Organization. These features are generally restricted to Organization members only, that is, individuals granted access only to specific projects do not have organization-level permissions. The exceptions to this are:</p>
+
+<ul>
+<li>the project Owner can view the Reporting dashboard</li>
+<li>any project role can view the projects they have access to in the game list</li>
+</ul>
+
+<p>The table below lists additional Organization-related permissions for Users, Managers and Owners.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;" colspan="3">Project-level</th>
+	<th style="text-align:left;" colspan="3">Org-level</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">User</td>
+	<td style="text-align:left;">Manager</td>
+	<td style="text-align:left;">Owner</td>
+	<td style="text-align:left;">User</td>
+	<td style="text-align:left;">Manager</td>
+	<td style="text-align:left;">Owner</td>
+</tr>
+<tr>
+	<td style="text-align:left;">View the Reporting dashboard</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Access the game list</td>
+	<td style="text-align:left;">Yes*</td>
+	<td style="text-align:left;">Yes*</td>
+	<td style="text-align:left;">Yes*</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Edit the Company profile</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Sign up the Organization to a store</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">No</td>
+	<td style="text-align:left;">Yes</td>
+	<td style="text-align:left;">Yes</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<strong>Note</strong>: Project-level users can assess the games within the host organization that owns the project, and any other projects they have access to within their own Organizations.</p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UnityMultiplayerService.html"></a></span><div class="tip">Multiplayer services</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="udp-getting-started.html"></a></span><div class="tip">Getting started with UDP</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-10-03.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
