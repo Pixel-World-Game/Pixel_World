@@ -1,0 +1,606 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Quality</title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20241003"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20241003"></script><script type="text/javascript" src="docdata/toc.js?ts=20241003"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20241003"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20241003">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="graphics" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2022.3</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-QualitySettings.html">English</a></li>
+<li><a href="/cn/current/Manual/class-QualitySettings.html">中文</a></li>
+<li><a href="/ja/current/Manual/class-QualitySettings.html">日本語</a></li>
+<li><a href="/kr/current/Manual/class-QualitySettings.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2022.3</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-QualitySettings.html">English</a></li>
+<li><a href="/cn/current/Manual/class-QualitySettings.html">中文</a></li>
+<li><a href="/ja/current/Manual/class-QualitySettings.html">日本語</a></li>
+<li><a href="/kr/current/Manual/class-QualitySettings.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityOverview.html">Working in Unity</a></li>
+<li><a href="EditorFeatures.html">Editor Features</a></li>
+<li><a href="comp-ManagerGroup.html">Project Settings</a></li>
+<li>Quality</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-PresetManager.html"></a></span><div class="tip">Preset Manager</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-MonoManager.html"></a></span><div class="tip">Script Execution Order settings</div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Quality</h1>
+<!--BeginSwitchLink--><a href='../ScriptReference/QualitySettings.html' title='Go to QualitySettings page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity allows you to set the level of graphical quality it attempts to render. Generally speaking, quality comes at the expense of frame rate and so it may be best not to aim for the highest quality on mobile devices or older hardware since it tends to have a detrimental effect on gameplay. Use the <strong>Quality</strong> settings (menu: <strong>Edit &gt; Project Settings</strong>, then select the <strong>Quality</strong> category) to select the <strong>Quality Level</strong> in the Editor for the chosen device. It is split into two main areas: the Quality matrix appears at the top; and below it, the settings for the active <strong>Quality Level</strong> appear.</p>
+
+<p>Unity lets you assign a name to a given combination of quality options for easy reference. The rows of the matrix let you choose which of the different platforms each <strong>Quality Level</strong> applies to. The <strong>Default</strong> row at the bottom of the matrix is not a <strong>Quality Level</strong> in itself but rather sets the default <strong>Quality Level</strong> used for each platform (a green checkbox in a column denotes the level currently chosen for that platform). Unity comes with six <strong>Quality Levels</strong> pre-enabled but you can <a href="#define">add your own levels</a>.</p>
+
+<p>
+<img src="../uploads/Main/quality-settings-panel.png" alt="Edit the settings for a specific Quality level"><br>
+A: The <strong>Quality Level</strong> you have defined in this project.<br>
+B: The currently active <strong>Quality Level</strong>.<br>
+C: The configuration of the current <strong>Quality Level</strong>. <br>
+</p>
+
+<p>To delete an unwanted <strong>Quality Level</strong>, use the trashcan icon (the rightmost column).</p>
+
+<p>To select a <strong>Quality Level</strong> for editing, click on its name in the matrix.</p>
+
+<p>
+<a name="define"></a>
+To define a new <strong>Quality Level</strong>, click the <strong>Add Quality Level</strong> button and type the name for the new level in the <strong>Name</strong> property box.</p>
+
+<p>Then you can choose which of the quality options documented in the following sections you need to update or set:</p>
+
+<ul>
+<li><a href="#Rendering">Rendering</a></li>
+<li><span class="tooltip"><a class="tooltipMoreInfoLink" href="#Textures">Textures</a><span class="tooltiptext">An image used when rendering a GameObject, Sprite, or UI element. Textures are often applied to the surface of a mesh to give it visual detail. <a href="class-TextureImporter.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#texture">Glossary</a></span></span></span></li>
+<li><span class="tooltip"><a class="tooltipMoreInfoLink" href="#Particles">Particles</a><span class="tooltiptext">A small, simple image or mesh that is emitted by a particle system. A particle system can display and move particles in great numbers to represent a fluid or amorphous entity. The effect of all the particles together creates the impression of the complete entity, such as smoke. <a href="class-ParticleSystem.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#particle">Glossary</a></span></span></span></li>
+<li><span class="tooltip"><a class="tooltipMoreInfoLink" href="#Terrain">Terrain</a><span class="tooltiptext">The landscape in your scene. A Terrain GameObject adds a large flat plane to your scene and you can use the Terrain’s Inspector window to create a detailed landscape. <a href="terrain-UsingTerrains.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Terrain">Glossary</a></span></span></span></li>
+<li><a href="#Shadows">Shadows</a></li>
+<li><a href="#AsyncAssetUpload">Async Asset Upload</a></li>
+<li><span class="tooltip"><a class="tooltipMoreInfoLink" href="#LevelOfDetail">Level of Detail</a><span class="tooltiptext">The <em>Level Of Detail</em> (LOD) technique is an optimization that reduces the number of triangles that Unity has to render for a GameObject when its distance from the Camera increases. <a href="LevelOfDetail.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#levelofdetail">Glossary</a></span></span></span></li>
+<li><a href="#Meshes">Meshes</a></li>
+</ul>
+
+<p><a name="Rendering"></a></p>
+
+<h2>Rendering</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong><span class="tooltip"><strong>Render Pipeline</strong><span class="tooltiptext">A series of operations that take the contents of a Scene, and displays them on a screen. Unity lets you choose from pre-built render pipelines, or write your own. <a class="tooltipMoreInfoLink" href="render-pipelines.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Renderpipeline">Glossary</a></span></span></span></strong></td>
+	<td style="text-align:left;">The Render Pipeline Asset to use for this <strong>Quality Level</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Pixel Light Count</strong></td>
+	<td style="text-align:left;">Set the maximum number of <span class="tooltip"><strong>pixel</strong><span class="tooltiptext">The smallest unit in a computer image. Pixel size depends on your screen resolution. Pixel lighting is calculated at every screen pixel. <a class="tooltipMoreInfoLink" href="ShadowPerformance.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#pixel">Glossary</a></span></span></span> lights when Unity uses <span class="tooltip"><a href="RenderTech-ForwardRendering.html">Forward Rendering</a><span class="tooltiptext">A rendering path that renders each object in one or more passes, depending on lights that affect the object. Lights themselves are also treated differently by Forward Rendering, depending on their settings and intensity. <a href="RenderTech-ForwardRendering.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#ForwardRendering">Glossary</a></span></span></span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="tooltip"><strong>AntiAliasing</strong><span class="tooltiptext">A technique for decreasing artifacts, like jagged lines (jaggies), in images to make them appear smoother.<br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Antialiasing">Glossary</a></span></span></span></td>
+	<td style="text-align:left;">Choose the level of Multi-Sample Anti-aliasing (MSAA) that the GPU performs. The options are <em>Disabled</em>, <em>2x Multi Sampling</em>, <em>4x Multi Sampling</em> and <em>8x Multi Sampling</em>.<br><br>Anti aliasing smooths the appearance of polygon edges. As the level of anti-aliasing increases, so does the smoothness and the performance cost on the GPU.<br><br>MSAA is compatible only with Forward rendering. For more information on other types of anti-aliasing and compatibility, see <a href="PostProcessingOverview.html">Post processing</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Realtime Reflection Probes</strong></td>
+	<td style="text-align:left;">Enable this option to update <span class="tooltip"><a class="tooltipMoreInfoLink" href="class-ReflectionProbe.html">reflection probes</a><span class="tooltiptext">A rendering component that captures a spherical view of its surroundings in all directions, rather like a camera. The captured image is then stored as a Cubemap that can be used by objects with reflective materials. <a href="class-ReflectionProbe.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#ReflectionProbe">Glossary</a></span></span></span> during gameplay.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="FixedDPIFactor"></a><strong>Resolution Scaling Fixed DPI Factor</strong>
+</td>
+	<td style="text-align:left;">Downscales the device’s screen resolution below its native resolution. For more details, see <a href="class-PlayerSettingsAndroid.html#Scaling">Android Player</a> settings and <a href="class-PlayerSettingsiOS.html#Scaling">iOS Player</a> settings.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>V Sync Count</strong></td>
+	<td style="text-align:left;">Choose to synchronize rendering with vertical blanks or not to synchronize at all. Unity can synchronize rendering with the refresh rate of the display device to <a href="#tearing">avoid tearing artifacts</a>. The available options are <em>Every V Blank</em>, <em>Every Second V Blank</em>, or <em>Don’t Sync</em>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Realtime GI CPU Usage</strong></td>
+	<td style="text-align:left;">The CPU budget you allow Enlighten Realtime Global Illumination to use for lighting calculations at runtime. Increasing this makes the system react faster to changes in lighting at a cost of using more CPU time.<br><strong>Note:</strong> Some platforms allow all CPUs to be occupied by worker threads whereas some enforce maximums. For example, some gaming consoles allow a maximum of 4 CPU cores. For Android devices, if it is a bigLittle architecture, only the little CPUs are used; otherwise the maximum is one less than the total number of CPUs. Note that this is only shown for Scriptable Render Pipelines.<br>If you use the Built-in Render Pipeline, you can find this property in the <a href="class-GraphicsSettings.html">graphics settings</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="tearing"></a></p>
+
+<h3>Tearing</h3>
+
+<p>The picture on the display device is not continuously updated, but rather the updates happen at regular intervals much like frame updates in Unity. However, Unity’s updates are not necessarily synchronized with those of the display, so it is possible for Unity to issue a new frame while the display is still rendering the previous one. This results in a visual artifact called “tearing” at the position onscreen where the frame change occurs.</p>
+
+<figure>
+<img src="../uploads/Main/Tearing.jpg" alt="Simulated example of tearing. The shift in the picture is clearly visible in the magnified portion.">
+<figcaption>Simulated example of tearing. The shift in the picture is clearly visible in the magnified portion.</figcaption>
+</figure>
+
+<p>It is possible to get Unity to switch frames only during the period where the display device is not updating, the so-called “vertical blank”. The <strong>V Sync Count</strong> option in <strong>Quality</strong> settings synchronizes frame switches with the device’s vertical blank or optionally with every other vertical blank. The latter may be useful if the game requires more than one device update to complete the rendering of a frame.</p>
+
+<p><a name="Textures"></a></p>
+
+<h2>Textures</h2>
+
+<p><a name="mipmaplimit"></a></p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Global Mipmap Limit</strong></td>
+	<td style="text-align:left;">Choose the highest resolution mipmap level that Unity uses when it renders textures. Higher mipmap levels have lower resolutions, which means that they require less GPU memory and GPU processing time.<br>This property only affects textures with a <a href="class-TextureImporter.html#textureshape">texture shape</a> of 2D.<br><br> The options are: <ul>
+<li><strong>0: Full Resolution</strong></li> <li><strong>1: Half Resolution</strong></li>
+<li> <strong>2: Quarter Resolution</strong>
+</li>
+<li> <strong>3: Eighth Resolution</strong>
+</li>
+</ul> For more detailed information about what these resolutions mean, see <a href="texture-mipmaps-introduction.html">Mipmaps introduction</a>.<br>Textures that do not have mipmaps render at their full resolution, regardless of the option you choose.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Mipmap Limit Groups</strong></td>
+	<td style="text-align:left;">Use these groups to designate specific textures that should disregard the <a href="../ScriptReference/QualitySettings-globalTextureMipmapLimit.html">globalTextureMipmapLimit</a> or add a bias. This makes it possible to allocate more of your memory budget for important textures and less of it for less important textures.<br><br>This property only affects textures with a <a href="class-TextureImporter.html#textureshape">texture shape</a> of 2D.<br><br> The options are: <ul>
+<li><strong>Offset Global Mipmap Limit: –3</strong></li>
+<li><strong>Offset Global Mipmap Limit: –2</strong></li>
+<li> <strong>Offset Global Mipmap Limit: –1</strong>
+</li>
+<li><strong>Use Global Mipmap Limit</strong></li>
+<li><strong>Offset Global Mipmap Limit: +1</strong></li>
+<li><strong>Offset Global Mipmap Limit: +2</strong></li>
+<li><strong>Offset Global Mipmap Limit: +3</strong></li>
+<li><strong>Override Global Mipmap Limit: Full Resolution</strong></li>
+<li><strong>Override Global Mipmap Limit: Half Resolution</strong></li>
+<li><strong>Override Global Mipmap Limit: Quarter Resolution</strong></li>
+<li><strong>Override Global Mipmap Limit: Eighth Resolution</strong></li>
+</ul> The Offsets bias the Mipmap Limit value for the applicable group of textures. For example, if the <strong>Global Texture Mipmap Limit</strong> is <strong>Half Resolution</strong> and you select <strong>Offset Global Mipmap Limit: –1</strong>, then the new Mipmap Limit for the applicable group of textures is <strong>Full Resolution</strong>. <br> <br>The Overrides replace the <strong>Global Mipmap Limit</strong> for the applicable group of textures. For example, if the <strong>Global Texture Mipmap Limit</strong> is <strong>Half Resolution</strong> and you select <strong>Override Global Mipmap Limit: Full Resolution</strong>, then the new Mipmap Limit for the applicable group of textures is <strong>Full Resolution</strong>.<br><br><strong>Note:</strong> If you delete or rename a Mipmap Limit Group, this triggers a dialog box that provides you with the option to re-import the textures in that group. Undo does not revert these import changes.<br>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Anisotropic Textures</strong></td>
+	<td style="text-align:left;">Choose if and how Unity uses anisotropic Textures. The options are <em>Disabled</em>, <em>Per Texture</em> and <em>Forced On</em> (that is, always enabled).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">
+<a name="texStream"></a><strong>Texture Streaming</strong><br>
+</td>
+	<td style="text-align:left;">Enable this checkbox to use <a href="TextureStreaming.html">Mipmap Streaming</a>. If you are not planning to use the Mipmap Streaming system, disable this feature to avoid any overhead.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Add All Cameras</td>
+	<td style="text-align:left;">Enable this checkbox to make Unity calculate <a href="TextureStreaming.html">Mipmap Streaming</a> for all active Cameras in the Project. This is enabled by default. <br><br>For more information, see <a href="TextureStreaming.html#cameras">Mipmap Streaming system: Configuring Cameras</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Memory Budget</td>
+	<td style="text-align:left;">Set the total amount of memory you want to assign to all loaded textures (in MB) when using the <a href="TextureStreaming.html">Mipmap Streaming system</a>. This is set to 512 MB by default. For more information, see <a href="TextureStreaming.html#memory-budget">Mipmap Streaming system: Setting the memory budget</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Renderers Per Frame</td>
+	<td style="text-align:left;">This controls the CPU processing overhead for the <a href="TextureStreaming.html">Mipmap Streaming system</a> for the main thread and associated jobs. This is 512 by default (that is, processing 512 Mesh renderers per frame). Lower values reduce processing time, but increase delays to Unity loading the mipmaps.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Max Level Reduction</td>
+	<td style="text-align:left;">Set the maximum number of mipmaps that the <a href="TextureStreaming.html">Mipmap Streaming system</a> can discard if the Mipmap Streaming system reaches the <strong>Memory Budget</strong>. This is set to 2 by default (which means that the system discards no more than two mipmaps). <br><br>This value is also the mipmap level that the Mipmap Streaming system initially loads at startup. For example, when this is set to 2, Unity skips the two highest mipmaps on first load.<br><br>For more information, see <a href="TextureStreaming.html#memory-budget">Mipmap Streaming system: Setting the memory budget</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Max IO Requests</td>
+	<td style="text-align:left;">Set the maximum number of texture file in/out (IO) requests from the <a href="TextureStreaming.html">MipMap Streaming system</a> that are active at any one time. This is set to 1024 by default. This default is set high enough to prevent any IO cap beyond what is already active due to the <a href="https://blogs.unity3d.com/2018/10/08/optimizing-loading-performance-understanding-the-async-upload-pipeline/">Async Upload pipeline</a> or file system itself.<br><br>If the Scene Texture content changes significantly and rapidly, the system might attempt to load more Texture mipmaps than the file IO can keep up with. Lowering this value reduces the IO bandwidth that the Mipmap Streaming system generates. The result is a more rapid response to changing mipmap requirements.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="Particles"></a></p>
+
+<h2>Particles</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="tooltip"><strong>Soft Particles</strong><span class="tooltiptext">Particles that create semi-transparent effects like smoke, fog or fire. Soft particles fade out as they approach an opaque object, to prevent intersections with the geometry. <a class="tooltipMoreInfoLink" href="shader-StandardParticleShaders.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#SoftParticles">Glossary</a></span></span></span></td>
+	<td style="text-align:left;">Indicates whether to fade particles as they approach the edges of opaque <span class="tooltip"><strong>GameObject</strong><span class="tooltiptext">The fundamental object in Unity scenes, which can represent characters, props, scenery, cameras, waypoints, and more. A GameObject’s functionality is defined by the Components attached to it. <a class="tooltipMoreInfoLink" href="class-GameObject.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#GameObject">Glossary</a></span></span></span>. For more information, see <a href="#SoftParticles">Soft particles</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Particle Raycast Budget</strong></td>
+	<td style="text-align:left;">Set the maximum number of raycasts to use for approximate <span class="tooltip"><strong>particle system</strong><span class="tooltiptext">A component that simulates fluid entities such as liquids, clouds and flames by generating and animating large numbers of small 2D images in the scene. <a class="tooltipMoreInfoLink" href="class-ParticleSystem.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#particlesystem">Glossary</a></span></span></span> <span class="tooltip"><strong>collisions</strong><span class="tooltiptext">A collision occurs when the physics engine detects that the colliders of two GameObjects make contact or overlap, when at least one has a Rigidbody component and is in motion. <a href="CollidersOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Collision">Glossary</a></span></span></span> (those with <em>Medium</em> or <em>Low</em> quality). See <a href="class-ParticleSystem.html">Particle System Collision Module</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="SoftParticles"></a></p>
+
+<h3>Soft particles</h3>
+
+<p>Soft particles fade out near intersections with other <span class="tooltip"><strong>Scene</strong><span class="tooltiptext">A Scene contains the environments and menus of your game. Think of each unique Scene file as a unique level. In each Scene, you place your environments, obstacles, and decorations, essentially designing and building your game in pieces. <a class="tooltipMoreInfoLink" href="CreatingScenes.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Scene">Glossary</a></span></span></span> geometry. This looks much nicer, but is more resource intensive to process and only works on platforms that support <a href="SL-CameraDepthTexture.html">depth textures</a>. Furthermore, you have to use the <span class="tooltip"><a href="RenderTech-DeferredShading.html">Deferred Shading</a><span class="tooltiptext">A rendering path in the Built-in Render Pipeline that places no limit on the number of Lights that can affect a GameObject. All Lights are evaluated per-pixel, which means that they all interact correctly with normal maps and so on. Additionally, all Lights can have cookies and shadows. <a href="RenderTech-DeferredShading.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Deferredshading">Glossary</a></span></span></span> <span class="tooltip"><strong>rendering path</strong><span class="tooltiptext">The technique that a render pipeline uses to render graphics. Choosing a different rendering path affects how lighting and shading are calculated. Some rendering paths are more suited to different platforms and hardware than others. <a href="RenderingPaths.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#RenderingPath">Glossary</a></span></span></span>, or make the <span class="tooltip"><strong>camera</strong><span class="tooltiptext">A component which creates an image of a particular viewpoint in your scene. The output is either drawn to the screen or captured as a texture. <a href="CamerasOverview.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a class="tooltipMoreInfoLink" href="Glossary.html#Camera">Glossary</a></span></span></span> render <a href="SL-CameraDepthTexture.html">depth textures</a> from <span class="tooltip"><strong>scripts</strong><span class="tooltiptext">A piece of code that allows you to create your own Components, trigger game events, modify Component properties over time and respond to user input in any way you like. <a href="CreatingAndUsingScripts.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Scripts">Glossary</a></span></span></span>.</p>
+
+<figure>
+<img src="../uploads/Main/SoftParticlesOff.jpg" alt="Without Soft Particles - visible intersections with the scene.">
+<figcaption>Without Soft Particles - visible intersections with the scene.</figcaption>
+</figure>
+
+<figure>
+<img src="../uploads/Main/SoftParticlesOn.jpg" alt="With Soft Particles - intersections fade out smoothly.">
+<figcaption>With Soft Particles - intersections fade out smoothly.</figcaption>
+</figure>
+
+<p><a name="Terrain"></a></p>
+
+<h2>Terrain</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong><span class="tooltip"><strong>Billboards</strong><span class="tooltiptext">A textured 2D object that rotates so that it always faces the Camera. <a class="tooltipMoreInfoLink" href="class-BillboardRenderer.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Billboard">Glossary</a></span></span></span> Face Camera Position</strong></td>
+	<td style="text-align:left;">Enable this option to force billboards to face the camera while rendering instead of the camera plane. This produces a better, more realistic image, but is more expensive to render.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Use Legacy Details Distribution</strong></td>
+	<td style="text-align:left;">Enable this option to use the previously supported scattering algorithm that often resulted in overlapping details. Included for backward compatibility with Terrains authored in Unity 2022.1 and earlier.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Terrain Setting Overrides</strong></td>
+	<td style="text-align:left;">Various override settings that, when enabled, override the value of all active terrains (except those with the “Ignore Quality Settings” setting enabled). For more information about these settings, see <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Pixel Error</td>
+	<td style="text-align:left;">Value set to Terrain Pixel Error. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Base Map Dist.</td>
+	<td style="text-align:left;">Value set to Terrain Basemap Distance. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Detail Density Scale</td>
+	<td style="text-align:left;">Value set to Terrain Density Scale. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Detail Distance</td>
+	<td style="text-align:left;">Value set to Terrain Detail Distance. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Tree Distance</td>
+	<td style="text-align:left;">Value set to Terrain Tree Distance. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Billboard Start</td>
+	<td style="text-align:left;">Value set to Terrain Billboard Start. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Fade Length</td>
+	<td style="text-align:left;">Value set to Terrain Fade Length. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">  Max <span class="tooltip"><strong>Mesh</strong><span class="tooltiptext">The main graphics primitive of Unity. Meshes make up a large part of your 3D worlds. Unity supports triangulated or Quadrangulated polygon meshes. Nurbs, Nurms, Subdiv surfaces must be converted to polygons. <a class="tooltipMoreInfoLink" href="comp-MeshGroup.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Mesh">Glossary</a></span></span></span> Trees</td>
+	<td style="text-align:left;">Value set to Terrain Max Mesh Trees. See <a href="terrain-OtherSettings.html">Terrain Settings</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="Shadows"></a></p>
+
+<h2>Shadows</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadowmask Mode</strong></td>
+	<td style="text-align:left;">Choose the shadowmask behavior when using the <a href="LightMode-Mixed-Shadowmask.html">Shadowmask</a> Mixed lighting mode. Use the Lighting window (menu: <strong>Window</strong> &gt; <strong>Rendering</strong> &gt; <strong>Lighting</strong>) to set this up in your Scene.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="tooltip"><strong>Distance Shadowmask</strong><span class="tooltiptext">A version of the Shadowmask lighting mode that includes high quality shadows cast from static GameObjects onto dynamic GameObjects. <a class="tooltipMoreInfoLink" href="LightMode-Mixed-Shadowmask.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#DistanceShadowmask">Glossary</a></span></span></span></td>
+	<td style="text-align:left;">Unity uses real-time shadows up to the <strong>Shadow Distance</strong>, and baked shadows beyond it.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="tooltip"><strong>Shadowmask</strong><span class="tooltiptext">A Texture that shares the same UV layout and resolution with its corresponding lightmap. <a class="tooltipMoreInfoLink" href="LightMode-Mixed-Shadowmask.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Shadowmask">Glossary</a></span></span></span></td>
+	<td style="text-align:left;">Static GameObjects that cast shadows always cast baked shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="tooltip"><strong>Shadows</strong><span class="tooltiptext">A UI component that adds a simple outline effect to graphic components such as Text or Image. It must be on the same GameObject as the graphic component. <a class="tooltipMoreInfoLink" href="script-Shadow.html">More info</a><br/><span class="tooltipGlossaryLink">See in <a href="Glossary.html#Shadow">Glossary</a></span></span></span></td>
+	<td style="text-align:left;">Choose which type of shadows to use. The available options are <em>Hard and Soft Shadows</em>, <em>Hard Shadows Only</em> and <em>Disable Shadows</em>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Resolution</strong></td>
+	<td style="text-align:left;">Choose which resolution to render shadows at. The available options are <em>Low Resolution</em>, <em>Medium Resolution</em>, <em>High Resolution</em> and <em>Very High Resolution</em>. The higher the resolution, the greater the processing overhead.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Projection</strong></td>
+	<td style="text-align:left;">Choose which method to use for projecting shadows from a directional light.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Close Fit</strong></td>
+	<td style="text-align:left;">Renders higher resolution shadows but they can sometimes wobble slightly if the camera moves.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><strong>Stable Fit</strong></td>
+	<td style="text-align:left;">Renders lower resolution shadows but they don’t wobble with camera movements.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Distance</strong></td>
+	<td style="text-align:left;">Enter the maximum distance from the Camera at which shadows are visible. Unity does not render shadows that fall beyond this distance.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Near Plane Offset</strong></td>
+	<td style="text-align:left;">Enter the offset shadow near plane to account for large triangles being distorted by shadow pancaking.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Shadow Cascades</strong></td>
+	<td style="text-align:left;">Choose the number of shadow cascades to use. The available options are <em>No Cascades</em>, <em>Two Cascades</em>, or <em>Four Cascades</em>. A higher number of cascades gives better quality but at the expense of processing overhead (see <a href="shadow-cascades.html">Shadow Cascades</a> for further details).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Cascade splits</strong></td>
+	<td style="text-align:left;">Adjust the cascade shadow split(s) by moving the vertical line between each cascade left or right.<br>Depending on what value you chose for the <strong>Shadow Cascades</strong> setting, you can see two or four different colors. If <strong>Shadow Cascades</strong> is set to <em>No Cascades</em>, then this entire control is hidden.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="AsyncAssetUpload"></a></p>
+
+<h2>Async Asset Upload</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Time Slice</strong></td>
+	<td style="text-align:left;">Set the amount of CPU time in milliseconds per frame Unity spends uploading buffered Texture and Mesh data to the GPU. See <a href="LoadingTextureandMeshData.html">LoadingTextureandMeshData</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Buffer Size</strong></td>
+	<td style="text-align:left;">Set the size in megabytes of the Async Upload Buffer Unity uses to stream Texture and Mesh data for the to the GPU. See <a href="LoadingTextureandMeshData.html">LoadingTextureandMeshData</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Persistent Buffer</strong></td>
+	<td style="text-align:left;">Indicates whether the upload buffer should persist even when there is nothing left to upload.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="LevelOfDetail"></a></p>
+
+<h2>Level of Detail</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<a name="LODBias"></a><strong>Lod Bias</strong>
+</td>
+	<td style="text-align:left;">Set the level-of-detail (LOD) bias. <br>LOD levels are chosen based on the onscreen size of an object. When the size is between two LOD levels, the choice can be biased toward the less detailed or more detailed of the two Models available. This is set as a fraction from 0 to +infinity. When it is set between 0 and 1 it favors less detail. A setting of more than 1 favors greater detail. For example, setting LOD Bias to 2 and having it change at 50% distance, LOD actually only changes on 25%.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Maximum LOD Level</strong></td>
+	<td style="text-align:left;">Set the highest LOD that the game uses. See <a href="#maxLOD">Maximum LOD level</a> for more information.</td>
+</tr>
+</tbody>
+</table>
+
+<p><a name="maxLOD"></a></p>
+
+<h3>Maximum LOD level</h3>
+
+<p>Unity does not use Models which have a LOD below the MaximumLOD level and omits them from the build (which saves storage and memory space). Unity uses the smallest LOD value from all the MaximumLOD values linked with the <strong>Quality</strong> settings for the target platform. If an LOD level is included, then Models from that LODGroup are included in the build and always loaded at runtime for that LODGroup, regardless of the Quality setting being used. As an example, if LOD level 0 is used in any Quality setting then all the LOD levels are included in the build and all the referenced Models load at runtime.</p>
+
+<p><a name="Meshes"></a></p>
+
+<h2>Meshes</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Property</strong></th>
+	<th style="text-align:left;"><strong>Description</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">
+<a name="BlendWeights"></a><strong>Skin Weights</strong>
+</td>
+	<td style="text-align:left;">Choose the number of bones that can affect a given vertex during an animation. The available options are <em>1 Bone</em>, <em>2 Bones</em>, <em>4 Bones</em>, and <em>Unlimited</em>.</td>
+</tr>
+</tbody>
+</table>
+
+<p><br></p>
+
+<hr>
+
+<ul>
+<li><span class="page-history">Terrain Quality Setting Overrides added in 2022.2</span></li>
+</ul>
+<!-- area:graphics -->
+
+<p><span class="search-words">QualitySettings</span></p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-PresetManager.html"></a></span><div class="tip">Preset Manager</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-MonoManager.html"></a></span><div class="tip">Script Execution Order settings</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-10-03.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

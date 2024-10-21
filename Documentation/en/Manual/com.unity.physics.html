@@ -1,0 +1,280 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-domain-script="6e91be4c-3145-4ea2-aa64-89d716064836" data-dLayer-ignore="true" data-document-language="true"></script><script type="text/javascript">function OptanonWrapper() {}</script><script>window.dataLayer = window.dataLayer || []; dataLayer.push({ event: 'dataLayer-initialized', user: { user_unity_id: undefined, user_logged_in: 'no' }, environment: { environment_locale: 'en-us', environment_currency: undefined }});</script><script>var offline=(location.href.indexOf('docs.unity3d.com')==-1)?true:false;if(!offline){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);  })(window,document,'script','dataLayer','GTM-5V25JL6');}</script><link href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Unity Physics </title>
+<meta property="og:image" content="https://unity3d.com/files/images/ogimg.jpg">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="https://unity.com/themes/contrib/unity_base/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript" src="/StaticFilesConfig/UnityVersionsInfo.js"></script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js?ts=20241003"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js?ts=20241003"></script><script type="text/javascript" src="docdata/toc.js?ts=20241003"></script><script type="text/javascript" src="docdata/global_toc.js?ts=20241003"></script><link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css?ts=20241003">
+<link rel="stylesheet" href="../StaticFilesManual/css/prism.css">
+<script src="../StaticFilesManual/js/prism.js"></script><script src="/StaticFilesConfig/feedback/feedback.js"></script><script src="../StaticFilesManual/js/jquery.sidebar.min.js"></script><link rel="stylesheet" href="../StaticFilesManual/css/mobileoptimisation.css">
+<script src="../StaticFilesManual/js/mobileoptimisation.js"></script>
+</head>
+<body>
+<div id="DocsAnalyticsData" data-area="none" data-pagetype="manual"></div>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div id="nav-open" for="nav-input"><span></span></div>
+<div class="logo"><a href="https://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="https://unity.com/">unity.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content">
+<div class="toggle version-number" id="VersionNumber" data-target=".otherversionscontent">
+                                Version: <b>2022.3</b><div class="otherversionscontent" id="OtherVersionsContent" style="display: none;">
+<ul id="OtherVersionsContentUl"></ul>
+<div id="otherVersionsLegend"><ul>
+<li>
+<div id="supportedColour" class="legendBox"></div>Supported</li>
+<li>
+<div id="notFoundColour" class="legendBox"></div>Legacy</li>
+</ul></div>
+</div>
+<div id="VersionSwitcherArrow" class="arrow versionSwitcherArrow"></div>
+</div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/com.unity.physics.html">English</a></li>
+<li><a href="/cn/current/Manual/com.unity.physics.html">中文</a></li>
+<li><a href="/ja/current/Manual/com.unity.physics.html">日本語</a></li>
+<li><a href="/kr/current/Manual/com.unity.physics.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div>
+<div class="mobileLogo"><a href="https://docs.unity3d.com"></a></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc" id="customScrollbar">
+<h2>Unity Manual</h2>
+<div class="search-form sidebar-search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" id="mobileSearchBtn" class="submit" value="Search">
+</form></div>
+<div class="toggle version-number sidebar-version-switcher" id="VersionNumber" data-target=".otherversionscontent"><form id="otherVersionsContentMobileForm"><div class="ui-field-contain">
+<label for="select-native-4">Version: 2022.3</label><select name="select-native-4" id="versionsSelectMobile"><option>Select a different version</option>
+<optgroup id="versionsWithThisPageMobile" label="Versions with this page"></optgroup>
+<optgroup id="versionsWithoutThisPageMobile" label="Versions without this page"></optgroup></select>
+</div></form></div>
+<div class="lang-switcher"><div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language
+:                <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/com.unity.physics.html">English</a></li>
+<li><a href="/cn/current/Manual/com.unity.physics.html">中文</a></li>
+<li><a href="/ja/current/Manual/com.unity.physics.html">日本語</a></li>
+<li><a href="/kr/current/Manual/com.unity.physics.html">한국어</a></li>
+</ul></div>
+</div></div>
+</div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="PackagesList.html">Packages and feature sets</a></li>
+<li><a href="pack-safe.html">Released packages</a></li>
+<li>Unity Physics </li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="com.unity.xr.meta-openxr.html"></a></span><div class="tip">Unity OpenXR Meta </div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="com.unity.profiling.core.html"></a></span><div class="tip">Unity Profiling Core API </div>
+</div>
+</div></div>
+<div id="_leavefeedback"></div>
+<h1>Unity Physics</h1>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p><span class="notooltips"></span></p>
+
+<p>
+<a href="https://docs.unity3d.com/Packages/com.unity.physics@1.3/manual/index.html" target="_blank">com.unity.physics</a> <img src="../uploads/Main/iconRel.png" alt="">
+</p>
+
+<h2>Description</h2>
+
+<p>Unity’s C# stateless physics library.<br><br>Built on top of the Unity C# ECS framework, Unity Physics is network-ready, completely customizable, and built for performance out of the box. Whether you’re building the next mobile hit or a new networked multiplayer console experience, Unity Physics leverages the Burst compiler and Job system to scale across a range of hardware. </p>
+
+<h2>Version information</h2>
+
+<h3>Released for Unity</h3>
+
+<p>Package version 1.3.2 is released for Unity Editor version 2022.3.</p>
+
+<h3>Compatible with Unity</h3>
+
+<p>These package versions are available in Unity version 2022.3:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Documentation location:</strong></th>
+	<th style="text-align:left;"><strong>State</strong></th>
+	<th style="text-align:left;"><strong>Versions available:</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@1.3/manual/index.html" target="_blank">com.unity.physics@1.3</a></td>
+	<td style="text-align:left;">released</td>
+	<td style="text-align:left;">1.3.0-exp.1, 1.3.0-exp.2, 1.3.0-exp.3, 1.3.0-exp.4, 1.3.0-exp.5, 1.3.0-exp.6, 1.3.0-exp.7, 1.3.0-exp.8, 1.3.0-exp.9, 1.3.0-exp.10, 1.3.0-exp.11, 1.3.0-pre.1, 1.3.0-pre.2, 1.3.0-pre.3, 1.3.0-pre.4, 1.3.0-pre.5, 1.3.0, 1.3.1, 1.3.2, 1.3.3-pre.1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@1.2/manual/index.html" target="_blank">com.unity.physics@1.2</a></td>
+	<td style="text-align:left;">released</td>
+	<td style="text-align:left;">1.2.0-exp.1, 1.2.0-exp.2, 1.2.0-exp.3, 1.2.0-exp.4, 1.2.0-exp.5, 1.2.0-exp.6, 1.2.0-exp.7, 1.2.0-exp.8, 1.2.0-pre.1, 1.2.0-pre.2, 1.2.0-pre.3, 1.2.0-pre.4, 1.2.0-pre.5, 1.2.0-pre.6, 1.2.0-pre.7, 1.2.0-pre.8, 1.2.0-pre.10, 1.2.0-pre.11, 1.2.0-pre.12, 1.2.0-pre.13, 1.2.0, 1.2.1-pre.1, 1.2.1-pre.2, 1.2.1, 1.2.2-pre.1, 1.2.2, 1.2.3, 1.2.4-pre.1, 1.2.4</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@1.1/manual/index.html" target="_blank">com.unity.physics@1.1</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">1.1.0-exp.1, 1.1.0-exp.2, 1.1.0-exp.3, 1.1.0-exp.4, 1.1.0-exp.5, 1.1.0-exp.6, 1.1.0-pre.1, 1.1.0-pre.2, 1.1.0-pre.3, 1.1.0-preview.1, 1.1.0-preview.2, 1.1.0-preview.3</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@1.0/manual/index.html" target="_blank">com.unity.physics@1.0</a></td>
+	<td style="text-align:left;">released</td>
+	<td style="text-align:left;">1.0.0-exp.1, 1.0.0-exp.2, 1.0.0-exp.3, 1.0.0-exp.4, 1.0.0-exp.5, 1.0.0-exp.6, 1.0.0-exp.7, 1.0.0-exp.8, 1.0.0-exp.9, 1.0.0-exp.10, 1.0.0-exp.11, 1.0.0-exp.12, 1.0.0-pre.1, 1.0.0-pre.2, 1.0.0-pre.3, 1.0.0-pre.4, 1.0.0-pre.5, 1.0.0-pre.6, 1.0.0-pre.7, 1.0.0-pre.8, 1.0.0-pre.9, 1.0.0-pre.10, 1.0.0-pre.11, 1.0.0-pre.12, 1.0.0-pre.13, 1.0.0-pre.14, 1.0.0-pre.15, 1.0.0-pre.16, 1.0.0-pre.17, 1.0.0-pre.18, 1.0.0-pre.19, 1.0.0-pre.20, 1.0.0-pre.21, 1.0.0-pre.22, 1.0.0-pre.23, 1.0.0-pre.24, 1.0.0-pre.25, 1.0.0-pre.26, 1.0.0-pre.27, 1.0.0-pre.28, 1.0.0-pre.29, 1.0.0-pre.30, 1.0.0-pre.31, 1.0.0-pre.32, 1.0.0-pre.33, 1.0.0-pre.34, 1.0.0-pre.35, 1.0.0-pre.36, 1.0.0-pre.37, 1.0.0-pre.38, 1.0.0-pre.39, 1.0.0-pre.40, 1.0.0-pre.41, 1.0.0-pre.43, 1.0.0-pre.44, 1.0.0-pre.45, 1.0.0-pre.46, 1.0.0-pre.47, 1.0.0-pre.56, 1.0.0-pre.57, 1.0.0-pre.58, 1.0.0-pre.59, 1.0.0-pre.60, 1.0.0-pre.61, 1.0.0-pre.62, 1.0.0-pre.63, 1.0.0-pre.64, 1.0.0-pre.65, 1.0.0-pre.66, 1.0.0-pre.81, 1.0.0-pre.82, 1.0.0-pre.83, 1.0.0-pre.84, 1.0.0-pre.85, 1.0.0-pre.86, 1.0.0-pre.87, 1.0.0-pre.88, 1.0.0-pre.89, 1.0.0-pre.90, 1.0.0-pre.91, 1.0.0-pre.92, 1.0.0-pre.93, 1.0.0-pre.94, 1.0.0-pre.95, 1.0.0-pre.96, 1.0.0-pre.97, 1.0.0-pre.98, 1.0.0-pre.99, 1.0.0-pre.100, 1.0.0-pre.101, 1.0.0, 1.0.1-pre.1, 1.0.1-pre.2, 1.0.1-pre.3, 1.0.1-pre.4, 1.0.1-pre.5, 1.0.1-pre.6, 1.0.1-pre.7, 1.0.1-pre.8, 1.0.1, 1.0.2, 1.0.3, 1.0.4, 1.0.5, 1.0.6, 1.0.7, 1.0.8, 1.0.9-pre.1, 1.0.9-pre.2, 1.0.9, 1.0.10-pre.1, 1.0.10-pre.2, 1.0.10-pre.3, 1.0.10-pre.4, 1.0.10-pre.5, 1.0.10-pre.6, 1.0.10-pre.7, 1.0.10-pre.8, 1.0.10-pre.9, 1.0.10-pre.10, 1.0.10-pre.11, 1.0.10-pre.12, 1.0.10-pre.13, 1.0.10-pre.14, 1.0.10-pre.15, 1.0.10-pre.16, 1.0.10-pre.17, 1.0.10-pre.18, 1.0.10-pre.19, 1.0.10-pre.20, 1.0.10-pre.21, 1.0.10-pre.22, 1.0.10-pre.23, 1.0.10-pre.24, 1.0.10, 1.0.11-pre.1, 1.0.11-pre.2, 1.0.11, 1.0.12-pre.1, 1.0.12-pre.2, 1.0.12-pre.3, 1.0.12, 1.0.13, 1.0.14, 1.0.15-pre.1, 1.0.15-pre.2, 1.0.15, 1.0.16</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>com.unity.physics@0.62</code></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.62.0-preview.1, 0.62.0-preview.2, 0.62.0-preview.3, 0.62.0-preview.4, 0.62.0-preview.5, 0.62.0-preview.6, 0.62.0-preview.7, 0.62.0-preview.8, 0.62.0-preview.9, 0.62.0-preview.10, 0.62.0-preview.11, 0.62.0-preview.12, 0.62.0-preview.13, 0.62.0-preview.14, 0.62.0-preview.15, 0.62.0-preview.16, 0.62.0-preview.17, 0.62.0-preview.18, 0.62.0-preview.19, 0.62.0-preview.20, 0.62.0-preview.21, 0.62.0-preview.22, 0.62.0-preview.23, 0.62.0-preview.24, 0.62.0-preview.25, 0.62.0-preview.26, 0.62.0-preview.27, 0.62.0-preview.28, 0.62.0-preview.29, 0.62.0-preview.30, 0.62.0-preview.31, 0.62.0-preview.32, 0.62.0-preview.33, 0.62.0-preview.34, 0.62.0-preview.35, 0.62.0-preview.36, 0.62.0-preview.37, 0.62.0-preview.38, 0.62.0-preview.39, 0.62.0-preview.40, 0.62.0-preview.41, 0.62.0-preview.42, 0.62.0-preview.43, 0.62.0-preview.44, 0.62.0-preview.45, 0.62.0-preview.46, 0.62.0-preview.47, 0.62.0-preview.48, 0.62.0-preview.49, 0.62.0-preview.50, 0.62.0-preview.51, 0.62.0-preview.52, 0.62.0-preview.53, 0.62.0-preview.54, 0.62.0-preview.55, 0.62.0-preview.56, 0.62.0-preview.57, 0.62.0-preview.58, 0.62.0-preview.59, 0.62.0-preview.60, 0.62.0-preview.61, 0.62.0-preview.62, 0.62.0-preview.63, 0.62.0-preview.64, 0.62.0-preview.65, 0.62.0-preview.66, 0.62.0-preview.67, 0.62.0-preview.68, 0.62.0-preview.69, 0.62.0-preview.70, 0.62.0-preview.71, 0.62.0-preview.72, 0.62.0-preview.73, 0.62.0-preview.74, 0.62.0-preview.75, 0.62.0-preview.76, 0.62.0-preview.77, 0.62.0-preview.78, 0.62.0-preview.79, 0.62.0-preview.80, 0.62.0-preview.81, 0.62.0-preview.82, 0.62.0-preview.83, 0.62.0-preview.84, 0.62.0-preview.85, 0.62.0-preview.86, 0.62.0-preview.87, 0.62.0-preview.88, 0.62.0-preview.89, 0.62.0-preview.90, 0.62.0-preview.91, 0.62.0-preview.92, 0.62.0-preview.93, 0.62.0-preview.94, 0.62.0-preview.95, 0.62.0-preview.96, 0.62.0-preview.97, 0.62.0-preview.98, 0.62.0-preview.99, 0.62.0-preview.100, 0.62.0-preview.101, 0.62.0-preview.102, 0.62.0-preview.103, 0.62.0-preview.104, 0.62.0-preview.105, 0.62.0-preview.106, 0.62.0-preview.107, 0.62.0-preview.108, 0.62.0-preview.109, 0.62.0-preview.110, 0.62.0-preview.111, 0.62.0-preview.112, 0.62.0-preview.113, 0.62.0-preview.114, 0.62.0-preview.115, 0.62.0-preview.116, 0.62.0-preview.117, 0.62.0-preview.118, 0.62.0-preview.119, 0.62.0-preview.120, 0.62.0-preview.121, 0.62.0-preview.122, 0.62.0-preview.123, 0.62.0-preview.124, 0.62.0-preview.125, 0.62.0-preview.126, 0.62.0-preview.127, 0.62.0-preview.128, 0.62.0-preview.129, 0.62.0-preview.130, 0.62.0-preview.131, 0.62.0-preview.132, 0.62.0-preview.133, 0.62.0-preview.134, 0.62.0-preview.135, 0.62.0-preview.136, 0.62.0-preview.137, 0.62.0-preview.138, 0.62.0-preview.139, 0.62.0-preview.140, 0.62.0-preview.141, 0.62.0-preview.142, 0.62.0-preview.143, 0.62.0-preview.144, 0.62.0-preview.145, 0.62.0-preview.146, 0.62.0-preview.147, 0.62.0-preview.148, 0.62.0-preview.149, 0.62.0-preview.150, 0.62.0-preview.151, 0.62.0-preview.152, 0.62.0-preview.153, 0.62.0-preview.154</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>com.unity.physics@0.60</code></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.60.0-preview.1, 0.60.0-preview.2, 0.60.0-preview.3, 0.60.0-preview.4, 0.60.0-preview.5, 0.60.0-preview.6, 0.60.0-preview.7, 0.60.0-preview.8, 0.60.0-preview.9, 0.60.0-preview.10, 0.60.0-preview.11, 0.60.0-preview.12, 0.60.0-preview.13, 0.60.0-preview.14, 0.60.0-preview.15, 0.60.0-preview.16, 0.60.0-preview.17, 0.60.0-preview.18, 0.60.0-preview.19, 0.60.0-preview.20, 0.60.0-preview.21, 0.60.0-preview.22, 0.60.0-preview.23, 0.60.0-preview.24, 0.60.0-preview.25, 0.60.0-preview.26, 0.60.0-preview.27, 0.60.0-preview.28, 0.60.0-preview.29, 0.60.0-preview.30, 0.60.0-preview.31, 0.60.0-preview.32, 0.60.0-preview.33, 0.60.0-preview.34, 0.60.0-preview.35, 0.60.0-preview.36, 0.60.0-preview.37, 0.60.0-preview.38, 0.60.0-preview.39, 0.60.0-preview.40, 0.60.0-preview.41, 0.60.0-preview.42, 0.60.0-preview.43, 0.60.0-preview.44, 0.60.0-preview.45, 0.60.0-preview.46, 0.60.0-preview.47, 0.60.0-preview.48, 0.60.0-preview.49, 0.60.0-preview.50, 0.60.0-preview.51, 0.60.0-preview.52, 0.60.0-preview.53, 0.60.0-preview.54, 0.60.0-preview.55, 0.60.0-preview.56, 0.60.0-preview.57, 0.60.0-preview.58, 0.60.0-preview.59, 0.60.0-preview.60, 0.60.0-preview.61, 0.60.0-preview.62, 0.60.0-preview.63, 0.60.0-preview.64, 0.60.0-preview.65, 0.60.0-preview.66, 0.60.0-preview.67, 0.60.0-preview.68, 0.60.0-preview.69, 0.60.0-preview.70, 0.60.0-preview.71, 0.60.0-preview.72, 0.60.0-preview.73, 0.60.0-preview.74, 0.60.0-preview.75, 0.60.0-preview.76, 0.60.0-preview.77, 0.60.0-preview.78, 0.60.0-preview.79, 0.60.0-preview.80, 0.60.0-preview.81, 0.60.0-preview.82, 0.60.0-preview.83, 0.60.0-preview.84, 0.60.0-preview.85, 0.60.0-preview.86, 0.60.0-preview.87, 0.60.0-preview.88</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@0.51/manual/index.html" target="_blank">com.unity.physics@0.51</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.51.0-preview.1, 0.51.0-preview.2, 0.51.0-preview.3, 0.51.0-preview.4, 0.51.0-preview.5, 0.51.0-preview.6, 0.51.0-preview.7, 0.51.0-preview.8, 0.51.0-preview.9, 0.51.0-preview.10, 0.51.0-preview.11, 0.51.0-preview.12, 0.51.0-preview.13, 0.51.0-preview.14, 0.51.0-preview.15, 0.51.0-preview.16, 0.51.0-preview.17, 0.51.0-preview.18, 0.51.0-preview.19, 0.51.0-preview.20, 0.51.0-preview.21, 0.51.0-preview.22, 0.51.0-preview.23, 0.51.0-preview.24, 0.51.0-preview.25, 0.51.0-preview.26, 0.51.0-preview.27, 0.51.0-preview.28, 0.51.0-preview.29, 0.51.0-preview.30, 0.51.0-preview.31, 0.51.0-preview.32, 0.51.0-preview.33, 0.51.0-preview.34, 0.51.0-preview.35, 0.51.0-preview.36, 0.51.0-preview.37, 0.51.0-preview.38, 0.51.0-preview.39, 0.51.0-preview.40, 0.51.0-preview.41, 0.51.0-preview.42, 0.51.0-preview.43, 0.51.0-preview.44, 0.51.0-preview.45, 0.51.0-preview.46, 0.51.1-preview.1, 0.51.1-preview.2, 0.51.1-preview.3, 0.51.1-preview.4, 0.51.1-preview.5, 0.51.1-preview.6, 0.51.1-preview.7, 0.51.1-preview.8, 0.51.1-preview.9, 0.51.1-preview.10, 0.51.1-preview.11, 0.51.1-preview.12, 0.51.1-preview.13, 0.51.1-preview.14, 0.51.1-preview.15, 0.51.1-preview.16, 0.51.1-preview.17, 0.51.1-preview.18, 0.51.1-preview.19, 0.51.1-preview.20, 0.51.1-preview.21, 0.51.1-preview.22, 0.51.1-preview.23, 0.51.1-preview.24, 0.51.1-preview.25, 0.51.1-preview.26, 0.51.1-preview.27, 0.51.1-preview.28, 0.51.1-preview.29, 0.51.1-preview.30, 0.51.1-preview.31, 0.51.1-preview.32, 0.51.1-preview.33, 0.51.1-preview.34, 0.51.1-preview.35, 0.51.1-preview.36, 0.51.1-preview.37, 0.51.1-preview.38, 0.51.1-preview.39, 0.51.1-preview.40, 0.51.1-preview.41, 0.51.1-preview.42, 0.51.1-preview.43, 0.51.1-preview.44, 0.51.1-preview.45, 0.51.1-preview.46, 0.51.1-preview.47, 0.51.1-preview.48, 0.51.1-preview.49, 0.51.1-preview.50, 0.51.1-preview.51, 0.51.1-preview.52, 0.51.1-preview.53, 0.51.1-preview.54, 0.51.1-preview.55, 0.51.1-preview.56</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@0.50/manual/index.html" target="_blank">com.unity.physics@0.50</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.50.0-preview.1, 0.50.0-preview.2, 0.50.0-preview.3, 0.50.0-preview.4, 0.50.0-preview.5, 0.50.0-preview.6, 0.50.0-preview.7, 0.50.0-preview.8, 0.50.0-preview.9, 0.50.0-preview.10, 0.50.0-preview.11, 0.50.0-preview.12, 0.50.0-preview.13, 0.50.0-preview.14, 0.50.0-preview.15, 0.50.0-preview.16, 0.50.0-preview.17, 0.50.0-preview.18, 0.50.0-preview.19, 0.50.0-preview.20, 0.50.0-preview.21, 0.50.0-preview.22, 0.50.0-preview.23, 0.50.0-preview.24, 0.50.0-preview.25, 0.50.0-preview.26, 0.50.0-preview.27, 0.50.0-preview.28, 0.50.0-preview.29, 0.50.0-preview.30, 0.50.0-preview.31, 0.50.0-preview.32, 0.50.0-preview.33, 0.50.0-preview.34, 0.50.0-preview.35, 0.50.0-preview.36, 0.50.0-preview.37, 0.50.0-preview.38, 0.50.0-preview.39, 0.50.0-preview.40, 0.50.0-preview.41, 0.50.0-preview.42, 0.50.0-preview.43, 0.50.0-preview.44, 0.50.0-preview.45</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>com.unity.physics@0.11</code></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.11.0-preview.1, 0.11.0-preview.2, 0.11.0-preview.3, 0.11.0-preview.4, 0.11.0-preview.5, 0.11.0-preview.6, 0.11.0-preview.7, 0.11.0-preview.8, 0.11.0-preview.9, 0.11.0-preview.10, 0.11.0-preview.11, 0.11.0-preview.12, 0.11.0-preview.13, 0.11.0-preview.14, 0.11.0-preview.15, 0.11.0-preview.16, 0.11.0-preview.17, 0.11.0-preview.18, 0.11.0-preview.19, 0.11.0-preview.20, 0.11.0-preview.21, 0.11.0-preview.22, 0.11.0-preview.23, 0.11.0-preview.24, 0.11.0-preview.25, 0.11.0-preview.26, 0.11.0-preview.27, 0.11.0-preview.28, 0.11.0-preview.29, 0.11.0-preview.30, 0.11.0-preview.31, 0.11.0-preview.32, 0.11.0-preview.33</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>com.unity.physics@0.10</code></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.10.0-preview.1, 0.10.0-preview.2, 0.10.0-preview.3, 0.10.0-preview.4, 0.10.0-preview.5, 0.10.0-preview.6, 0.10.0-preview.7, 0.10.0-preview.8</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>com.unity.physics@0.9</code></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.9.0-preview.1, 0.9.0-preview.2, 0.9.0-preview.3, 0.9.0-preview.4</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>com.unity.physics@0.8</code></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.8.0-preview.1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>com.unity.physics@0.7</code></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.7.0-preview, 0.7.0-preview.2, 0.7.0-preview.3</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@0.6/manual/index.html" target="_blank">com.unity.physics@0.6</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.6.0-preview, 0.6.0-preview.1, 0.6.0-preview.2, 0.6.0-preview.3</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@0.5/manual/index.html" target="_blank">com.unity.physics@0.5</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.5.0-preview, 0.5.0-preview.1, 0.5.1-preview, 0.5.1-preview.1, 0.5.1-preview.2</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@0.4/manual/index.html" target="_blank">com.unity.physics@0.4</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.4.0-preview, 0.4.0-preview.1, 0.4.0-preview.2, 0.4.0-preview.3, 0.4.0-preview.4, 0.4.0-preview.5, 0.4.1-preview</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@0.3/manual/index.html" target="_blank">com.unity.physics@0.3</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.3.0-preview, 0.3.0-preview.1, 0.3.1-preview, 0.3.2-preview</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><code>com.unity.physics@0.2</code></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.2.0-preview, 0.2.1-preview, 0.2.2-preview, 0.2.3-preview, 0.2.4-preview, 0.2.5-preview, 0.2.5-preview.1</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@0.1/manual/index.html" target="_blank">com.unity.physics@0.1</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.1.0-preview</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><a href="https://docs.unity3d.com/Packages/com.unity.physics@0.0/manual/index.html" target="_blank">com.unity.physics@0.0</a></td>
+	<td style="text-align:left;">compatible</td>
+	<td style="text-align:left;">0.0.1-preview.1, 0.0.2-preview.1</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Keywords</h2>
+
+<p>
+<a href="pack-keys.html#unity">unity</a> , <a href="pack-keys.html#physics">physics</a> </p>
+<div id="_content"></div>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="com.unity.xr.meta-openxr.html"></a></span><div class="tip">Unity OpenXR Meta </div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="com.unity.profiling.core.html"></a></span><div class="tip">Unity Profiling Core API </div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2024 Unity Technologies. Publication Date: 2024-10-03.</div>
+<div class="menu">
+<a href="https://learn.unity.com/">Tutorials</a><a href="https://answers.unity3d.com">Community Answers</a><a href="https://support.unity3d.com/hc/en-us">Knowledge Base</a><a href="https://forum.unity3d.com">Forums</a><a href="https://unity3d.com/asset-store">Asset Store</a><a href="https://docs.unity3d.com/Manual/TermsOfUse.html">Terms of use</a><a href="https://unity.com/legal">Legal</a><a href="https://unity.com/legal/privacy-policy">Privacy Policy</a><a href="https://unity.com/legal/cookie-policy">Cookies</a><a href="https://unity.com/legal/do-not-sell-my-personal-information">Do Not Sell or Share My Personal Information</a><div id="ot-sdk-btn-container"><a id="ot-sdk-btn" class="ot-sdk-show-settings" href="javascript:void(0);">Your Privacy Choices (Cookie Settings)</a></div>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
