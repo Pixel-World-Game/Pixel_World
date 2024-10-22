@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 198354357}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -446,6 +446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 5
   blockPrefab: {fileID: 7621728370592194014, guid: 559021132a40e9247a095cd36963031b, type: 3}
+  terrainParent: {fileID: 1335885986}
 --- !u!114 &1492545511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -461,7 +462,7 @@ MonoBehaviour:
   speed: 5
   lookSpeed: 2
   gravity: -9.81
-  jumpHeight: 2
+  jumpHeight: 1.2
   groundCheck: {fileID: 198354358}
   groundDistance: 0.4
   groundMask:

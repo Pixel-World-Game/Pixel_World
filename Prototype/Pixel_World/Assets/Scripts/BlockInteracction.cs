@@ -3,6 +3,8 @@ using UnityEngine;
 public class BlockInteraction : MonoBehaviour{
     public float range = 5.0f;
     public GameObject blockPrefab;
+    public Transform terrainParent; // Parent GameObject for organizing generated blocks
+
 
     void Update(){
         if (Input.GetMouseButtonDown(0)) // Left-click to break a block
@@ -28,7 +30,9 @@ public class BlockInteraction : MonoBehaviour{
                 placePosition = new Vector3(Mathf.Round(placePosition.x), Mathf.Round(placePosition.y),
                     Mathf.Round(placePosition.z));
 
-                Instantiate(blockPrefab, placePosition, Quaternion.identity);
+                GameObject block = Instantiate(blockPrefab, placePosition, Quaternion.identity);
+                // Set the block's parent to be the terrainParent
+                block.transform.parent = terrainParent;
             }
         }
     }
