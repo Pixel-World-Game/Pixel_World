@@ -18,6 +18,7 @@ public class BlockInteraction : MonoBehaviour{
             if (Physics.Raycast(ray, out hit, range)){
                 if (hit.collider.gameObject.CompareTag("Block")){
                     Destroy(hit.collider.gameObject);
+                    inventory.GetBlock();
                 }
             }
         }
@@ -31,11 +32,14 @@ public class BlockInteraction : MonoBehaviour{
                 Vector3 placePosition = hit.point + hit.normal * 0.5f;
                 placePosition = new Vector3(Mathf.Round(placePosition.x), Mathf.Round(placePosition.y),
                     Mathf.Round(placePosition.z));
-
-                GameObject blockToPlace = inventory.GetSelectedBlockPrefab();
                 
+                GameObject blockToPlace = Instantiate(inventory.GetSelectedBlockPrefab(), placePosition, Quaternion.identity);
                 // Set the block's parent to be the terrainParent
-                Instantiate(blockToPlace, placePosition, Quaternion.identity).transform.parent = terrainParent;
+                Debug.Log(blockToPlace);
+                blockToPlace.transform.parent = terrainParent;
+                
+                // Use the block from inventory
+                inventory.UseBlock();
             }
         }
     }

@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryUI : MonoBehaviour{
     public Image[] slotImages; // UI images representing inventory slots
+    public TextMeshProUGUI[] quantityTexts; // Text elements to show quantities
     public Color highlightColor = Color.grey;
     private Inventory inventory;
 
@@ -23,6 +25,12 @@ public class InventoryUI : MonoBehaviour{
             else{
                 slotImages[i].color = Color.white; // Default color for unselected slots
             }
+        }
+
+        // Update the quantities for each block type
+        for (int i = 0; i < quantityTexts.Length; i++)
+        {
+            quantityTexts[i].text = inventory.GetBlockQuantity(i).ToString();
         }
     }
 }
