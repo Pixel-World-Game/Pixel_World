@@ -4,9 +4,10 @@ public class PlayerController : MonoBehaviour{
     public float speed = 5.0f; // Movement speed
     public float lookSpeed = 2.0f; // Mouse sensitivity
     public float gravity = -9.81f; // Gravity value
-    public float jumpHeight = 5.0f; // Jump height
+    public float jumpHeight = 1.2f; // Jump height
+    
     public Transform groundCheck; // Position to check if the player is grounded
-    public float groundDistance = 0.4f; // Radius of the ground check sphere
+    public float groundDistance = 0.8f; // Radius of the ground check sphere
     public LayerMask groundMask; // Layer mask to specify what is considered ground
 
     private CharacterController controller;
@@ -24,14 +25,7 @@ public class PlayerController : MonoBehaviour{
     }
 
     void Update(){
-        // Check if the player is grounded
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        if (isGrounded && velocity.y < 0){
-            velocity.y = -2f; // Keeps the player grounded (slight downward force to stay on ground)
-        }
-
-
+        GroundCheck();
         MovePlayer();
         LookAround();
         HandleJumpingAndGravity();
@@ -62,6 +56,20 @@ public class PlayerController : MonoBehaviour{
         cameraTransform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 
+    void GroundCheck(){
+        // Check if the player is touching the ground using a sphere cast
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+
+        // If grounded and the player is falling (velocity.y < 0), reset the downward velocity
+        if (isGrounded && velocity.y < 0){
+            velocity.y = -2f; // Set to a small value to keep the player grounded
+        }
+        
+        Debug.Log(groundCheck.position+" "+groundDistance+" "+groundMask);
+        // Debugging: Print whether the player is grounded or not
+        Debug.Log("Grounded: " + isGrounded);
+    }
+
     void HandleJumpingAndGravity(){
         // Handle Jumping
         if (isGrounded && Input.GetButtonDown("Jump")){
@@ -70,7 +78,7 @@ public class PlayerController : MonoBehaviour{
 
 
         controller.Move(velocity * Time.deltaTime);
-        
+
         // Apply Gravity
         velocity.y += gravity * Time.deltaTime;
     }
