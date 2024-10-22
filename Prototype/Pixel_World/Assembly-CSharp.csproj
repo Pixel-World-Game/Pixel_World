@@ -46,9 +46,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Inventory.cs" />
-    <Compile Include="Assets\Scripts\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\TerrainGenerator.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\InventoryUI.cs" />
     <Compile Include="Assets\Scripts\BlockInteracction.cs" />
     <Compile Include="Assets\Scripts\VoxelGenerator.cs" />
     <Reference Include="UnityEngine">
@@ -770,8 +770,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Scripts\Inventory.cs.meta" />
-    <Content Include="Assets\Scripts\InventoryUI.cs.meta" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
