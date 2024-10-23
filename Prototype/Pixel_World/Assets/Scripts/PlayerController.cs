@@ -64,10 +64,6 @@ public class PlayerController : MonoBehaviour{
         if (isGrounded && velocity.y < 0){
             velocity.y = -2f; // Set to a small value to keep the player grounded
         }
-        
-        Debug.Log(groundCheck.position+" "+groundDistance+" "+groundMask);
-        // Debugging: Print whether the player is grounded or not
-        Debug.Log("Grounded: " + isGrounded);
     }
 
     void HandleJumpingAndGravity(){
