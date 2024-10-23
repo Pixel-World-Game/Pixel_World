@@ -9,26 +9,39 @@ public class AnimalAI : MonoBehaviour{
     private float timer;
 
     void Start(){
+        // Get the NavMeshAgent component attached to the animal
         agent = GetComponent<NavMeshAgent>();
         timer = wanderTimer;
     }
 
     void Update(){
+        // Increment timer
         timer += Time.deltaTime;
 
-        if (timer >= wanderTimer){
+        // If the timer exceeds the wanderTimer, set a new destination
+        if (timer >= wanderTimer) {
             Vector3 newPos = RandomNavSphere(transform.position, wanderRadius, -1);
-            agent.SetDestination(newPos);
+            if (agent != null && agent.isOnNavMesh) {
+                agent.SetDestination(newPos);
+            }
             timer = 0;
         }
+        
+        Debug.Log(agent.isOnNavMesh);
     }
 
     public static Vector3 RandomNavSphere(Vector3 origin, float dist, int layermask){
+        
         Vector3 randDirection = Random.insideUnitSphere * dist;
         randDirection += origin;
+
         NavMeshHit navHit;
-        NavMesh.SamplePosition(randDirection, out navHit, dist, layermask);
-        return navHit.position;
+        if (NavMesh.SamplePosition(randDirection, out navHit, dist, layermask))
+        {
+            return navHit.position;
+        }
+
+        return origin; // Return origin if no valid position found
     }
     
     public void FleeFrom(Vector3 attackerPosition)

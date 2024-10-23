@@ -2576,8 +2576,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e313c4c6ed7452daf840654bb19071b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDamage: 5
-  attackRange: 2
+  attackDamage: 10
+  attackRange: 5
 --- !u!1 &1512108578
 GameObject:
   m_ObjectHideFlags: 0
@@ -3326,15 +3326,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1663490931627022639, guid: db5b1cecc7f73c84dbc8f95b9722357c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 270
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 1663490931627022639, guid: db5b1cecc7f73c84dbc8f95b9722357c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1663490931627022639, guid: db5b1cecc7f73c84dbc8f95b9722357c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 1663490931627022639, guid: db5b1cecc7f73c84dbc8f95b9722357c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3396,7 +3396,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c755bec4e1a24f61b10d944cf151cce4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 20
+  maxHealth: 15
 --- !u!114 &7820659413807207851
 MonoBehaviour:
   m_ObjectHideFlags: 0
