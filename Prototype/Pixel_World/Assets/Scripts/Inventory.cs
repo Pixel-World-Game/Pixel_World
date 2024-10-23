@@ -1,9 +1,13 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Inventory : MonoBehaviour{
     public GameObject[] blockPrefabs; // Array holding different block types
     public int[] blockQuantities; // Quantities for each block type
     public int selectedBlockIndex = 0; // Currently selected block
+
+    // A dictionary to map block types to prefab references
+    private Dictionary<string, GameObject> blockPrefabDictionary;
 
     void Start(){
         // Initialize block quantities (for example, start with 10 blocks of each type)
@@ -86,5 +90,16 @@ public class Inventory : MonoBehaviour{
 
     public int GetBlockQuantity(int index){
         return blockQuantities[index];
+    }
+
+    // Method to get a block prefab based on its type
+    public GameObject GetBlockPrefabByType(string blockType){
+        if (blockPrefabDictionary.ContainsKey(blockType)){
+            return blockPrefabDictionary[blockType];
+        }
+        else{
+            Debug.LogWarning("Block type not found: " + blockType);
+            return null;
+        }
     }
 }
