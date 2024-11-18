@@ -1,5 +1,7 @@
-﻿namespace AbstractClass.Subject{
-    public class Subject{
+﻿using UnityEngine;
+
+namespace AbstractClass.Subject{
+    public abstract class Subject : MonoBehaviour{
         
     }
 }

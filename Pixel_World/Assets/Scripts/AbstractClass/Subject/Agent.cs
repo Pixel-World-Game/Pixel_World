@@ -1,5 +1,5 @@
 ﻿namespace AbstractClass.Subject{
-    public class Agent{
+    public abstract class Agent : Subject{
         
     }
 }

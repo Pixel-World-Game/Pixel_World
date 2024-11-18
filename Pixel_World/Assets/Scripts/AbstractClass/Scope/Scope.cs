@@ -1,5 +1,7 @@
-﻿namespace AbstractClass.Scope{
-    public class Scope{
+﻿using UnityEngine;
+
+namespace AbstractClass.Scope{
+    public abstract class Scope : MonoBehaviour{
         
     }
 }

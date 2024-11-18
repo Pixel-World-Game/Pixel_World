@@ -1,5 +1,5 @@
 ﻿namespace AbstractClass.Subject{
-    public class NPC{
+    public abstract class NPC : Subject{
         
     }
 }

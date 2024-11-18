@@ -1,5 +1,5 @@
 ﻿namespace AbstractClass.Scope{
-    public class Principle{
+    public abstract class Principle : Scope{
         
     }
 }

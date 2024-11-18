@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace AbstractClass.Space{
+﻿namespace AbstractClass.Space{
 // Environment class inherits from Space 
     public abstract class InterpretSpace : Space{
         // Implementation of the abstract Initialize method
