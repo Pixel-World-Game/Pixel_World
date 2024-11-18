@@ -9,8 +9,8 @@ namespace AbstractClass.Space{
         public Vector3 initial_position = new Vector3(0, 0, 0);
 
         public scope[] scope_list;
-        public element[] object_list;
-        public subject[] subject_list;
+        public Element.Element[] object_list;
+        public Subject.Subject[] subject_list;
 
         public abstract void Initialize();
 

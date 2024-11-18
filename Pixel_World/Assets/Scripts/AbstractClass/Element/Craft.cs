@@ -1,5 +1,5 @@
 ﻿namespace AbstractClass.Element{
-    public abstract class material{
+    public abstract class Craft{
         
     }
 }
