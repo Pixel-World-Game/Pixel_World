@@ -52,7 +52,7 @@
     <Compile Include="Assets\Scripts\AbstractClass\Subject\Subject.cs" />
     <Compile Include="Assets\Scripts\AbstractClass\Space\Environment.cs" />
     <Compile Include="Assets\Scripts\AbstractClass\Space\InterpertSpace.cs" />
-    <Compile Include="Assets\Scripts\AbstractClass\Element\Material.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Element\RawMaterial.cs" />
     <Compile Include="Assets\Scripts\AbstractClass\Space\Space.cs" />
     <Compile Include="Assets\Scripts\AbstractClass\Scope\Scope.cs" />
     <Compile Include="Assets\Scripts\AbstractClass\Element\Element.cs" />
