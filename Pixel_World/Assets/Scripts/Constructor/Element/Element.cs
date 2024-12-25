@@ -2,7 +2,7 @@
 using UnityEditor.UI;
 using UnityEngine;
 
-namespace AbstractClass.Element{
+namespace Constructor.Element{
     public abstract class Element : MonoBehaviour{
         [System.Serializable]
         public class Attributes{

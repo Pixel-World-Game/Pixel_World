@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AbstractClass.Scope{
+namespace Constructor.Scope{
     public abstract class Scope : MonoBehaviour{
         
     }

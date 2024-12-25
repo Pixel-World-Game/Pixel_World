@@ -1,4 +1,4 @@
-﻿namespace AbstractClass.Scope{
+﻿namespace Constructor.Scope{
     public abstract class Principle : Scope{
         
     }

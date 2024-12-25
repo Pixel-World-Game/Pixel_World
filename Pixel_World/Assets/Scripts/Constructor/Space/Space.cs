@@ -1,7 +1,7 @@
 using UnityEngine;
-using AbstractClass;
+using Constructor;
 
-namespace AbstractClass.Space{
+namespace Constructor.Space{
     public abstract class Space : MonoBehaviour{
         public string description;
 

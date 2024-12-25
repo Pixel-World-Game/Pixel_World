@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace AbstractClass.Subject {
+namespace Constructor.Subject {
     /// <summary>
     /// Abstract base class that represents any interactive entity in the game, 
     /// such as player (Agent), NPC, or any other creature.
@@ -38,9 +38,7 @@ namespace AbstractClass.Subject {
         /// </summary>
         /// <param name="direction">Movement direction.</param>
         public virtual void Move(Vector3 direction) {
-            // Simple example using Transform.Translate.
-            // In a real project, consider using CharacterController, NavMesh, or physics-based movement.
-            transform.Translate(direction.normalized * moveSpeed * Time.deltaTime, Space.World);
+            
         }
 
         /// <summary>

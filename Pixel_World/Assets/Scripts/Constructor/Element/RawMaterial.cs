@@ -1,4 +1,4 @@
-﻿namespace AbstractClass.Element{
+﻿namespace Constructor.Element{
     public abstract class RawMaterial : Element{
         
     }

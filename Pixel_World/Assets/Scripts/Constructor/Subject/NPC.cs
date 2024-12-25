@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using AbstractClass.Subject;
+using Constructor.Subject;
 
 namespace NPC {
     /// <summary>
