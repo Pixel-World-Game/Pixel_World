@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{03f899a7-2507-e220-f3a9-538d85121d35}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{c57fc2a4-5718-9ab0-f43a-a0758e0b5f5d}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Toaru.UI", "Unity.Toaru.UI.csproj", "{cf4cc71e-5ac2-bc86-c799-c199b1163281}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Toaru.UI.Editor", "Unity.Toaru.UI.Editor.csproj", "{bfabdd46-8f82-f1c0-9055-1ab30a8d6b5c}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unity.Toaru.UI.Tests", "Unity.Toaru.UI.Tests.csproj", "{cde82af3-ef58-f45c-1f71-ee694c6190a3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03f899a7-2507-e220-f3a9-538d85121d35}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03f899a7-2507-e220-f3a9-538d85121d35}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{c57fc2a4-5718-9ab0-f43a-a0758e0b5f5d}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{c57fc2a4-5718-9ab0-f43a-a0758e0b5f5d}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{cf4cc71e-5ac2-bc86-c799-c199b1163281}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{cf4cc71e-5ac2-bc86-c799-c199b1163281}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{bfabdd46-8f82-f1c0-9055-1ab30a8d6b5c}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{bfabdd46-8f82-f1c0-9055-1ab30a8d6b5c}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{cde82af3-ef58-f45c-1f71-ee694c6190a3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{cde82af3-ef58-f45c-1f71-ee694c6190a3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
