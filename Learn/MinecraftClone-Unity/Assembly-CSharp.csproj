@@ -202,7 +202,6 @@
      <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\block_table.json" />
      <None Include="Assets\Minecraft Default PBR Resources\Shaders\Includes\Minecraft\Core.hlsl" />
      <None Include="Assets\Minecraft Default PBR Resources\Shaders\Includes\Minecraft\ScreenSpaceReflection.hlsl" />
-     <None Include="Assets\XLua\CHANGELOG.txt" />
      <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\block_mesh_table.json" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
