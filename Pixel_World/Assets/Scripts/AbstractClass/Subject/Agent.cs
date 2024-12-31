@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Constructor.Subject;
+using AbstractClass.Subject;
 
 namespace Agent {
     /// <summary>

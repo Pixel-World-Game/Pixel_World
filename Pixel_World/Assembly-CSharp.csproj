@@ -45,18 +45,17 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Constructor\Element\Craft.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Space\Environment.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Space\Space.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Subject\NPC.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Subject\Subject.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Element\Element.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Scope\Scope.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Scope\Principle.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Element\RawMaterial.cs" />
-    <Compile Include="Assets\Scripts\Scene_START.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Space\InterpertSpace.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Subject\Agent.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Element\Craft.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Subject\Agent.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Scope\Principle.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Subject\NPC.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Subject\Subject.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Space\Environment.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Space\InterpertSpace.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Element\RawMaterial.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Space\Space.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Scope\Scope.cs" />
+    <Compile Include="Assets\Scripts\AbstractClass\Element\Element.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
