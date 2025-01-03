@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Render{
+namespace Space{
 	public static class VoxelData {
 
 		public static readonly int ChunkWidth = 16;

@@ -1,7 +1,6 @@
-﻿using Render;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Terrain{
+namespace Space.Terrain{
     public static class Noise  {
 
         public static float Get2DPerlin (Vector2 position, float offset, float scale) {

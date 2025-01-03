@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
-using Terrain;
+using Space.Terrain;
 using UnityEngine;
 
-namespace Render{
+namespace Space{
     public class World : MonoBehaviour {
 
         public int seed;
@@ -12,7 +12,7 @@ namespace Render{
         public Vector3 spawnPosition;
 
         public Material material;
-        public List<BlockType> blocktypes = new List<BlockType>();
+        public List<BlockType> blocktypes = new();
 
         Chunk[,] chunks = new Chunk[VoxelData.WorldSizeInChunks, VoxelData.WorldSizeInChunks];
 
@@ -20,7 +20,7 @@ namespace Render{
         ChunkCoord playerChunkCoord;
         ChunkCoord playerLastChunkCoord;
 
-        private void Start() {
+        private void Start(){
             AddBlockTypes();
             biome = ScriptableObject.CreateInstance<BiomeAttributes>();
             biome.biomeName = "Default";
@@ -28,43 +28,44 @@ namespace Render{
             biome.terrainHeight = 42;
             biome.terrainScale = 0.25f;
             biome.lodes = new Lode[2]{
-                new Lode("Dirt", 5,1,255,0.1f,0.5f,0),
-                new Lode("Sand", 4,30,60,0.2f,0.6f,500)
+                new("Dirt", 5, 1, 255, 0.1f, 0.5f, 0),
+                new("Sand", 4, 30, 60, 0.2f, 0.6f, 500)
             };
             seed = 114514;
-        
+
             Random.InitState(seed);
 
-            spawnPosition = new Vector3((VoxelData.WorldSizeInChunks * VoxelData.ChunkWidth) / 2f, VoxelData.ChunkHeight + 2f, (VoxelData.WorldSizeInChunks * VoxelData.ChunkWidth) / 2f);
             GenerateWorld();
+            
             playerLastChunkCoord = GetChunkCoordFromVector3(player.position);
+        
 
         }
 
         private void Update() {
-
-            playerChunkCoord = GetChunkCoordFromVector3(player.position);
             
+            
+            
+            playerChunkCoord = GetChunkCoordFromVector3(player.position);
+
             // Only update the chunks if the player has moved from the chunk they were previously on.
-            if (!playerChunkCoord.Equals(playerLastChunkCoord))
-                CheckViewDistance();
+            // if (!playerChunkCoord.Equals(playerLastChunkCoord))
+            //     CheckViewDistance();
         }
 
-        void AddBlockTypes(){
+        private void AddBlockTypes(){
             AddBlockType(new BlockType("Air", false, 0, 0, 0, 0, 0, 0));
             AddBlockType(new BlockType("Bedrock", true, 9, 9, 9, 9, 9, 9));
             AddBlockType(new BlockType("Stone", true, 0, 0, 0, 0, 0, 0));
             AddBlockType(new BlockType("Grass", true, 2, 2, 7, 1, 2, 2));
-            AddBlockType(new BlockType("Sand", true, 10,10,10,10,10,10));
-            AddBlockType(new BlockType("Dirt", true, 1,1,1,1,1,1));
-
+            AddBlockType(new BlockType("Sand", true, 10, 10, 10, 10, 10, 10));
+            AddBlockType(new BlockType("Dirt", true, 1, 1, 1, 1, 1, 1));
         }
-    
+
         public void AddBlockType(BlockType blockType){
             blocktypes.Add(blockType);
             Debug.Log($"Block Type '{blockType.blockName}' registered.");
         }
-    
 
         void GenerateWorld () {
 
@@ -75,8 +76,6 @@ namespace Render{
 
                 }
             }
-
-            player.position = spawnPosition;
 
         }
 
@@ -127,6 +126,41 @@ namespace Render{
                 chunks[c.x, c.z].isActive = false;
 
         }
+
+        public bool CheckForVoxel(float _x, float _y, float _z)
+        {
+            int xCheck = Mathf.FloorToInt(_x);
+            int yCheck = Mathf.FloorToInt(_y);
+            int zCheck = Mathf.FloorToInt(_z);
+
+            // Step 1: Check if (xCheck, yCheck, zCheck) is within world bounds.
+            // For example, if your entire world is VoxelData.WorldSizeInVoxels wide/high:
+            if (xCheck < 0 || xCheck >= VoxelData.WorldSizeInVoxels ||
+                yCheck < 0 || yCheck >= VoxelData.ChunkHeight ||
+                zCheck < 0 || zCheck >= VoxelData.WorldSizeInVoxels)
+            {
+                // We can say "no voxel here" or treat out-of-bounds differently.
+                return false;
+            }
+
+            // Step 2: Convert world coords -> chunk-local coords.
+            int xChunk = xCheck / VoxelData.ChunkWidth;
+            int zChunk = zCheck / VoxelData.ChunkWidth;
+
+            // Subtract chunk offsets to get voxel indices within that chunk.
+            xCheck -= xChunk * VoxelData.ChunkWidth;
+            zCheck -= zChunk * VoxelData.ChunkWidth;
+
+            // Step 3: Check if the chunk actually exists and is not null.
+            if (chunks[xChunk, zChunk] == null)
+                return false;  // or handle chunk creation, if desired.
+
+            // Step 4: Finally, index the chunk’s voxelMap.
+            // Make sure 'yCheck' is between 0 and chunk height.
+            return blocktypes[chunks[xChunk, zChunk].voxelMap[xCheck, yCheck, zCheck]].isSolid;
+        }
+
+
 
         public byte GetVoxel (Vector3 pos) {
 
@@ -247,6 +281,8 @@ namespace Render{
                 default:
                     Debug.Log("Error in GetTextureID; invalid face index");
                     return 0;
+
+
             }
 
         }
