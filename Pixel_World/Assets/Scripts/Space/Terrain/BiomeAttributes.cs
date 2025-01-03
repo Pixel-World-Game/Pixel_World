@@ -1,14 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace Space.Terrain{
     [CreateAssetMenu(fileName = "BiomeAttributes", menuName = "MinecraftTutorial/Biome Attribute")]
     public class BiomeAttributes : ScriptableObject {
 
-        public string biomeName;
-        public int solidGroundHeight;
-        public int terrainHeight;
-        public float terrainScale;
-        public Lode[] lodes;
+    public string biomeName;
+
+    public int solidGroundHeight;
+    public int terrainHeight;
+    public float terrainScale;
+
+    public Lode[] lodes;
 
     }
 
