@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Space;
+using UnityEngine.UI;
+using Space;  // Make sure you have a 'World' script in the 'Space' namespace
 
 namespace Agent
 {
@@ -11,7 +12,7 @@ namespace Agent
         public bool isSprinting;
 
         private Transform cam;
-        private World world;
+        public World world;
 
         public float walkSpeed = 3f;
         public float sprintSpeed = 6f;
@@ -29,16 +30,75 @@ namespace Agent
         private float mouseHorizontal;
         private float mouseVertical;
         private Vector3 velocity;
-        private float verticalMomentum = 0;
+        private float verticalMomentum = 0f;
         private bool jumpRequest;
         private float cameraPitch = 0f;
         private PlayerInputHandler inputHandler;
 
+        // Three references we'll create dynamically at runtime
+        public Transform targetBlock;     // The block to be removed
+        public Transform placeBlock;      // The block to be placed
+        public Text selectedBlockText;    // Text UI to display selected block info
+
+        public byte selectedBlockIndex = 1;
+
         private void Start()
         {
-            cam = GameObject.Find("Main Camera")?.transform;
-            world = GameObject.Find("World")?.GetComponent<Space.World>();
+            // 1) Create targetBlock at runtime if not assigned
+            if (targetBlock == null)
+            {
+                GameObject targetObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                targetObj.name = "TargetBlock";
+                targetObj.SetActive(false); // Hide initially
+                targetBlock = targetObj.transform;
+            }
 
+            // 2) Create placeBlock at runtime if not assigned
+            if (placeBlock == null)
+            {
+                GameObject placeObj = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                placeObj.name = "PlaceBlock";
+                placeObj.SetActive(false); // Hide initially
+                placeBlock = placeObj.transform;
+            }
+
+            // 3) Create a Canvas + Text for selectedBlockText if not assigned
+            if (selectedBlockText == null)
+            {
+                // Create a Canvas
+                GameObject canvasObj = new GameObject("RuntimeCanvas");
+                Canvas canvas = canvasObj.AddComponent<Canvas>();
+                canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+                canvasObj.AddComponent<CanvasScaler>();
+                canvasObj.AddComponent<GraphicRaycaster>();
+
+                // Create the Text child
+                GameObject textObj = new GameObject("SelectedBlockText");
+                textObj.transform.SetParent(canvasObj.transform, false);
+
+                // Add a Text component
+                Text uiText = textObj.AddComponent<Text>();
+
+                // Load font "MinecraftCHMC.ttf" from "Assets/Resources/Fonts/MinecraftCHMC.ttf"
+                uiText.font = Resources.Load<Font>("Fonts/MinecraftCHMC");
+                uiText.fontSize = 20;
+                uiText.color = Color.white;
+                uiText.text = "Selected Block: ???";
+
+                RectTransform rectTransform = uiText.GetComponent<RectTransform>();
+                rectTransform.anchorMin = new Vector2(0, 1); // top-left
+                rectTransform.anchorMax = new Vector2(0, 1); // top-left
+                rectTransform.anchoredPosition = new Vector2(150, -50);
+
+                selectedBlockText = uiText;
+            }
+
+            // Find camera / world references if not already assigned
+            cam = GameObject.Find("Main Camera")?.transform;
+            if (!world)
+                world = GameObject.Find("World")?.GetComponent<World>();
+
+            // Disable script if critical references are missing
             if (cam == null || world == null)
             {
                 Debug.LogError("Required components are missing. Ensure Main Camera and World are properly assigned.");
@@ -46,22 +106,32 @@ namespace Agent
                 return;
             }
 
+            // Initialize selectedBlockText if valid
+            if (selectedBlockText != null
+                && world.blocktypes != null
+                && world.blocktypes.Count > selectedBlockIndex)
+            {
+                selectedBlockText.text =
+                    world.blocktypes[selectedBlockIndex].blockName + " block selected";
+            }
+
+            // Lock cursor (optional)
+            Cursor.lockState = CursorLockMode.Locked;
+
+            // Add PlayerInputHandler if you use a custom input system
             inputHandler = gameObject.AddComponent<PlayerInputHandler>();
 
-            // Suppose your world is (chunkCount * chunkSize) wide
-            // and you want the center at half that in X and Z, 
-            // and a safe Y like 64:
-            float centerX = (VoxelData.WorldSizeInChunks * VoxelData.ChunkWidth) / 2f;
-            float centerZ = (VoxelData.WorldSizeInChunks * VoxelData.ChunkWidth) / 2f;
-            float spawnY = VoxelData.ChunkHeight - 50;
-
+            // Example spawn logic
+            float centerX = VoxelData.WorldSizeInChunks * VoxelData.ChunkWidth / 2f;
+            float centerZ = VoxelData.WorldSizeInChunks * VoxelData.ChunkWidth / 2f;
+            float spawnY = VoxelData.ChunkHeight - 50f;
             transform.position = new Vector3(centerX, spawnY, centerZ);
 
-            // Now set the camera above the player's transform
+            // Position the camera
             cam.position = transform.position + new Vector3(0, 1.6f, 0);
             cam.rotation = Quaternion.identity;
 
-            Debug.Log("Spawned player at: " + transform.position);
+            Debug.Log("Player started. TargetBlock, PlaceBlock, and SelectedBlockText created at runtime.");
         }
 
         private void FixedUpdate()
@@ -71,6 +141,11 @@ namespace Agent
             UpdateCameraPosition();
         }
 
+        private void Update()
+        {
+            GetPlayerInputs();
+        }
+
         private void HandleMovement()
         {
             CalculateVelocity();
@@ -78,19 +153,36 @@ namespace Agent
             if (jumpRequest)
                 Jump();
 
-            // Fully qualify Unity space to avoid conflicts with namespace "Space"
             transform.Translate(velocity, UnityEngine.Space.World);
+        }
+
+        private void CalculateVelocity()
+        {
+            verticalMomentum += gravity * Time.fixedDeltaTime;
+            float speed = isSprinting ? sprintSpeed : walkSpeed;
+
+            velocity = (transform.forward * vertical + transform.right * horizontal)
+                       * speed * Time.fixedDeltaTime;
+            velocity += Vector3.up * verticalMomentum * Time.fixedDeltaTime;
+
+            if ((velocity.z > 0 && front) || (velocity.z < 0 && back))
+                velocity.z = 0;
+            if ((velocity.x > 0 && right) || (velocity.x < 0 && left))
+                velocity.x = 0;
+
+            if (velocity.y < 0)
+                velocity.y = CheckDownSpeed(velocity.y);
+            else
+                velocity.y = CheckUpSpeed(velocity.y);
         }
 
         private void HandleCameraRotation()
         {
-            // Rotate the player left/right
             transform.Rotate(Vector3.up * mouseHorizontal);
 
-            // Tilt the camera up/down
             cameraPitch -= mouseVertical;
             cameraPitch = Mathf.Clamp(cameraPitch, minVerticalAngle, maxVerticalAngle);
-            cam.localRotation = Quaternion.Euler(cameraPitch, 0, 0);
+            cam.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
         }
 
         private void UpdateCameraPosition()
@@ -98,44 +190,11 @@ namespace Agent
             cam.position = transform.position + new Vector3(0, 1.6f, 0);
         }
 
-        private void Update()
-        {
-            GetPlayerInputs();
-        }
-
         private void Jump()
         {
             verticalMomentum = jumpForce;
             isGrounded = false;
             jumpRequest = false;
-        }
-
-        private void CalculateVelocity()
-        {
-            // Apply gravity unconditionally (or clamp for terminal velocity if desired)
-            verticalMomentum += gravity * Time.fixedDeltaTime;
-
-            // Determine movement speed (walk vs sprint)
-            float speed = isSprinting ? sprintSpeed : walkSpeed;
-
-            // Calculate horizontal movement
-            velocity = (transform.forward * vertical + transform.right * horizontal) * speed * Time.fixedDeltaTime;
-
-            // Add vertical momentum
-            velocity += Vector3.up * verticalMomentum * Time.fixedDeltaTime;
-
-            // XZ collisions
-            if ((velocity.z > 0 && front) || (velocity.z < 0 && back))
-                velocity.z = 0;
-
-            if ((velocity.x > 0 && right) || (velocity.x < 0 && left))
-                velocity.x = 0;
-
-            // Y collisions
-            if (velocity.y < 0)
-                velocity.y = CheckDownSpeed(velocity.y);
-            else
-                velocity.y = CheckUpSpeed(velocity.y);
         }
 
         private void GetPlayerInputs()
@@ -147,8 +206,48 @@ namespace Agent
             isSprinting = inputHandler.isSprinting;
 
             if (isGrounded && inputHandler.jumpRequest)
-            {
                 jumpRequest = true;
+
+            // Destroy block (left-click)
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (targetBlock.gameObject.activeSelf)
+                {
+                    Vector3 pos = targetBlock.position;
+                    world.SetVoxel(Mathf.FloorToInt(pos.x),
+                                   Mathf.FloorToInt(pos.y),
+                                   Mathf.FloorToInt(pos.z), 0);
+                }
+            }
+
+            // Place block (right-click)
+            if (Input.GetMouseButtonDown(1))
+            {
+                if (placeBlock.gameObject.activeSelf)
+                {
+                    Vector3 pos = placeBlock.position;
+                    world.SetVoxel(Mathf.FloorToInt(pos.x),
+                                   Mathf.FloorToInt(pos.y),
+                                   Mathf.FloorToInt(pos.z),
+                                   selectedBlockIndex);
+                }
+            }
+
+            // Mouse wheel to change block type
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            if (scroll > 0f)
+            {
+                selectedBlockIndex++;
+                if (selectedBlockIndex >= world.blocktypes.Count)
+                    selectedBlockIndex = 1;
+                selectedBlockText.text = world.blocktypes[selectedBlockIndex].blockName + " block selected";
+            }
+            else if (scroll < 0f)
+            {
+                selectedBlockIndex--;
+                if (selectedBlockIndex < 1)
+                    selectedBlockIndex = (byte)(world.blocktypes.Count - 1);
+                selectedBlockText.text = world.blocktypes[selectedBlockIndex].blockName + " block selected";
             }
 
             inputHandler.ResetInputs();
@@ -156,11 +255,12 @@ namespace Agent
 
         private float CheckDownSpeed(float downSpeed)
         {
-            // Check if the space below is solid
-            if (VoxelCheck(transform.position.x, transform.position.y + downSpeed, transform.position.z))
+            if (VoxelCheck(transform.position.x,
+                           transform.position.y + downSpeed,
+                           transform.position.z))
             {
                 isGrounded = true;
-                return 0; // Stop falling
+                return 0f;
             }
 
             isGrounded = false;
@@ -169,26 +269,29 @@ namespace Agent
 
         private float CheckUpSpeed(float upSpeed)
         {
-            // Check if the space above the player's head is solid
-            if (VoxelCheck(transform.position.x, transform.position.y + 2f + upSpeed, transform.position.z))
-                return 0; // Stop upward movement
+            if (VoxelCheck(transform.position.x,
+                           transform.position.y + 2f + upSpeed,
+                           transform.position.z))
+                return 0f;
 
             return upSpeed;
         }
 
         private bool VoxelCheck(float x, float y, float z)
         {
-            // Check four corners horizontally for collisions
-            return world.CheckForVoxel(x - playerWidth, y, z - playerWidth) ||
-                   world.CheckForVoxel(x + playerWidth, y, z - playerWidth) ||
-                   world.CheckForVoxel(x + playerWidth, y, z + playerWidth) ||
-                   world.CheckForVoxel(x - playerWidth, y, z + playerWidth);
+            return world.CheckForVoxel(x - playerWidth, y, z - playerWidth)
+                   || world.CheckForVoxel(x + playerWidth, y, z - playerWidth)
+                   || world.CheckForVoxel(x + playerWidth, y, z + playerWidth)
+                   || world.CheckForVoxel(x - playerWidth, y, z + playerWidth);
         }
 
-        // Helpers to check if there's a block in front/back/left/right
-        public bool front => VoxelCheck(transform.position.x, transform.position.y, transform.position.z + playerWidth);
-        public bool back  => VoxelCheck(transform.position.x, transform.position.y, transform.position.z - playerWidth);
-        public bool left  => VoxelCheck(transform.position.x - playerWidth, transform.position.y, transform.position.z);
-        public bool right => VoxelCheck(transform.position.x + playerWidth, transform.position.y, transform.position.z);
+        public bool front
+            => VoxelCheck(transform.position.x, transform.position.y, transform.position.z + playerWidth);
+        public bool back
+            => VoxelCheck(transform.position.x, transform.position.y, transform.position.z - playerWidth);
+        public bool left
+            => VoxelCheck(transform.position.x - playerWidth, transform.position.y, transform.position.z);
+        public bool right
+            => VoxelCheck(transform.position.x + playerWidth, transform.position.y, transform.position.z);
     }
 }

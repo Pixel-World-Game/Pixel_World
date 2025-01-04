@@ -45,23 +45,14 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Constructor\Element\Craft.cs" />
     <Compile Include="Assets\Scripts\Agent\PlayerInputHandler.cs" />
     <Compile Include="Assets\Scripts\pw_Debug\Screen.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Space\Environment.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Space\Space.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Subject\NPC.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Subject\Subject.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Element\Element.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Scope\Scope.cs" />
+    <Compile Include="Assets\Scripts\Agent\PlayerUI.cs" />
     <Compile Include="Assets\Scripts\Agent\Player.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Scope\Principle.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Element\RawMaterial.cs" />
     <Compile Include="Assets\Scripts\Space\VoxelData.cs" />
     <Compile Include="Assets\Scripts\Space\World.cs" />
     <Compile Include="Assets\Scripts\Space\Terrain\Noise.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Space\InterpertSpace.cs" />
-    <Compile Include="Assets\Scripts\Constructor\Subject\Agent.cs" />
+    <Compile Include="Assets\Scripts\Agent\CursorBlock.cs" />
     <Compile Include="Assets\Scripts\Space\Terrain\BiomeAttributes.cs" />
     <Compile Include="Assets\Scripts\Space\Chunk.cs" />
     <None Include="Assets\Resources\BillingMode.json" />
