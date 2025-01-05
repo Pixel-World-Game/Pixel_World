@@ -1,0 +1,1 @@
+find "./Assets" -type f -name "*.meta" -print -delete

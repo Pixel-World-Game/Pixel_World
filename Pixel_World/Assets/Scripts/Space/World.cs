@@ -72,7 +72,7 @@ namespace Space{
 
         public void AddBlockType(BlockType blockType){
             blocktypes.Add(blockType);
-            Debug.Log($"Block Type '{blockType.blockName}' registered.");
+            // Debug.Log($"Block Type '{blockType.blockName}' registered.");
         }
 
         void GenerateWorld () {
@@ -102,6 +102,14 @@ namespace Space{
             int x = Mathf.FloorToInt(pos.x / VoxelData.ChunkWidth);
             int z = Mathf.FloorToInt(pos.z / VoxelData.ChunkWidth);
             return new ChunkCoord(x, z);
+        }
+        
+        public Chunk GetChunkFromVector3 (Vector3 pos) {
+
+            int x = Mathf.FloorToInt(pos.x / VoxelData.ChunkWidth);
+            int z = Mathf.FloorToInt(pos.z / VoxelData.ChunkWidth);
+            return chunks[x, z];
+
         }
 
         void CheckViewDistance () {
@@ -171,8 +179,6 @@ namespace Space{
             return blocktypes[chunks[xChunk, zChunk].voxelMap[xCheck, yCheck, zCheck]].isSolid;
         }
 
-
-
         public byte GetVoxel (Vector3 pos) {
 
             int yPos = Mathf.FloorToInt(pos.y);
@@ -215,6 +221,33 @@ namespace Space{
             return voxelValue;
         }
 
+        public void SetVoxel(int x, int y, int z, byte blockID)
+        {
+            // 1) Check if the position is within world bounds
+            if (!IsVoxelInWorld(new Vector3(x, y, z)))
+                return;
+
+            // 2) Determine which chunk this voxel belongs to
+            int xChunk = x / VoxelData.ChunkWidth;
+            int zChunk = z / VoxelData.ChunkWidth;
+
+            // 3) Local position inside that chunk
+            int xInChunk = x - (xChunk * VoxelData.ChunkWidth);
+            int zInChunk = z - (zChunk * VoxelData.ChunkWidth);
+
+            // 4) If the chunk doesn't exist (possible in infinite or procedural worlds), create it
+            if (chunks[xChunk, zChunk] == null)
+            {
+                chunks[xChunk, zChunk] = new Chunk(new ChunkCoord(xChunk, zChunk), this, true);
+            }
+
+            // 5) Use the chunk's EditVoxel(...) to update the voxel and rebuild the mesh
+            chunks[xChunk, zChunk].EditVoxel(
+                new Vector3(xInChunk, y, zInChunk),
+                blockID
+            );
+        }
+        
         bool IsChunkInWorld (ChunkCoord coord) {
 
             if (coord.x > 0 && coord.x < VoxelData.WorldSizeInChunks - 1 && coord.z > 0 && coord.z < VoxelData.WorldSizeInChunks - 1)

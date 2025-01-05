@@ -547,6 +547,10 @@ MonoBehaviour:
   boundsTolerance: 0.1
   minVerticalAngle: -60
   maxVerticalAngle: 60
+  targetBlock: {fileID: 0}
+  placeBlock: {fileID: 0}
+  selectedBlockText: {fileID: 0}
+  selectedBlockIndex: 1
 --- !u!4 &1713844524
 Transform:
   m_ObjectHideFlags: 0
