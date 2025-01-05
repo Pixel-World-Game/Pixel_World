@@ -3,177 +3,321 @@ using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
 
-// Game_List.cs
-// This script shows a list of saved games, includes a search box, and a "New Game" button as the first item.
-
 namespace pw_UI{
     public class Game_List : MonoBehaviour{
-        [Header("Search Field")]
-        // Reference to an InputField used for searching saved games
-        public InputField searchField;
-
-        [Header("Scroll Rect")]
-        // Reference to a ScrollRect that contains the list of saved games
-        public ScrollRect scrollRect;
-
-        [Header("List Content")]
-        // The content Transform inside the ScrollRect where each item (Button) will be placed
-        public Transform listContent;
-
-        [Header("List Item Prefab")]
-        // A prefab or template for each item in the list (Button with a label)
-        public GameObject listItemPrefab;
-
-        // The path where saved games might be located
-        private string gameFilesFolder;
+        private string savesFolder;
         private List<string> allSavedGames = new();
 
-        [Header("New Game UI")]
-        // Reference to the New_Game script or the UI Manager for new game creation
-        public New_Game newGameUI;
+        private GameObject mainCanvasObj;
+        private Font customFont;
+
+        private InputField searchInput;
+        private ScrollRect scrollRect;
+        private Transform listContent;
+
+        // Optional: if you want to show a separate New_Game UI
+        public GameObject newGameObj;
 
         private void Awake(){
-            // Let's assume saved games are in <persistentDataPath>/Saves
-            gameFilesFolder = Path.Combine(Application.persistentDataPath, "Saves");
+            // 1. Create Canvas
+            CreateMainCanvas();
 
-            if (!Directory.Exists(gameFilesFolder)) Directory.CreateDirectory(gameFilesFolder);
+            // 2. Load font
+            customFont = Resources.Load<Font>("Fonts/MinecraftCHMC");
+            if (customFont == null)
+                Debug.LogWarning("MinecraftCHMC.ttf not found in Resources/Fonts.");
 
-            // If there's a search field, add a listener for text change
-            if (searchField != null) searchField.onValueChanged.AddListener(OnSearchValueChanged);
+            // 3. Build UI: top search, middle list, bottom button
+            var searchBar = BuildSearchBar();
+            searchInput = searchBar.GetComponentInChildren<InputField>();
+            if (searchInput != null)
+                searchInput.onValueChanged.AddListener(OnSearchValueChanged);
+
+            var scrollPanel = BuildScrollList();
+            scrollRect = scrollPanel.GetComponentInChildren<ScrollRect>();
+            if (scrollRect != null)
+                listContent = scrollRect.content;
+
+            BuildNewGameButton();
+
+            // 4. Folder for .pwdat
+            savesFolder = Path.Combine(Application.persistentDataPath, "Saves");
+            if (!Directory.Exists(savesFolder))
+                Directory.CreateDirectory(savesFolder);
+
+            // Hide initially
+            mainCanvasObj.SetActive(false);
         }
 
-        // Call this method when showing the Game_List page
         public void ShowGameList(){
-            Debug.Log("Game_List: Showing game list UI.");
-
-            // Refresh the list of saved games
+            mainCanvasObj.SetActive(true);
             LoadAllSavedGames();
-            // Rebuild the UI list with no filter by default
             RebuildList("");
+            if (searchInput != null)
+                searchInput.text = "";
         }
 
-        // Load all saved game files from the folder
         private void LoadAllSavedGames(){
-            Debug.Log($"Searching for saved game files in: {gameFilesFolder}");
-
+            Debug.Log($"Scanning .pwdat in {savesFolder}");
             allSavedGames.Clear();
-            // We are looking for files with .pwdat extension
-            var files = Directory.GetFiles(gameFilesFolder, "*.pwdat", SearchOption.TopDirectoryOnly);
+            var files = Directory.GetFiles(savesFolder, "*.pwdat", SearchOption.TopDirectoryOnly);
+            if (files.Length == 0)
+                Debug.Log("No saved games found.");
 
-            if (files.Length == 0) Debug.Log("No saved game files found. The list is empty.");
-
-            foreach (var file in files) allSavedGames.Add(Path.GetFileName(file));
+            foreach (var f in files)
+                allSavedGames.Add(Path.GetFileName(f));
         }
 
-        // Called when user types in the search field
-        private void OnSearchValueChanged(string searchText){
-            RebuildList(searchText);
+        private void OnSearchValueChanged(string keyword){
+            RebuildList(keyword);
         }
 
-        // Rebuild the UI list
-        private void RebuildList(string filter){
-            if (listContent == null){
-                Debug.Log("listContent is null.");
-                return;
-            }
+        private void RebuildList(string keyword){
+            if (listContent == null) return;
+            foreach (Transform child in listContent)
+                Destroy(child.gameObject);
 
-            if (listItemPrefab == null){
-                Debug.Log("listItemPrefab is null.");
-                return;
-            }
-
-            // Clear existing items
-            foreach (Transform child in listContent) Destroy(child.gameObject);
-
-            // Always create "New Game" button at the top
-            CreateNewGameButton();
-
-            // Filter the saved files
-            var foundAnyMatchingFile = false;
-            if (allSavedGames == null){
-                Debug.LogWarning("allSavedGames is null. No saved files to display.");
-                return;
-            }
-
-            foreach (var saveFile in allSavedGames)
-                if (string.IsNullOrEmpty(filter)
-                    || saveFile.ToLower().Contains(filter.ToLower())){
-                    CreateSaveFileButton(saveFile);
-                    foundAnyMatchingFile = true;
+            var foundAny = false;
+            foreach (var file in allSavedGames)
+                if (string.IsNullOrEmpty(keyword) || file.ToLower().Contains(keyword.ToLower())){
+                    CreateSaveFileItem(file);
+                    foundAny = true;
                 }
 
-            // If no matching save files were found, do NOT remove "New Game" button;
-            // just add a "no results" label below it
-            if (!foundAnyMatchingFile) CreateNoResultsLabel();
+            if (!foundAny)
+                CreateNoResultsLabel();
         }
 
-        // Helper method to show "No matching saved games" label
+        // -------------------------
+        // UI building
+        // -------------------------
+        private void CreateMainCanvas(){
+            mainCanvasObj = new GameObject("GameListCanvas");
+            var canvas = mainCanvasObj.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            mainCanvasObj.AddComponent<CanvasScaler>();
+            mainCanvasObj.AddComponent<GraphicRaycaster>();
+        }
+
+        private GameObject BuildSearchBar(){
+            var bar = new GameObject("SearchBar");
+            bar.transform.SetParent(mainCanvasObj.transform, false);
+
+            var r = bar.AddComponent<RectTransform>();
+            r.anchorMin = new Vector2(0, 1);
+            r.anchorMax = new Vector2(1, 1);
+            r.pivot = new Vector2(0.5f, 1f);
+            r.sizeDelta = new Vector2(0, 60);
+
+            var bg = bar.AddComponent<Image>();
+            bg.color = new Color(0.8f, 0.8f, 0.8f);
+
+            var inputObj = new GameObject("SearchField");
+            inputObj.transform.SetParent(bar.transform, false);
+
+            var iRect = inputObj.AddComponent<RectTransform>();
+            iRect.anchorMin = Vector2.zero;
+            iRect.anchorMax = Vector2.one;
+            iRect.offsetMin = new Vector2(10, 10);
+            iRect.offsetMax = new Vector2(-10, -10);
+
+            var iImg = inputObj.AddComponent<Image>();
+            iImg.color = Color.white;
+
+            var input = inputObj.AddComponent<InputField>();
+
+            var textObj = new GameObject("Text");
+            textObj.transform.SetParent(inputObj.transform, false);
+
+            var tRect = textObj.AddComponent<RectTransform>();
+            tRect.anchorMin = Vector2.zero;
+            tRect.anchorMax = Vector2.one;
+
+            var tComp = textObj.AddComponent<Text>();
+            tComp.font = customFont;
+            tComp.fontSize = 24;
+            tComp.color = Color.black;
+            tComp.alignment = TextAnchor.MiddleLeft;
+
+            input.textComponent = tComp;
+
+            // Placeholder
+            var phObj = new GameObject("Placeholder");
+            phObj.transform.SetParent(inputObj.transform, false);
+            var phRect = phObj.AddComponent<RectTransform>();
+            phRect.anchorMin = Vector2.zero;
+            phRect.anchorMax = Vector2.one;
+
+            var phText = phObj.AddComponent<Text>();
+            phText.text = "Search...";
+            phText.font = customFont;
+            phText.fontSize = 24;
+            phText.color = new Color(0.5f, 0.5f, 0.5f);
+            phText.alignment = TextAnchor.MiddleLeft;
+
+            input.placeholder = phText;
+
+            return bar;
+        }
+
+        private GameObject BuildScrollList(){
+            var listPanel = new GameObject("ListPanel");
+            listPanel.transform.SetParent(mainCanvasObj.transform, false);
+
+            var lpRect = listPanel.AddComponent<RectTransform>();
+            lpRect.anchorMin = new Vector2(0, 0);
+            lpRect.anchorMax = new Vector2(1, 1);
+            lpRect.offsetMin = new Vector2(0, 60);
+            lpRect.offsetMax = new Vector2(0, -60);
+
+            var lpImg = listPanel.AddComponent<Image>();
+            lpImg.color = new Color(0.9f, 0.9f, 0.9f);
+
+            var scrollObj = new GameObject("ScrollView");
+            scrollObj.transform.SetParent(listPanel.transform, false);
+
+            var srRect = scrollObj.AddComponent<RectTransform>();
+            srRect.anchorMin = Vector2.zero;
+            srRect.anchorMax = Vector2.one;
+
+            var sr = scrollObj.AddComponent<ScrollRect>();
+            sr.horizontal = false;
+
+            var vpObj = new GameObject("Viewport");
+            vpObj.transform.SetParent(scrollObj.transform, false);
+
+            var vpRect = vpObj.AddComponent<RectTransform>();
+            vpRect.anchorMin = Vector2.zero;
+            vpRect.anchorMax = Vector2.one;
+
+            var vpMask = vpObj.AddComponent<Mask>();
+            vpMask.showMaskGraphic = false;
+
+            var vpImg = vpObj.AddComponent<Image>();
+            vpImg.color = new Color(1, 1, 1, 0.1f);
+
+            sr.viewport = vpRect;
+
+            var contentObj = new GameObject("Content");
+            contentObj.transform.SetParent(vpObj.transform, false);
+
+            var cRect = contentObj.AddComponent<RectTransform>();
+            cRect.anchorMin = new Vector2(0, 1);
+            cRect.anchorMax = new Vector2(1, 1);
+            cRect.pivot = new Vector2(0.5f, 1f);
+            cRect.sizeDelta = new Vector2(0, 600);
+
+            sr.content = cRect;
+
+            return listPanel;
+        }
+
+        private void BuildNewGameButton(){
+            var bottomPanel = new GameObject("NewGamePanel");
+            bottomPanel.transform.SetParent(mainCanvasObj.transform, false);
+
+            var bpRect = bottomPanel.AddComponent<RectTransform>();
+            bpRect.anchorMin = new Vector2(0, 0);
+            bpRect.anchorMax = new Vector2(1, 0);
+            bpRect.pivot = new Vector2(0.5f, 0f);
+            bpRect.sizeDelta = new Vector2(0, 60);
+
+            var bpImg = bottomPanel.AddComponent<Image>();
+            bpImg.color = new Color(0.8f, 0.8f, 0.8f);
+
+            var newGameButton = new GameObject("NewGameButton");
+            newGameButton.transform.SetParent(bottomPanel.transform, false);
+
+            var btnRect = newGameButton.AddComponent<RectTransform>();
+            btnRect.anchorMin = new Vector2(0.5f, 0.5f);
+            btnRect.anchorMax = new Vector2(0.5f, 0.5f);
+            btnRect.sizeDelta = new Vector2(160, 40);
+
+            var btnImg = newGameButton.AddComponent<Image>();
+            btnImg.color = Color.white;
+
+            var button = newGameButton.AddComponent<Button>();
+            button.onClick.AddListener(OnNewGameButtonClicked);
+
+            var textObj = new GameObject("Text");
+            textObj.transform.SetParent(newGameButton.transform, false);
+
+            var tRect = textObj.AddComponent<RectTransform>();
+            tRect.anchorMin = Vector2.zero;
+            tRect.anchorMax = Vector2.one;
+
+            var tComp = textObj.AddComponent<Text>();
+            tComp.text = "New Game";
+            tComp.font = customFont;
+            tComp.fontSize = 24;
+            tComp.alignment = TextAnchor.MiddleCenter;
+            tComp.color = Color.black;
+        }
+
+        private void CreateSaveFileItem(string fileName){
+            if (listContent == null) return;
+
+            var itemObj = new GameObject($"Item_{fileName}");
+            itemObj.transform.SetParent(listContent, false);
+
+            var rect = itemObj.AddComponent<RectTransform>();
+            rect.sizeDelta = new Vector2(300, 60);
+
+            var bg = itemObj.AddComponent<Image>();
+            bg.color = Color.white;
+
+            var btn = itemObj.AddComponent<Button>();
+            btn.onClick.AddListener(() => {
+                Debug.Log($"Clicked: {fileName}");
+                // TODO: load logic
+            });
+
+            var textObj = new GameObject("ItemText");
+            textObj.transform.SetParent(itemObj.transform, false);
+
+            var txtRect = textObj.AddComponent<RectTransform>();
+            txtRect.anchorMin = Vector2.zero;
+            txtRect.anchorMax = Vector2.one;
+
+            var txtComp = textObj.AddComponent<Text>();
+            txtComp.text = fileName;
+            txtComp.font = customFont;
+            txtComp.fontSize = 24;
+            txtComp.alignment = TextAnchor.MiddleCenter;
+            txtComp.color = Color.black;
+        }
+
         private void CreateNoResultsLabel(){
-            if (listItemPrefab == null){
-                Debug.LogWarning("listItemPrefab is null. Creating a label from code instead.");
-                // Fallback: purely create a Text object
-                var fallbackLabel = new GameObject("NoResultsLabel_Fallback");
-                fallbackLabel.transform.SetParent(listContent, false);
+            if (listContent == null) return;
 
-                var rectTransform = fallbackLabel.AddComponent<RectTransform>();
-                rectTransform.sizeDelta = new Vector2(300, 60);
+            var labelObj = new GameObject("NoResults");
+            labelObj.transform.SetParent(listContent, false);
 
-                var textComponent = fallbackLabel.AddComponent<Text>();
-                textComponent.text = "No matching saved games found.";
-                textComponent.alignment = TextAnchor.MiddleCenter;
-                textComponent.color = Color.red;
-                textComponent.font = Resources.Load<Font>("Fonts/MinecraftCHMC");
-                textComponent.fontSize = 28;
+            var rect = labelObj.AddComponent<RectTransform>();
+            rect.sizeDelta = new Vector2(300, 60);
 
-                return;
-            }
-
-            var itemObj = Instantiate(listItemPrefab, listContent);
-            itemObj.name = "NoResultsLabel";
-
-            var btn = itemObj.GetComponent<Button>();
-            if (btn != null) btn.interactable = false;
-
-            var txt = itemObj.GetComponentInChildren<Text>();
-            if (txt != null) txt.text = "No matching saved games found.";
-
-            Debug.Log("Created 'NoResultsLabel' using listItemPrefab.");
+            var txt = labelObj.AddComponent<Text>();
+            txt.text = "No matching saved games found.";
+            txt.font = customFont;
+            txt.fontSize = 24;
+            txt.alignment = TextAnchor.MiddleCenter;
+            txt.color = Color.red;
         }
 
-        private void CreateNewGameButton(){
-            var itemObj = Instantiate(listItemPrefab, listContent);
-            itemObj.name = "NewGameButtonItem";
+        private void OnNewGameButtonClicked(){
+            Debug.Log("New Game button clicked -> Hide this list UI, show New_Game UI.");
 
-            var btn = itemObj.GetComponent<Button>();
-            var txt = itemObj.GetComponentInChildren<Text>();
+            // Hide current UI
+            if (mainCanvasObj) mainCanvasObj.SetActive(false);
 
-            if (txt != null) txt.text = "New Game";
+            var newGameCanvas = new GameObject("NewGameCanvas");
+            var canvas = newGameCanvas.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            newGameCanvas.AddComponent<CanvasScaler>();
+            newGameCanvas.AddComponent<GraphicRaycaster>();
 
-            btn.onClick.AddListener(() => {
-                Debug.Log("New Game button clicked! Opening New_Game UI...");
-                gameObject.SetActive(false);
-
-                if (newGameUI != null)
-                    newGameUI.gameObject.SetActive(true);
-                else
-                    Debug.LogWarning("No reference to New_Game UI!");
-            });
-        }
-
-        private void CreateSaveFileButton(string saveFileName){
-            var itemObj = Instantiate(listItemPrefab, listContent);
-            itemObj.name = "GameItem_" + saveFileName;
-
-            var btn = itemObj.GetComponent<Button>();
-            var txt = itemObj.GetComponentInChildren<Text>();
-            if (txt != null) txt.text = saveFileName;
-
-            btn.onClick.AddListener(() => {
-                Debug.Log($"Selected saved game file: {saveFileName}");
-                // TODO: load game logic
-                // string fullPath = Path.Combine(gameFilesFolder, saveFileName);
-                // Game.LoadGame(fullPath);
-            });
+            var newGameUI = newGameCanvas.AddComponent<New_Game>();
+            newGameCanvas.SetActive(true);
         }
     }
 }

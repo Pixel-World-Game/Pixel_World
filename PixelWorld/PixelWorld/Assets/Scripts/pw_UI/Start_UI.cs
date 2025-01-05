@@ -1,57 +1,55 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace pw_UI{
-    public class Start_UI : MonoBehaviour{
+namespace pw_UI
+{
+    public class Start_UI : MonoBehaviour
+    {
         // We will create an instance of Game_List here in pure script mode.
-        private GameObject panelObj;
+
+        private GameObject mainCanvasObj;
+        private Font customFont;
+
+        private GameObject startPanel;
         private GameObject gameTitleObj;
         private GameObject startButtonObj;
         private GameObject quitButtonObj;
 
-        private Font customFont;
-
-        // References to the Game_List instance we will create at runtime
+        // Reference to the Game_List instance we create at runtime
         private GameObject gameListObj;
         private Game_List gameListUI;
 
-        private void Start(){
-            Debug.Log("Start_UI component initialized. Creating start menu UI...");
+        private void Start()
+        {
+            Debug.Log("Start_UI: Initializing UI by code...");
 
-            // Try to load custom font from Resources/Fonts
+            // 1. Create a main Canvas so all UI is visible
+            CreateMainCanvas();
+
+            // 2. Load custom font (MinecraftCHMC) from Resources/Fonts
             customFont = Resources.Load<Font>("Fonts/MinecraftCHMC");
             if (customFont == null)
-                Debug.LogWarning(
-                    "Could not load MinecraftCHMC.ttf from Resources/Fonts! Falling back to default font.");
+            {
+                Debug.LogWarning("Could not load MinecraftCHMC.ttf from Resources/Fonts! Using no fallback font.");
+            }
 
-            // 1. Create a fullscreen panel (semi-transparent background)
-            panelObj = new GameObject("StartPanel");
-            panelObj.transform.SetParent(transform, false);
+            // 3. Create a semi-transparent panel to fill the Canvas
+            CreateStartPanel();
 
-            var panelRect = panelObj.AddComponent<RectTransform>();
-            panelRect.anchorMin = new Vector2(0, 0);
-            panelRect.anchorMax = new Vector2(1, 1);
-            panelRect.offsetMin = Vector2.zero;
-            panelRect.offsetMax = Vector2.zero;
+            // 4. Create a game title text
+            gameTitleObj = CreateGameTitle(startPanel.transform, "Pixel World");
 
-            var panelImage = panelObj.AddComponent<Image>();
-            panelImage.color = new Color(0, 0, 0, 0.5f);
-
-            // 2. Create the game title text
-            gameTitleObj = CreateGameTitle(panelObj.transform, "Pixel World");
-
-            // 3. Create "Start Game" button
+            // 5. Create "Start" and "Quit" buttons
             startButtonObj = CreateButton(
-                panelObj.transform,
+                startPanel.transform,
                 "StartButton",
                 "Start",
                 new Vector2(0, 50),
                 OnStartButtonClicked
             );
 
-            // 4. Create "Quit" button
             quitButtonObj = CreateButton(
-                panelObj.transform,
+                startPanel.transform,
                 "QuitButton",
                 "Quit",
                 new Vector2(0, -50),
@@ -60,54 +58,96 @@ namespace pw_UI{
 
             Debug.Log("Start menu UI creation completed.");
 
-            // 5. Create a new GameObject for the Game_List UI
+            // 6. Create a new GameObject for Game_List UI
+            // and add Game_List component. Inactive by default.
             gameListObj = new GameObject("GameListManager");
-            // Add the Game_List component
             gameListUI = gameListObj.AddComponent<Game_List>();
-
-            // By default, we make this UI inactive until it's needed
             gameListObj.SetActive(false);
 
-            Debug.Log("GameListManager created, attached Game_List component, and set inactive by default.");
+            Debug.Log("GameListManager created, attached Game_List, inactive by default.");
         }
 
-        // Public method to show the UI
-        public void ShowStartUI(){
-            gameObject.SetActive(true);
+        // Public method to show Start UI
+        public void ShowStartUI()
+        {
+            if (mainCanvasObj != null)
+            {
+                mainCanvasObj.SetActive(true);
+            }
             Debug.Log("Start UI is now visible.");
         }
 
         // When "Start" button is clicked
-        private void OnStartButtonClicked(){
+        private void OnStartButtonClicked()
+        {
             Debug.Log("Start Game button clicked!");
 
-            // Hide the current Start UI
-            gameObject.SetActive(false);
+            // Hide this UI's Canvas
+            if (mainCanvasObj != null)
+            {
+                mainCanvasObj.SetActive(false);
+            }
 
-            // Activate the GameList UI we just created
+            // Activate GameList UI
             gameListObj.SetActive(true);
 
-            // If the component exists, call its ShowGameList method
             if (gameListUI != null)
+            {
                 gameListUI.ShowGameList();
+            }
             else
-                Debug.LogWarning("Game_List script is missing on the created GameListManager object!");
+            {
+                Debug.LogWarning("Game_List script not found on the created GameListManager object!");
+            }
         }
 
         // When "Quit" button is clicked
-        private void OnQuitButtonClicked(){
+        private void OnQuitButtonClicked()
+        {
             Debug.Log("Quit Game button clicked!");
             Application.Quit();
         }
 
-        // Helper: Create a button with pure script
+        // -----------------------------------------
+        // Helper methods to create UI in pure code
+        // -----------------------------------------
+
+        // Create a main Canvas to hold all UI
+        private void CreateMainCanvas()
+        {
+            mainCanvasObj = new GameObject("StartUICanvas");
+            var canvas = mainCanvasObj.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+            mainCanvasObj.AddComponent<CanvasScaler>();
+            mainCanvasObj.AddComponent<GraphicRaycaster>();
+        }
+
+        // Create a semi-transparent panel filling the canvas
+        private void CreateStartPanel()
+        {
+            startPanel = new GameObject("StartPanel");
+            startPanel.transform.SetParent(mainCanvasObj.transform, false);
+
+            var panelRect = startPanel.AddComponent<RectTransform>();
+            panelRect.anchorMin = Vector2.zero;
+            panelRect.anchorMax = Vector2.one;
+            panelRect.offsetMin = Vector2.zero;
+            panelRect.offsetMax = Vector2.zero;
+
+            var panelImage = startPanel.AddComponent<Image>();
+            panelImage.color = new Color(0, 0, 0, 0.5f);
+        }
+
+        // Create a button with text
         private GameObject CreateButton(
             Transform parent,
             string buttonName,
             string buttonText,
             Vector2 anchoredPosition,
             UnityEngine.Events.UnityAction onClickAction
-        ){
+        )
+        {
             var buttonObj = new GameObject(buttonName);
             buttonObj.transform.SetParent(parent, false);
 
@@ -130,21 +170,19 @@ namespace pw_UI{
             textRect.offsetMin = Vector2.zero;
             textRect.offsetMax = Vector2.zero;
 
-            var textComponent = textObj.AddComponent<Text>();
-            textComponent.text = buttonText;
-            textComponent.alignment = TextAnchor.MiddleCenter;
-            textComponent.color = Color.black;
-            textComponent.font = customFont != null
-                ? customFont
-                : Resources.GetBuiltinResource<Font>("Arial.ttf");
-
-            textComponent.fontSize = 36;
+            var textComp = textObj.AddComponent<Text>();
+            textComp.text = buttonText;
+            textComp.alignment = TextAnchor.MiddleCenter;
+            textComp.color = Color.black;
+            textComp.font = customFont;
+            textComp.fontSize = 36;
 
             return buttonObj;
         }
 
-        // Helper: Create the game title text
-        private GameObject CreateGameTitle(Transform parent, string titleText){
+        // Create the game title at the top
+        private GameObject CreateGameTitle(Transform parent, string titleText)
+        {
             var titleObj = new GameObject("GameTitle");
             titleObj.transform.SetParent(parent, false);
 
@@ -155,14 +193,12 @@ namespace pw_UI{
             rectTransform.anchoredPosition = new Vector2(0, -30);
             rectTransform.sizeDelta = new Vector2(400, 100);
 
-            var textComponent = titleObj.AddComponent<Text>();
-            textComponent.text = titleText;
-            textComponent.alignment = TextAnchor.MiddleCenter;
-            textComponent.color = Color.white;
-            textComponent.fontSize = 72;
-            textComponent.font = customFont != null
-                ? customFont
-                : Resources.GetBuiltinResource<Font>("Arial.ttf");
+            var textComp = titleObj.AddComponent<Text>();
+            textComp.text = titleText;
+            textComp.alignment = TextAnchor.MiddleCenter;
+            textComp.color = Color.white;
+            textComp.fontSize = 72;
+            textComp.font = customFont;
 
             return titleObj;
         }
