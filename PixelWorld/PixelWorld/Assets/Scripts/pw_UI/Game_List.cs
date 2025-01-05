@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
+using pw_Game;
 
 namespace pw_UI{
     public class Game_List : MonoBehaviour{
@@ -254,7 +255,8 @@ namespace pw_UI{
             tComp.color = Color.black;
         }
 
-        private void CreateSaveFileItem(string fileName){
+        private void CreateSaveFileItem(string fileName)
+        {
             if (listContent == null) return;
 
             var itemObj = new GameObject($"Item_{fileName}");
@@ -269,7 +271,33 @@ namespace pw_UI{
             var btn = itemObj.AddComponent<Button>();
             btn.onClick.AddListener(() => {
                 Debug.Log($"Clicked: {fileName}");
-                // TODO: load logic
+
+                // 1. 构建绝对路径或相对路径
+                //    假设 .pwdat 存储在 Application.persistentDataPath + "/Saves/"
+                //    并且 fileName 就是 "{存档名}.pwdat" 
+                string savesFolder = System.IO.Path.Combine(Application.persistentDataPath, "Saves");
+                string filePath = System.IO.Path.Combine(savesFolder, fileName);
+        
+                // 2. 获取或找到 Game 脚本引用
+                //    假设场景中有一个 "GameManager" GameObject 挂载了 Game.cs
+                //    或者你可以把 Game 做成单例，或 FindObjectOfType<Game>() 均可
+                var gameObj = GameObject.Find("GameManager");
+                if (gameObj != null)
+                {
+                    var gameScript = gameObj.GetComponent<Game>();
+                    if (gameScript != null)
+                    {
+                        gameScript.LoadGameFromFile(filePath);
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Game script not found on GameManager object.");
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning("GameManager object not found in scene.");
+                }
             });
 
             var textObj = new GameObject("ItemText");

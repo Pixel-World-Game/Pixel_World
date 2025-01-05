@@ -4,62 +4,18 @@ using UnityEngine;
 
 namespace pw_Game.Object
 {
-    /// <summary>
-    /// Represents a block or item in the game world, storing name, unique ID, 
-    /// six-face textures, sound, and custom interaction logic.
-    /// </summary>
     [Serializable]
     public class Object
     {
-        /// <summary>
-        /// The display name of this block/item.
-        /// </summary>
         public string Name { get; private set; }
-
-        /// <summary>
-        /// Unique identifier for this block/item, e.g., "minecraft:stone" or custom ID.
-        /// </summary>
         public string UID { get; private set; }
-
-        /// <summary>
-        /// Sound type or key used for this block when placing, breaking, stepping, etc.
-        /// If none specified, can be null or empty.
-        /// </summary>
         public string Sound { get; private set; }
-
-        /// <summary>
-        /// Indicates whether this block uses the same texture for all faces (isotropic).
-        /// Some blocks like "dirt" or "sand" can share a single texture on all sides.
-        /// </summary>
         public bool IsIsotropic { get; private set; }
-
-        /// <summary>
-        /// Optional brightness factor, e.g. "brightness_gamma".
-        /// If not present, can use a default like 1.0.
-        /// </summary>
         public float BrightnessGamma { get; private set; } = 1.0f;
 
-        /// <summary>
-        /// Dictionary for the six faces (up, down, north, south, west, east).
-        /// If the block uses a single texture, you may store the same texture under all keys,
-        /// or only store one key if truly isotropic.
-        /// </summary>
         public Dictionary<string, string> FaceTextures { get; private set; }
-
-        /// <summary>
-        /// Optional "carried_textures" for blocks that have a different texture 
-        /// when in inventory or carried by the player. Key usage is similar to FaceTextures.
-        /// </summary>
         public Dictionary<string, string> CarriedTextures { get; private set; }
 
-        // -----------------------------------------------------------------------------------
-        // Constructors
-        // -----------------------------------------------------------------------------------
-
-        /// <summary>
-        /// Basic constructor to manually create an Object with just name & ID.
-        /// You can then set textures, sound, etc., through methods.
-        /// </summary>
         public Object(string name, string uid)
         {
             Name = name;
@@ -68,119 +24,69 @@ namespace pw_Game.Object
             CarriedTextures = new Dictionary<string, string>();
         }
 
-        /// <summary>
-        /// Constructor that initializes this Object from a JSON-derived dictionary.
-        /// The dictionary structure is assumed to follow the sample JSON blocks.
-        /// </summary>
         public Object(string name, string uid, Dictionary<string, object> jsonData)
         {
             Name = name;
             UID = uid;
             FaceTextures = new Dictionary<string, string>();
             CarriedTextures = new Dictionary<string, string>();
-
             ParseJsonData(jsonData);
         }
 
-        // -----------------------------------------------------------------------------------
-        // Public Methods
-        // -----------------------------------------------------------------------------------
-
-        /// <summary>
-        /// Virtual method for interacting with this object (besides build/destroy).
-        /// Subclasses or specific blocks may override to do custom logic 
-        /// (e.g., open a chest GUI, turn on a furnace, etc.).
-        /// </summary>
         public virtual void Interact()
         {
-            Debug.Log($"Object '{Name}' (UID: {UID}) was interacted with. Override Interact() for custom behavior.");
+            Debug.Log($"Object '{Name}' (UID: {UID}) was interacted with.");
         }
 
-        // -----------------------------------------------------------------------------------
-        // Private Helpers
-        // -----------------------------------------------------------------------------------
-
-        /// <summary>
-        /// Parse the jsonData (from the blocks.json entry) to fill textures, sound, etc.
-        /// Example keys might be: "textures", "sound", "isotropic", "brightness_gamma", 
-        /// or nested "textures": { "up": "...", "down": "...", ... }.
-        /// </summary>
-        private void ParseJsonData(Dictionary<string, object> jsonData)
+        private void ParseJsonData(Dictionary<string, object> data)
         {
-            // 1) Sound
-            if (jsonData.ContainsKey("sound"))
+            if (data.ContainsKey("sound"))
+                Sound = data["sound"] as string;
+
+            if (data.ContainsKey("isotropic"))
             {
-                Sound = jsonData["sound"] as string;
+                var iso = data["isotropic"];
+                if (iso is bool b) IsIsotropic = b;
             }
 
-            // 2) isotropic (bool or complex structure)
-            // "isotropic": true OR "isotropic": { "up": false, "down": false }
-            if (jsonData.ContainsKey("isotropic"))
+            if (data.ContainsKey("brightness_gamma"))
             {
-                var isoVal = jsonData["isotropic"];
-                if (isoVal is bool isoBool)
-                {
-                    IsIsotropic = isoBool;
-                }
-                // If it is a dictionary specifying up/down, etc., 
-                // you can parse further as needed
+                if (float.TryParse(data["brightness_gamma"].ToString(), out float val))
+                    BrightnessGamma = val;
             }
 
-            // 3) brightness_gamma
-            if (jsonData.ContainsKey("brightness_gamma"))
+            if (data.ContainsKey("textures"))
             {
-                // Convert to float if possible
-                if (float.TryParse(jsonData["brightness_gamma"].ToString(), out float gammaVal))
-                {
-                    BrightnessGamma = gammaVal;
-                }
-            }
-
-            // 4) textures 
-            //   Could be a string (like "dirt") or a dictionary with up/down/side
-            if (jsonData.ContainsKey("textures"))
-            {
-                var texVal = jsonData["textures"];
+                var texVal = data["textures"];
                 if (texVal is string singleTex)
                 {
-                    // e.g. "dirt" -> fill all faces or just store a single reference
-                    FaceTextures["all"] = singleTex; // Indicate a single texture
+                    FaceTextures["all"] = singleTex;
                 }
-                else if (texVal is Dictionary<string, object> texDict)
+                else if (texVal is Dictionary<string, object> dict)
                 {
-                    // e.g. "up": "log_top", "down": "log_top", "side": "log_side"
-                    foreach (var kvp in texDict)
+                    foreach (var kvp in dict)
                     {
-                        var faceKey = kvp.Key;      // e.g. "up", "down", "side", "north", ...
-                        var faceTexture = kvp.Value as string;
-                        if (!string.IsNullOrEmpty(faceTexture))
-                        {
-                            FaceTextures[faceKey] = faceTexture;
-                        }
+                        var faceTex = kvp.Value as string;
+                        if (!string.IsNullOrEmpty(faceTex))
+                            FaceTextures[kvp.Key] = faceTex;
                     }
                 }
             }
 
-            // 5) carried_textures
-            if (jsonData.ContainsKey("carried_textures"))
+            if (data.ContainsKey("carried_textures"))
             {
-                var cTexVal = jsonData["carried_textures"];
-                if (cTexVal is string singleCarried)
+                var cVal = data["carried_textures"];
+                if (cVal is string singleCarried)
                 {
-                    // e.g. "leaves_carried"
                     CarriedTextures["all"] = singleCarried;
                 }
-                else if (cTexVal is Dictionary<string, object> cTexDict)
+                else if (cVal is Dictionary<string, object> cDict)
                 {
-                    // e.g. "up": "dispenser_top", "down": "dispenser_top", "north": ...
-                    foreach (var kvp in cTexDict)
+                    foreach (var kvp in cDict)
                     {
-                        var faceKey = kvp.Key;
-                        var faceTex = kvp.Value as string;
-                        if (!string.IsNullOrEmpty(faceTex))
-                        {
-                            CarriedTextures[faceKey] = faceTex;
-                        }
+                        var cTex = kvp.Value as string;
+                        if (!string.IsNullOrEmpty(cTex))
+                            CarriedTextures[kvp.Key] = cTex;
                     }
                 }
             }

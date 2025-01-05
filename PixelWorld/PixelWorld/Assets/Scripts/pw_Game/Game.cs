@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
+using pw_Game.Object;
 using pw_SaveManage;        // For GameSaveData, pwdat
 using pw_Game.Environment; // For World, WorldManager
 
@@ -36,7 +38,27 @@ namespace pw_Game
             // 6) Build or generate the world
             worldManager.BuildWorld();
         }
+        
+        private void Start()
+        {
+            // 1. 创建并挂载 ObjectManager
+            GameObject managerObj = new GameObject("ObjectManager");
+            ObjectManager objManager = managerObj.AddComponent<ObjectManager>();
 
+            // 2. 读取 object.json
+            //    路径示例：位于 Assets/Scripts/pw_Game/Object/object.json
+            string jsonPath = Application.dataPath + "/Scripts/pw_Game/Object/object.json";
+            List<Object.Object> loadedObjects = objManager.LoadObjectsFromJson(jsonPath);
+
+            // 3. 测试 - 输出每个加载到的 Object 信息
+            Debug.Log($"[Game] Successfully loaded {loadedObjects.Count} objects.");
+            foreach (var block in loadedObjects)
+            {
+                Debug.Log($"[Game] UID='{block.UID}', Name='{block.Name}', Sound='{block.Sound}', " +
+                          $"IsIsotropic={block.IsIsotropic}, FaceTexturesCount={block.FaceTextures.Count}");
+            }
+        }
+        
         private void Update()
         {
             // Let the WorldManager update the current world if initialized
