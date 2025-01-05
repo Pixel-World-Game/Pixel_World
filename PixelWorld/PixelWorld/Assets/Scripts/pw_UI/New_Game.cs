@@ -1,93 +1,60 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.IO;  // For file operations
+using System.IO;
 
-namespace pw_UI
-{
-    // New_Game.cs
-    // This script collects game initialization data and starts a new game.
-    public class New_Game : MonoBehaviour
-    {
-        [Header("Game Name Input")]
-        // Reference to the InputField for the game name
-        public InputField gameNameInput;
-        
-        [Header("Seed Input")]
-        // Reference to the InputField for the seed
-        public InputField seedInput;
+namespace pw_UI{
+    public class New_Game : MonoBehaviour{
+        [Header("Game Name Input")] public InputField gameNameInput;
 
-        // Limit for seed length
+        [Header("Seed Input")] public InputField seedInput;
         public int seedLengthLimit = 16;
 
-        [Header("Start Button")]
-        // Button to start the game
-        public Button startButton;
+        [Header("Start Button")] public Button startButton;
 
-        // We'll store our game files in this folder
+        // 统一将存档保存在 <persistentDataPath>/SavedGames/ 下
         private string gameFilesFolder;
 
-        void Awake()
-        {
-            // Construct the path to store game files
-            // For example: <persistentDataPath>/SavedGames
+        private void Awake(){
+            // 1. 指定我们想存档的目录
             gameFilesFolder = Path.Combine(Application.persistentDataPath, "SavedGames");
+            if (!Directory.Exists(gameFilesFolder)) Directory.CreateDirectory(gameFilesFolder);
 
-            if (!Directory.Exists(gameFilesFolder))
-            {
-                Directory.CreateDirectory(gameFilesFolder);
-            }
-
-            // If the button is assigned, add listener
+            // 2. 按钮点击绑定
             if (startButton != null)
-            {
                 startButton.onClick.AddListener(OnStartGameClicked);
-            }
             else
-            {
                 Debug.LogWarning("Start Button is not assigned in the Inspector!");
-            }
         }
 
-        // Called when the user clicks the "Start" button
-        private void OnStartGameClicked()
-        {
-            // 1. Get the game name
-            string gameName = (gameNameInput != null) ? gameNameInput.text : "UnnamedGame";
+        // 当用户点击“Start”时执行
+        private void OnStartGameClicked(){
+            // 获取游戏名
+            var gameName = gameNameInput != null ? gameNameInput.text : "UnnamedGame";
 
-            // 2. Get the seed
-            string seed = (seedInput != null) ? seedInput.text : "";
+            // 获取种子
+            var seed = seedInput != null ? seedInput.text : "";
 
-            // 3. Check seed length
-            if (seed.Length > seedLengthLimit)
-            {
+            if (seed.Length > seedLengthLimit){
                 Debug.LogWarning($"Seed length cannot exceed {seedLengthLimit} characters.");
-                // You could show a UI warning or just return
                 return;
             }
 
-            // 4. Create a game file
-            // We'll keep it simple and just store plain text
-            string fileName = gameName.Replace(" ", "_") + "_GameData.dat";
-            string filePath = Path.Combine(gameFilesFolder, fileName);
+            var fileName = gameName.Replace(" ", "_") + "_GameData.txt";
+            var filePath = Path.Combine(gameFilesFolder, fileName);
 
-            string fileContent = $"GameName: {gameName}\nSeed: {seed}";
-            try
-            {
+            var fileContent = $"GameName: {gameName}\nSeed: {seed}";
+
+            try{
                 File.WriteAllText(filePath, fileContent);
-                Debug.Log($"Game file created: {filePath}");
+                Debug.Log($"Game file created at: {filePath}");
             }
-            catch (IOException e)
-            {
+            catch (IOException e){
                 Debug.LogError($"Failed to write game file: {e.Message}");
                 return;
             }
 
-            // 5. Call Game.cs to start the game
-            // For example: Game.StartGame(filePath);
-            // Or load a new scene that references this data
-            // e.g. SceneManager.LoadScene("GameScene");
             Debug.Log($"Starting game with file: {filePath}");
-            // Game.StartGame(filePath); // Example usage
+            // Game.StartGame(filePath);
         }
     }
 }
