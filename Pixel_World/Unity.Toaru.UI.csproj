@@ -11,12 +11,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>Minecraft</RootNamespace>
-    <ProjectGuid>{3091481a-71e4-2ef3-d1c4-d764a4495f4a}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{8ea3bef4-6be2-fd15-1831-727a783c0503}</ProjectGuid>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Unity.Toaru.UI</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <BaseDirectory>.</BaseDirectory>
@@ -25,12 +25,12 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>Temp\Bin\Debug\Assembly-CSharp\</OutputPath>
+    <OutputPath>Temp\Bin\Debug\Unity.Toaru.UI\</OutputPath>
     <DefineConstants>UNITY_2022_3_48;UNITY_2022_3;UNITY_2022;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_2020_1_OR_NEWER;UNITY_2020_2_OR_NEWER;UNITY_2020_3_OR_NEWER;UNITY_2021_1_OR_NEWER;UNITY_2021_2_OR_NEWER;UNITY_2021_3_OR_NEWER;UNITY_2022_1_OR_NEWER;UNITY_2022_2_OR_NEWER;UNITY_2022_3_OR_NEWER;PLATFORM_ARCH_64;UNITY_64;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_VIRTUALTEXTURING;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_EDITOR_GAME_SERVICES;ENABLE_UNITY_GAME_SERVICES_ANALYTICS_SUPPORT;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_GENERATE_NATIVE_PLUGINS_FOR_ASSEMBLIES_API;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_MANAGED_UNITYTLS;INCLUDE_DYNAMIC_GI;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;ENABLE_ACCELERATOR_CLIENT_DEBUGGING;ENABLE_NAVIGATION_PACKAGE_DEBUG_VISUALIZATION;ENABLE_NAVIGATION_HEIGHTMESH_RUNTIME_SUPPORT;ENABLE_NAVIGATION_UI_REQUIRES_PACKAGE;PLATFORM_STANDALONE;TEXTCORE_1_0_OR_NEWER;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_NVIDIA;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;PLATFORM_UPDATES_TIME_OUTSIDE_OF_PLAYER_LOOP;GFXDEVICE_WAITFOREVENT_MESSAGEPUMP;PLATFORM_INITIALIZES_MEMORY_MANAGER_EXPLICITLY;ENABLE_MONO;NET_4_6;NET_UNITY_4_8;ENABLE_PROFILER;DEBUG;TRACE;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_INPUT_SYSTEM;ENABLE_LEGACY_INPUT_MANAGER;TEXTCORE_FONT_ENGINE_1_5_OR_NEWER;UNITY_POST_PROCESSING_STACK_V2;HOTFIX_ENABLE;LOAD_ASSET_BUNDLE_FROM_FILE;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169,0649</NoWarn>
-    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
     <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
@@ -45,174 +45,29 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Entities\PlayerEntity.cs" />
-     <Compile Include="Assets\Scripts\Assets\AssetInfo.cs" />
-     <Compile Include="Assets\XLua\Src\DelegateBridge.cs" />
-     <Compile Include="Assets\Scripts\Rendering\SectionMeshWorkScheduler.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenLayers\DefaultLayers\BiomeLayer.cs" />
-     <Compile Include="Assets\Scripts\Assets\AssetManager.cs" />
-     <Compile Include="Assets\Scripts\Assets\AsyncAsset.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenLayers\NativeInt2DArray.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockData.cs" />
-     <Compile Include="Assets\Scripts\Rendering\SectionMeshManager.cs" />
-     <Compile Include="Assets\Scripts\PlayerControls\FOVKick.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockRotationAxes.cs" />
-     <Compile Include="Assets\XLua\Src\TemplateEngine\TemplateEngine.cs" />
-     <Compile Include="Assets\Scripts\Noises\PerlinNoise.cs" />
-     <Compile Include="Assets\Scripts\ChunkDebugger.cs" />
-     <Compile Include="Assets\Scripts\Configurations\ItemData.cs" />
-     <Compile Include="Assets\XLua\util\Xxtea.cs" />
-     <Compile Include="Assets\Scripts\Rendering\Jobs\FrustumCullingJob.cs" />
-     <Compile Include="Assets\Scripts\Chunk3x3Accessor.cs" />
-     <Compile Include="Assets\XLua\Src\LuaAsset.cs" />
-     <Compile Include="Assets\Scripts\ChunkBuilder.cs" />
-     <Compile Include="Assets\Scripts\Assets\UnityResourceAPI.cs" />
-     <Compile Include="Assets\Scripts\PlayerControls\FluidInteractor.cs" />
-     <Compile Include="Assets\Scripts\Rendering\ShaderUtility.cs" />
-     <Compile Include="Assets\Scripts\PlayerControls\FirstPersonLook.cs" />
-     <Compile Include="Assets\XLua\Src\ObjectCasters.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockFace.cs" />
-     <Compile Include="Assets\Scripts\Assets\AssetPtr.cs" />
-     <Compile Include="Assets\Scripts\Assets\AssetManagerUpdater.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenLayers\DefaultLayers\AddBeachLayer.cs" />
-     <Compile Include="Assets\Scripts\PhysicSystem\PhysicState.cs" />
-     <Compile Include="Assets\Scripts\Entities\Entity.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\WorldGeneratePipeline.cs" />
-     <Compile Include="Assets\Scripts\World.cs" />
-     <Compile Include="Assets\XLua\Src\LuaEnv.cs" />
-     <Compile Include="Assets\Scripts\ChunkPos.cs" />
-     <Compile Include="Assets\Scripts\DayNightCycle.cs" />
-     <Compile Include="Assets\XLua\Src\CopyByValue.cs" />
-     <Compile Include="Assets\Scripts\PhysicSystem\BlockRaycastHit.cs" />
-     <Compile Include="Assets\Scripts\Collections\PriorityQueue.cs" />
-     <Compile Include="Assets\Scripts\InspectorExtensions\ConditionalDisplayAttribute.cs" />
-     <Compile Include="Assets\XLua\Src\LuaDLL.cs" />
-     <Compile Include="Assets\XLua\Src\LuaException.cs" />
-     <Compile Include="Assets\Scripts\WorldConsts.cs" />
-     <Compile Include="Assets\Scripts\Assets\EnsureAssetTypeAttribute.cs" />
-     <Compile Include="Assets\Scripts\Configurations\IOrderedConfigData.cs" />
-     <Compile Include="Assets\Scripts\Utils\ArrayUtility.cs" />
-     <Compile Include="Assets\Scripts\Collections\LRULinkedMap.cs" />
-     <Compile Include="Assets\Scripts\Entities\IRenderableEntity.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenLayers\DefaultLayers\AddIslandLayer.cs" />
-     <Compile Include="Assets\Scripts\Entities\LuaBlockEntity.cs" />
-     <Compile Include="Assets\Scripts\Configurations\IBlockBehaviour.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\CaveGenerator.cs" />
-     <Compile Include="Assets\Scripts\PhysicSystem\PhysicMaterial.cs" />
-     <Compile Include="Assets\XLua\Src\SignatureLoader.cs" />
-     <Compile Include="Assets\Scripts\Collections\HashUtility.cs" />
-     <Compile Include="Assets\Scripts\WorldUtility.cs" />
-     <Compile Include="Assets\Scripts\Lua\ILuaCallCSharp.cs" />
-     <Compile Include="Assets\XLua\Src\TypeExtensions.cs" />
-     <Compile Include="Assets\Scripts\PlayerControls\CurveControlledBob.cs" />
-     <Compile Include="Assets\Scripts\IWorldRWAccessor.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenerationHelper.cs" />
-     <Compile Include="Assets\XLua\Src\GenAttributes.cs" />
-     <Compile Include="Assets\Scripts\Entities\EntityManager.cs" />
-     <Compile Include="Assets\Scripts\Lua\LuaManager.cs" />
-     <Compile Include="Assets\Scripts\Rendering\Jobs\CalculateFrustumPlaneJob.cs" />
-     <Compile Include="Assets\Scripts\Chunk.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockFlags.cs" />
-     <Compile Include="Assets\Scripts\Assets\AssetBundleInfo.cs" />
-     <Compile Include="Assets\XLua\Src\MethodWarpsCache.cs" />
-     <Compile Include="Assets\XLua\Src\ObjectPool.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockUtility.cs" />
-     <Compile Include="Assets\Scripts\Assets\EditorAssetBundle.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockFaceCorner.cs" />
-     <Compile Include="Assets\XLua\Src\RawObject.cs" />
-     <Compile Include="Assets\Scripts\ModificationSource.cs" />
-     <Compile Include="Assets\Scripts\MathUtility.cs" />
-     <Compile Include="Assets\Scripts\WorldSinglePlayer.cs" />
-     <Compile Include="Assets\XLua\Src\GenericDelegateBridge.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockMesh.cs" />
-     <Compile Include="Assets\Scripts\Utils\WorkScheduler.cs" />
-     <Compile Include="Assets\XLua\Src\LuaFunction.cs" />
-     <Compile Include="Assets\Scripts\Assets\RuntimeAssetBundle.cs" />
-     <Compile Include="Assets\XLua\Src\LuaTable.cs" />
-     <Compile Include="Assets\Scripts\Collections\NibbleArray.cs" />
-     <Compile Include="Assets\Scripts\InspectorExtensions\MinMaxSliderAttribute.cs" />
-     <Compile Include="Assets\Scripts\Lua\IHotfixable.cs" />
-     <Compile Include="Assets\XLua\Src\Utils.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenLayers\DefaultLayers\IslandLayer.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockTable.cs" />
-     <Compile Include="Assets\Scripts\PlayerControls\LerpControlledBob.cs" />
-     <Compile Include="Assets\Scripts\IWorld.cs" />
-     <Compile Include="Assets\Scripts\Assets\AssetCatalog.cs" />
-     <Compile Include="Assets\XLua\Src\StaticLuaCallbacks.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockVertexData.cs" />
-     <Compile Include="Assets\Scripts\PhysicSystem\Physics.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\TreeGenerator.cs" />
-     <Compile Include="Assets\Scripts\Lua\ICSharpCallLua.cs" />
-     <Compile Include="Assets\Scripts\Noises\UniformRNG.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenLayers\StatelessGenLayer.cs" />
-     <Compile Include="Assets\Scripts\Rendering\BlockMeshBuilder.cs" />
-     <Compile Include="Assets\Scripts\Utils\FPSCounter.cs" />
-     <Compile Include="Assets\Scripts\PlayerControls\BlockInteraction.cs" />
-     <Compile Include="Assets\Scripts\Assets\AssetUtility.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BlockEntityConversion.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\TerrainGenerator.cs" />
-     <Compile Include="Assets\XLua\Src\LuaBase.cs" />
-     <Compile Include="Assets\XLua\Src\InternalGlobals.cs" />
-     <Compile Include="Assets\Scripts\PhysicSystem\BlockPhysicsUtility.cs" />
-     <Compile Include="Assets\Scripts\Rendering\RenderingUtility.cs" />
-     <Compile Include="Assets\Scripts\Noises\INoise.cs" />
-     <Compile Include="Assets\Scripts\Rendering\BlockMeshVertexData.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\PlantGenerator.cs" />
-     <Compile Include="Assets\Scripts\Lua\LuaUtility.cs" />
-     <Compile Include="Assets\Scripts\Audio\AudioManager.cs" />
-     <Compile Include="Assets\Scripts\WorldSetting.cs" />
-     <Compile Include="Assets\Scripts\Rendering\SectionRenderingManager.cs" />
-     <Compile Include="Assets\Scripts\ChunkManager.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BiomeData.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenerationContext.cs" />
-     <Compile Include="Assets\Scripts\PhysicSystem\AABB.cs" />
-     <Compile Include="Assets\Scripts\Rendering\LightingUtility.cs" />
-     <Compile Include="Assets\Scripts\Assets\IAssetBundle.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenLayers\DefaultLayers\AddRiverLayer.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\StatelessGenerator.cs" />
-     <Compile Include="Assets\Scripts\IWorldRAccessor.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\GenLayers\DefaultLayers\ZoomLayer.cs" />
-     <Compile Include="Assets\XLua\Src\CodeEmit.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BiomeId.cs" />
-     <Compile Include="Assets\Scripts\Rendering\MeshBuilder.cs" />
-     <Compile Include="Assets\Scripts\ScriptableWorldGeneration\MineGenerator.cs" />
-     <Compile Include="Assets\XLua\Src\ObjectTranslatorPool.cs" />
-     <Compile Include="Assets\Scripts\Entities\IAABBEntity.cs" />
-     <Compile Include="Assets\XLua\Src\ObjectTranslator.cs" />
-     <Compile Include="Assets\Scripts\Utils\AOTUtils.cs" />
-     <Compile Include="Assets\Scripts\Configurations\BiomeTable.cs" />
-     <Compile Include="Assets\Scripts\Noises\GenericNoise.cs" />
-     <None Include="Assets\block_material_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\Includes\Minecraft\BlockBRDF.hlsl" />
-     <None Include="Assets\Scripts\link.xml" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\item_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\biome_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\block_material_table.json" />
-     <None Include="Assets\block_table.json" />
-     <None Include="Assets\ToaruUnity.UI\package.json" />
-     <None Include="Assets\[editor]block_material_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\WaterPBR.shader" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\Includes\Minecraft\Input.hlsl" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\[editor]block_texture_table.json" />
-     <None Include="Assets\biome_table.json" />
-     <None Include="Assets\StreamingAssets\catalog.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\block_texture_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\CommonFluidPBR.shader" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\[editor]block_material_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\[editor]block_mesh_table.json" />
-     <None Include="Assets\[editor]block_texture_table.json" />
-     <None Include="Assets\[editor]block_mesh_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\CommonFoliagePBR.shader" />
-     <None Include="Assets\block_mesh_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\CommonSolidPBR.shader" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\Includes\Minecraft\ShadowCaster.hlsl" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\block_table.json" />
-     <None Include="Assets\block_texture_table.json" />
-     <None Include="Assets\XLua\CHANGELOG.txt" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\Includes\Minecraft\Core.hlsl" />
-     <None Include="Assets\Minecraft Default PBR Resources\Shaders\Includes\Minecraft\ScreenSpaceReflection.hlsl" />
-     <None Include="Assets\item_table.json" />
-     <None Include="Assets\Minecraft Default PBR Resources\Tables\Configs\block_mesh_table.json" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Actions\InjectActionsAttribute.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Collections\HybridDictionary.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Actions\ActionCenter.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\AbstractView.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\UGUI\AbstractUGUIView.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Actions\ActionAttribute.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\ViewState.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\SwitchViewParameters.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\IUIManager.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Properties\AssemblyInfo.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Actions\Observed.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Actions\ActionInfo.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\CloseViewParameters.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\SwitchViewMode.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\SwitchViewCallbackHandler.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\UIManager.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\SwitchViewResult.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\UGUI\TweenUGUIView.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Actions\IActionState.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\ViewStack.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\ViewLoader.cs" />
+     <Compile Include="Assets\ToaruUnity.UI\Runtime\Actions\ValueObserved.cs" />
+     <None Include="Assets\ToaruUnity.UI\Runtime\Unity.Toaru.UI.asmdef" />
      <Reference Include="UnityEngine">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
      </Reference>
@@ -461,6 +316,36 @@
      </Reference>
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.Graphs">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.WebGL.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.OSXStandalone.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\MacStandaloneSupport\UnityEditor.OSXStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.Android.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.iOS.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\iOSSupport\UnityEditor.iOS.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.VisionOS.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\VisionOSPlayer\UnityEditor.VisionOS.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.AppleTV.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\AppleTVSupport\UnityEditor.AppleTV.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.LinuxStandalone.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\LinuxStandaloneSupport\UnityEditor.LinuxStandalone.Extensions.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.UWP.Extensions">
+     <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\PlaybackEngines\MetroSupport\UnityEditor.UWP.Extensions.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Collections.LowLevel.ILSupport">
      <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\PackageCache\com.unity.collections@1.4.0\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
@@ -873,150 +758,14 @@
      <Reference Include="System.Xml.XPath.XDocument">
      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Recorder.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Recorder.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Jobs">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Jobs.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Postprocessing.Runtime">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Burst.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Rider.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.2D.Sprite.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Mathematics.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Collections">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Collections.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Collections.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="PPv2URPConverters">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Recorder">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Recorder.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VSCode.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Profiling.Core">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.MemoryProfiler">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.MemoryProfiler.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Sysroot.Linux_x86_64">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Sysroot.Linux_x86_64.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.EditorCoroutines.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.MemoryProfiler.Editor.MemoryProfilerModule">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.MemoryProfiler.Editor.MemoryProfilerModule.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Burst">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Timeline.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ShaderGraph.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualStudio.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Recorder.Base">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Recorder.Base.dll</HintPath>
-     </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-     </Reference>
-     <Reference Include="UnityEditor.CacheServer">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\UnityEditor.CacheServer.dll</HintPath>
      </Reference>
      <Reference Include="UnityEngine.UI">
      <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Timeline">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.InputSystem">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.InputSystem.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.MemoryProfiler.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.MemoryProfiler.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.SysrootPackage.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Postprocessing.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Mathematics">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Searcher.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.ScriptableBuildPipeline.Editor">
-     <HintPath>C:\Users\Ryen\Project\Pixel_World\Pixel_World\Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
-     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Unity.Toaru.UI.csproj">
-      <Project>{8ea3bef4-6be2-fd15-1831-727a783c0503}</Project>
-      <Name>Unity.Toaru.UI</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
