@@ -1,2 +1,0 @@
-﻿[Textures]
-[1] https://mcpedl.com/simpleaf-pack/
