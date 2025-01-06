@@ -5,13 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5d103b2-e3da-4613-9d24-b8d2940fc399" name="Changes" comment="finish">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pixel_World.sln" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minecraft Default PBR Resources/Effects/Destroyed Effect Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minecraft Default PBR Resources/Effects/Destroyed Effect Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minecraft Default PBR Resources/Effects/Explosion Effect Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minecraft Default PBR Resources/Effects/Explosion Effect Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minecraft Default PBR Resources/URP Settings/URPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minecraft Default PBR Resources/URP Settings/URPAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Minecraft Default PBR Resources/URP Settings/URPAsset_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Minecraft Default PBR Resources/URP Settings/URPAsset_Renderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XLua/Doc/Materials/logo.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XLua/Doc/Materials/logo.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Unity.Toaru.UI.Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Toaru.UI.Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Unity.Toaru.UI.Editor.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Unity.Toaru.UI.Editor.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Toaru.UI.Tests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Toaru.UI.Tests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Unity.Toaru.UI.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Unity.Toaru.UI.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +74,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.45f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\Ryen\Project\Pixel_World\Pixel_World -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Ryen\Project\Pixel_World\Pixel_World" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -70,7 +82,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.45f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.48f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\Ryen\Project\Pixel_World\Pixel_World -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\Ryen\Project\Pixel_World\Pixel_World" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -112,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1736122285106</updated>
-      <workItem from="1736122286925" duration="1453000" />
+      <workItem from="1736122286925" duration="1837000" />
     </task>
     <task id="LOCAL-00001" summary="finish">
       <option name="closed" value="true" />
@@ -130,7 +142,23 @@
       <option name="project" value="LOCAL" />
       <updated>1736123412853</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finish">
+      <option name="closed" value="true" />
+      <created>1736123935400</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736123935400</updated>
+    </task>
+    <task id="LOCAL-00004" summary="finish">
+      <option name="closed" value="true" />
+      <created>1736124132737</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736124132737</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
