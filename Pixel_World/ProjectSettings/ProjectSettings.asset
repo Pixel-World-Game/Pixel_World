@@ -1033,11 +1033,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 9ed3c0cb-e1f2-4296-b7c2-e2b256e4f08f
+  cloudProjectId: 5ce7b9a1-976b-41cf-ac78-54e1c8cdfb0e
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: MinecraftClone
-  organizationId: wechat_os_qy02m6xyyadukzm1mjlkf7ogo
+  projectName: Pixel_World
+  organizationId: ruihanzhao
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
