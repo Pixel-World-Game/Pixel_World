@@ -77,15 +77,10 @@ Ensure you have the following installed:
 ## External Asset Integration
 
 ### Assets Used
-- **Unity Standard Assets**: Core mechanics and camera scripts.
-  - Source: [Unity Asset Store](https://assetstore.unity.com)
-- **FPS Standard Asset Pack**: Shooting and movement mechanics.
-  - Source: [Unity Asset Store](https://assetstore.unity.com)
 - **Music and Sound Effects**: Background music and sound effects.
   - Source: [Aigei.com](https://www.aigei.com)
-- **Vegetation Models**: 3D plants and environmental assets.
+- **Models**: 3D plants, environmental and other assets.
   - Source: [Aigei.com](https://www.aigei.com)
-- **Additional Models and Textures**: Imported from Unity Store resource packs.
 
 ### Custom Assets
 All scripts, puzzles, and unique game mechanics were custom-developed by our team.
