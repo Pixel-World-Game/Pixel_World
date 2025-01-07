@@ -1,7 +1,7 @@
 # Unity Game Project README
 
 ## Introduction
-Welcome to our Unity game project! This document provides details about how to run, play, and evaluate the game, including its unique features, levels, and external resources used.
+Welcome to our Unity game project! This document provides details about how to run, play, and evaluate the game, including its unique features, levels, and external resources used. We recommend using the WEB version of the release branch to play!
 
 ## Table of Contents
 - [How to Run and Play](#how-to-run-and-play)
