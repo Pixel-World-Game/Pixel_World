@@ -1,63 +1,139 @@
-# Pixel_World
+# Unity Game Project README
 
-Welcome to **Pixel_World**! This game is a voxel-based survival and exploration game inspired by popular sandbox experiences, where creativity meets adventure. Players can explore, build, craft, and interact with a dynamic environment filled with AI-driven wildlife and procedurally generated terrain.
+## Introduction
+Welcome to our Unity game project! This document provides details about how to run, play, and evaluate the game, including its unique features, levels, and external resources used. We recommend using the WEB version of the release branch to play!
 
-## Prototype Game
-  click [here](https://pixel-world-game.github.io/Pixel_World/build/WebGL/index.html) to start
-## Prototype Code 
- please check [prototype](https://github.com/Pixel-World-Game/Pixel_World/tree/prototype) branch
- prototype unity project is [here](https://github.com/Pixel-World-Game/Pixel_World/tree/prototype/Prototype/Pixel_World)
+## Table of Contents
+- [How to Run and Play](#how-to-run-and-play)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+  - [Gameplay Instructions](#gameplay-instructions)
+- [Game Levels](#game-levels)
+- [Gameplay Features](#gameplay-features)
+- [External Asset Integration](#external-asset-integration)
+- [Non-Playable Features](#non-playable-features)
+- [Aesthetic Design](#aesthetic-design)
+- [Development Reflections](#development-reflections)
 
-## Features
+---
 
-- **Procedurally Generated Terrain**: Explore a dynamic world generated block by block, creating hills, valleys, and unique landscapes every time you play.
-- **Dynamic AI Animals**: Animals roam the world using intelligent AI navigation and react to player actions, such as fleeing when attacked.
-- **Player Interaction**: Mine resources, place blocks, and modify the environment to suit your needs.
-- **Crafting System**: Combine materials to craft new items using a simple crafting system.
-- **Inventory Management**: Store and use resources through an intuitive inventory system, allowing you to select and place blocks.
-- **Save and Load**: Save your progress and load the world state to continue exploring and building where you left off.
+## How to Run and Play
 
-## Installation
+### Prerequisites
+Ensure you have the following installed:
+- Unity Editor (Version 2020.3.2f1 or later)
+- Git for version control
 
-1. Clone or download the repository to your local machine.
-2. Open the project in **Unity** (version 2021.3 or newer is recommended).
-3. Ensure all required dependencies are installed, such as **NavMesh Components** for AI navigation.
-4. Click **Play** in the Unity Editor to start exploring Pixel_World!
+### Installation
+1. Clone the repository to your local machine using Git:
+   ```bash
+   git clone <repository-url>
+   ```
+2. Open the Unity Editor.
+3. Navigate to the cloned project folder and open the `Main` scene from the `Scenes` directory.
+4. Click the play button in the Unity Editor to start the game.
 
-## How to Play
+### Gameplay Instructions
+- **Goal**: Complete challenges across three unique levels by solving puzzles, gathering resources, and defeating enemies.
+- **Controls**: Move, jump, and interact with the environment using standard Unity input bindings.
 
-- **Movement**: Use **WASD** to move around and **Spacebar** to jump.
-- **Look Around**: Use the mouse to look around and aim.
-- **Place Blocks**: Right-click to place blocks at the targeted location.
-- **Mine Blocks**: Left-click to break blocks and gather resources.
-- **Craft Items**: Open the crafting UI to combine items and create new resources.
-- **Interact with Animals**: Approach animals, but be careful—they may flee if attacked!
+---
 
-## Controls
+## Game Levels
 
-- **WASD**: Move
-- **Mouse**: Look around
-- **Left-click**: Attack/mine blocks
-- **Right-click**: Place blocks
-- **Number Keys (1-9)**: Select items from the inventory
-- **Spacebar**: Jump
+### Level 1: Maze Escape
+- **Objective**: Navigate through a maze within a time limit.
+- **Features**:
+  - Collect energy items to maintain health.
+  - Avoid thorn obstacles that reduce health.
+  - Locate and exit the maze before time runs out.
 
-## Credits
+### Level 2: Fragment Search
+- **Objective**: Find hidden fragments inside a house and solve puzzles.
+- **Features**:
+  - Interact with NPCs for hints.
+  - Search for fragments in various hidden spots (e.g., under beds, behind curtains).
+  - Solve a puzzle using collected fragments to progress.
 
-- **Game Design and Development**: [Your Name]
-- **Assets**: Custom block models, animal models, and textures.
-- **Special Thanks**: Unity Documentation, online tutorials, and the OpenAI community for their assistance and support.
+### Level 3: Survival Shooting
+- **Objective**: Defeat enemies in the maze and find the exit.
+- **Features**:
+  - AI-controlled enemies with behaviors like hiding and collaborating.
+  - Manage health by collecting medkits.
+  - Shoot and eliminate all enemies before exiting the level.
 
-## Future Improvements
+---
 
-- **Multiplayer Support**: Allow players to explore and build together.
-- **Advanced Crafting System**: Expand the crafting recipes and introduce complex item interactions.
-- **More Wildlife**: Add different animal species with unique behaviors.
-- **Weather System**: Introduce weather effects like rain and snow that impact gameplay.
+## Gameplay Features
 
-## Contact
+- **Player Control**: First-person and third-person view options.
+- **Combat System**: Robust shooting mechanics and health management.
+- **Puzzle Solving**: Interactive puzzles to unlock new levels and items.
+- **AI Interaction**: NPCs provide hints and interact with the player dynamically.
+- **Procedural Generation**: Randomized maze layouts and item placements for replayability.
 
-For any inquiries or contributions, feel free to reach out at **[ruihan.ryen.zhao@gmail.com]** or create an issue in the repository.
+---
 
-Enjoy building and exploring **Pixel_World**!
+## External Asset Integration
+
+### Assets Used
+- **Music and Sound Effects**: Background music and sound effects.
+  - Source: [Aigei.com](https://www.aigei.com)
+- **Models**: 3D plants, environmental and other assets.
+  - Source: [Aigei.com](https://www.aigei.com)
+
+### Custom Assets
+All scripts, puzzles, and unique game mechanics were custom-developed by our team.
+
+---
+
+## Non-Playable Features
+
+- **Adjustable Settings**: Includes audio and input sensitivity adjustments.
+- **Menu Systems**:
+  - Start Menu: Navigate to different game modes.
+  - Pause Menu: Save or exit during gameplay.
+  - End Screen: Displays results after completing levels.
+- **Data Persistence**: Save and load player progress between sessions.
+- **HUD (Head-Up Display)**: Displays real-time health, ammo, and objectives.
+
+---
+
+## Aesthetic Design
+
+- **Sound Design**:
+  - Immersive 3D sound effects and background music tailored to each level.
+- **Lighting Effects**:
+  - Dynamic shadows and reflections for realistic environments.
+- **Post-Processing**:
+  - Enhanced visual appeal using bloom, depth of field, and motion blur.
+- **Particle Effects**:
+  - Custom animations for interactions like shooting and collecting items.
+
+---
+
+## Development Reflections
+
+### Learning Outcomes
+- Enhanced understanding of Unity development workflows.
+- Gained proficiency in scripting AI behaviors and integrating procedural generation.
+
+### Challenges and Solutions
+- **Obstacle**: Balancing game difficulty.
+  - **Solution**: Iterative testing and feedback from playtesters.
+- **Obstacle**: Integrating procedural content seamlessly.
+  - **Solution**: Modular design of maze and item placement systems.
+
+### Contributions
+Each team member contributed to design, coding, testing, and debugging, ensuring a polished and functional game.
+
+---
+
+## Notes
+- If no external resources were used, or if all assets are custom, this must be clearly stated in the README file to avoid penalties.
+- Follow the submission guidelines carefully to ensure smooth evaluation.
+
+---
+
+Thank you for exploring our game! For any questions or feedback, feel free to reach out.
 
